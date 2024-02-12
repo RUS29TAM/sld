@@ -12,6 +12,7 @@
     /*left: 0;*/
     /*right: 0;*/
     /*bottom: 0;*/
+    overflow: hidden;
 }
 
 .carousel .list .item .img {
@@ -225,8 +226,9 @@
 
 .time {
     width: 0;
-    height: 13px;
+    height: 10px;
     background-color: #f1683a;
+    border-radius: 20px;
     position: absolute;
     z-index: 100;
     top: 0;
@@ -240,8 +242,13 @@
 }
 
 @keyframes timeRunning {
+    from {
+        background-color: #f1683a;
+    }
     to {
+        background-color: transparent;
         width: 0;
+        height: 1px;
     }
 }
 
