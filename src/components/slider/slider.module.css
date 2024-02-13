@@ -157,6 +157,10 @@
     border-radius: 20px;
     box-shadow: 0 0 15px 1px #eeeeee;
 }
+.carousel.prev .thumbnail .item:nth-child(1):hover {
+    border-radius: 20px;
+    box-shadow: 0 0 15px 1px #eeeeee;
+}
 
 @keyframes showThumbnail {
     to {
@@ -199,7 +203,7 @@
 .carousel.prev .thumbnail .item:nth-child(1) {
     width: 0;
     overflow: hidden;
-    opacity: 0;
+    opacity: 1;
     animation: showThumbnail .5s linear 1 forwards;
 }
 
@@ -246,9 +250,9 @@
         background-color: #f1683a;
     }
     to {
-        background-color: transparent;
+        /*background-color: transparent;*/
         width: 0;
-        height: 1px;
+        /*height: 1px;*/
     }
 }
 
@@ -256,9 +260,20 @@
     .carousel .list .item .content {
         padding-right: 0;
     }
-
     .carousel .list .item .content .title {
         font-size: 30px;
+    }
+    .carousel .list .item .content .topic {
+        font-size: 30px;
+    }
+    .carousel .thumbnail .item {
+        width: 1%;
+        height: auto;
+        flex-shrink: 0;
+        position: relative;
+    }
+    .carousel .thumbnail {
+        gap: 5px;
     }
 }
 
@@ -288,9 +303,15 @@
 
 .thumbnail .item .content {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    color: rgba(116, 116, 116, 0.44);
+
 }
 
 .thumbnail .item .content .title {
