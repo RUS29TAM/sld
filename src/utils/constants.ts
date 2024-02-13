@@ -1,4 +1,5 @@
-export const sliderItems = [
+import { StaticImageData } from 'next/image';
+export const sliderItems: { src: string | StaticImageData, author: string, title: string, topic: string, description: string }[] = [
     {   src: 'https://images.unsplash.com/photo-1682695794816-7b9da18ed470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         author: 'RUS29TAM',
         title: 'WEB DESIGN & DEV',
@@ -45,10 +46,9 @@ export const sliderItems = [
             'Зачем он нужен? Бизнес-план — это необходимый инструмент для привлечения инвестиций, партнерств и покупателей. ' +
             'Он помогает вам понять ваш рынок, цели, и как вы собираетесь их достичь.\n' +
             'Так что не откладывайте, начните с составления своего бизнес-плана сегодня! Это ваш первый шаг к процветающему бизнесу.', },
-    // Add other slider items as needed
 ];
 
-export const thumbnailItems = [
+export const thumbnailItems: { src: string | StaticImageData, title: string, description: string }[] = [
     {   src: 'https://images.unsplash.com/photo-1682695794816-7b9da18ed470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         title: 'ФРАНЧАЙЗИНГ',
         description: 'Description', },
@@ -61,5 +61,4 @@ export const thumbnailItems = [
     {   src: 'https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         title: 'БИЗНЕС ПЛАН',
         description: 'Description', },
-    // Add other thumbnail items as needed
 ];

@@ -5,6 +5,7 @@ import {sliderItems, thumbnailItems} from "@/utils/constants";
 
 const Slider = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [animationInProgress, setAnimationInProgress] = useState(true);
     const [direction, setDirection] = useState<'next' | 'prev' | 'carousel'>('carousel');
     const [key, setKey] = useState<number>(0);
     const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -36,6 +37,7 @@ const Slider = () => {
                 setDirection('prev')
                 setKey((prevKey) => prevKey + 1); // Увеличиваем key для перезапуска компонента
                 setActiveIndex((prevIndex) => (prevIndex - 1 + sliderItems.length) % sliderItems.length);
+                setAnimationInProgress(false); // Устанавливаем, что анимация не в процессе
                 sliderRef.current.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
                 thumbnailBorderRef.current.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
                 carouselRef.current?.classList.add('prev');
@@ -85,6 +87,21 @@ const Slider = () => {
             */
         }
     };
+    useEffect(() => {
+        const handleTransitionEnd = () => {
+            setAnimationInProgress(true); // Сбрасываем состояние, когда анимация завершена
+        };
+
+        if (carouselRef.current) {
+            carouselRef.current.addEventListener('transitionend', handleTransitionEnd);
+        }
+
+        return () => {
+            if (carouselRef.current) {
+                carouselRef.current.removeEventListener('transitionend', handleTransitionEnd);
+            }
+        };
+    }, [carouselRef]);
 
     return (
         <div className={`${styles.carousel} ${direction === 'next' ? styles.next : 'carousel'} ${direction === 'prev' ? styles.prev : 'carousel'}`} ref={carouselRef}>
@@ -93,8 +110,8 @@ const Slider = () => {
             {/* Slider */}
             <div className={styles.list} ref={sliderRef}>
                 {sliderItems.map((item, index) => (
-                    <div className={styles.item} key={index}>
-                        <img className={styles.img} src={item.src} alt={`Slide ${index + 1}`} />
+                    <div className={`${styles.item} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''} ${animationInProgress ? styles.animationInProgress : ''}`} key={index}>
+                        <img className={styles.img} src={typeof item.src === 'string' ? item.src : String(item.src)} alt={`Slide ${index + 1}`} />
                         <div className={styles.content}>
                             <div className={styles.author}>{item.author}</div>
                             <div className={styles.title}>{item.title}</div>
@@ -113,7 +130,7 @@ const Slider = () => {
             <div className={styles.thumbnail} ref={thumbnailBorderRef}>
                 {thumbnailItems.map((item, index) => (
                     <div className={styles.item} onClick={() => showSlider('thumbnail', index)} key={index}>
-                        <img className={styles.img} src={item.src} alt={`Thumbnail ${index + 1}`} />
+                        <img className={styles.img} src={typeof item.src === 'string' ? item.src : String(item.src)} alt={`Thumbnail ${index + 1}`} />
                         <div className={styles.content}>
                             <div className={styles.title}>{item.title}</div>
                             <div className={styles.description}>{item.description}</div>

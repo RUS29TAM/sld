@@ -182,6 +182,9 @@
 .carousel.prev .list .item:nth-child(2) {
     z-index: 2;
 }
+.carousel.prev .list .item.animationInProgress:nth-child(2) {
+    z-index: 0;
+}
 
 .carousel.prev .list .item:nth-child(2) .img {
     position: absolute;
