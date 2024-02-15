@@ -1,0 +1,22 @@
+.time {
+    width: 100%;
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.5), rgba(0, 115, 255, 0.5), #ffffff);
+    /*background: linear-gradient(45deg, #ffffff, #0073ff, #ff0006);*/
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10px;
+    animation: timeRunning 2s linear 1 forwards;
+    /*z-index: 2;*/
+}
+
+@keyframes timeRunning {
+    from {
+
+    }
+    to {
+        width: 0;
+        font-size: 0;
+    }
+}

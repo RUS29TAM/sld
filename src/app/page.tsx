@@ -1,12 +1,11 @@
 import styles from "./page.module.css";
-import Slider from "@/components/slider/Slider";
-import Header from "@/components/header/header";
+import Main from "@/app/pages/main/main";
+import Header from "@/app/pages/header/page";
 
 export default function Home() {
     return (
-        <main className={styles.main}>
-            <Header/>
-            <Slider/>
-        </main>
+        // <main className={styles.main}>
+            <Main/>
+        // </main>
     );
 }

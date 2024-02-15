@@ -2,8 +2,9 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styles from './slider.module.css'
 import {sliderItems, thumbnailItems} from "@/utils/constants";
+import Link from "next/link";
 
-const Slider = () => {
+const Main = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [animationInProgress, setAnimationInProgress] = useState(true);
     const [direction, setDirection] = useState<'next' | 'prev' | 'carousel'>('carousel');
@@ -104,51 +105,61 @@ const Slider = () => {
     }, [carouselRef]);
 
     return (
-        <div className={`${styles.carousel} ${direction === 'next' ? styles.next : 'carousel'} ${direction === 'prev' ? styles.prev : 'carousel'}`} ref={carouselRef}>
-            {/* header and navigation */}
-
-            {/* Slider */}
-            <div className={styles.list} ref={sliderRef}>
-                {sliderItems.map((item, index) => (
-                    <div className={`${styles.item} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''} ${animationInProgress ? styles.animationInProgress : ''}`} key={index}>
-                        <img className={styles.img} src={typeof item.src === 'string' ? item.src : String(item.src)} alt={`Slide ${index + 1}`} />
-                        <div className={styles.content}>
-                            <div className={styles.author}>{item.author}</div>
-                            <div className={styles.title}>{item.title}</div>
-                            <div className={styles.topic}>{item.topic}</div>
-                            <div className={styles.des}>{item.description}</div>
-                            <div className={styles.buttons}>
-                                <button className={styles.button}>СМОТРЕТЬ</button>
-                                <button className={styles.button}>ПОДПИСКА</button>
+        <>
+            {/*<Header/>*/}
+            <div
+                className={`${styles.carousel} ${direction === 'next' ? styles.next : 'carousel'} ${direction === 'prev' ? styles.prev : 'carousel'}`}
+                ref={carouselRef}>
+                {/* header and navigation */}
+                {/* Main */}
+                <div className={styles.list} ref={sliderRef}>
+                    {sliderItems.map((item, index) => (
+                        <div
+                            className={`${styles.item} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''} ${animationInProgress ? styles.animationInProgress : ''}`}
+                            key={index}>
+                            <img className={styles.img} src={typeof item.src === 'string' ? item.src : String(item.src)}
+                                 alt={`Slide ${index + 1}`}/>
+                            <div className={styles.content}>
+                                <div className={styles.author}>{item.author}</div>
+                                <div className={styles.title}>{item.title}</div>
+                                <div className={styles.topic}>{item.topic}</div>
+                                <div className={styles.des}>{item.description}</div>
+                                <div className={styles.buttons}>
+                                    <Link className={styles.button} href={'/pages/social-contract'}>СМОТРЕТЬ</Link>
+                                    <Link className={styles.button} href={'/pages/header'}>ПОДПИСКА</Link>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
 
-            {/* Thumbnail */}
-            <div className={styles.thumbnail} ref={thumbnailBorderRef}>
-                {thumbnailItems.map((item, index) => (
-                    <div className={styles.item} onClick={() => showSlider('thumbnail', index)} key={index}>
-                        <img className={styles.img} src={typeof item.src === 'string' ? item.src : String(item.src)} alt={`Thumbnail ${index + 1}`} />
-                        <div className={styles.content}>
-                            <div className={styles.title}>{item.title}</div>
-                            <div className={styles.description}>{item.description}</div>
+                {/* Thumbnail */}
+                <div className={styles.thumbnail} ref={thumbnailBorderRef}>
+                    {thumbnailItems.map((item, index) => (
+                        <div className={styles.item} onClick={() => showSlider('thumbnail', index)} key={index}>
+                            <img className={styles.img} src={typeof item.src === 'string' ? item.src : String(item.src)}
+                                 alt={`Thumbnail ${index + 1}`}/>
+                            <div className={styles.content}>
+                                <div className={styles.title}>{item.title}</div>
+                                <div className={styles.description}>{item.description}</div>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
 
-            {/* Navigation buttons */}
-            <div className={styles.arrows}>
-                <button className={styles.button} onClick={() => showSlider('prev')}>&lt;</button>
-                <button className={styles.button} onClick={() => showSlider('next')}>&gt;</button>
-            </div>
+                {/* Navigation buttons */}
+                <div className={styles.arrows}>
+                    <button className={styles.button} onClick={() => showSlider('prev')}>&lt;</button>
+                    <button className={styles.button} onClick={() => showSlider('next')}>&gt;</button>
+                </div>
 
-            {/* Time running */}
-            <div key={key} ref={timeRef} className={`${styles.time} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''}`}></div>
-        </div>
+                {/* Time running */}
+                <div key={key} ref={timeRef}
+                     className={`${styles.time} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''}`}></div>
+            </div>
+        </>
+
     );
 };
 
-export default Slider;
+export default Main;

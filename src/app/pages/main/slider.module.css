@@ -1,4 +1,5 @@
 .carousel {
+    /*border-top: 1px solid #eeeeee;*/
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -32,6 +33,7 @@
     box-sizing: border-box;
     color: #fff;
     text-shadow: 0 5px 10px #000;
+    overflow: hidden;
 }
 
 .carousel .list .item .content .author {
@@ -56,15 +58,30 @@
     grid-template-rows: 40px;
     gap: 5px;
     margin-top: 20px;
+    color: #222222;
+
 }
 
-.carousel .list .item .content .button {
-    border: none;
+.carousel .list .item .content .buttons .button {
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #eee;
     letter-spacing: 3px;
     font-family: Popins, sans-serif;
     font-weight: 500;
-    cursor: pointer;
+    /*cursor: pointer;*/
+
+}
+
+.carousel .list .item .content .button {
+    /*border: none;*/
+    /*background-color: #eee;*/
+    /*letter-spacing: 3px;*/
+    /*font-family: Popins, sans-serif;*/
+    /*font-weight: 500;*/
+    /*cursor: pointer;*/
 }
 
 .carousel .list .item .content .button:hover {
@@ -270,8 +287,8 @@
         font-size: 30px;
     }
     .carousel .thumbnail .item {
-        width: 1%;
-        height: auto;
+        /*width: 150px;*/
+        /*height: 240px;*/
         flex-shrink: 0;
         position: relative;
     }

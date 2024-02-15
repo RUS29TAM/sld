@@ -5,6 +5,8 @@
     height: 50px;
     display: flex;
     align-items: center;
+    background: #222222;
+    z-index: 1;
 }
 
 .header a {
