@@ -124,7 +124,7 @@ const Main = () => {
                                 <div className={styles.title}>{item.title}</div>
                                 <div className={styles.topic}>{item.topic}</div>
                                 <div className={styles.des}>{item.description}</div>
-                                <div className={styles.buttons}>
+                                <div className={styles.buttonsWrapper}>
                                     <Link className={styles.button} href={'/pages/social-contract'}>СМОТРЕТЬ</Link>
                                     <Link className={styles.button} href={'/pages/header'}>ПОДПИСКА</Link>
                                 </div>
@@ -134,7 +134,7 @@ const Main = () => {
                 </div>
 
                 {/* Thumbnail */}
-                <div className={styles.thumbnail} ref={thumbnailBorderRef}>
+                <div className={styles.miniature} ref={thumbnailBorderRef}>
                     {thumbnailItems.map((item, index) => (
                         <div className={styles.item} onClick={() => showSlider('thumbnail', index)} key={index}>
                             <img className={styles.img} src={typeof item.src === 'string' ? item.src : String(item.src)}
@@ -148,14 +148,16 @@ const Main = () => {
                 </div>
 
                 {/* Navigation buttons */}
-                <div className={styles.arrows}>
-                    <button className={styles.button} onClick={() => showSlider('prev')}>&lt;</button>
-                    <button className={styles.button} onClick={() => showSlider('next')}>&gt;</button>
+                <div className={styles.arrowsWrapper}>
+                    <button className={styles.buttonArrow} onClick={() => showSlider('prev')}>&lt;</button>
+                    <button className={styles.buttonArrow} onClick={() => showSlider('next')}>&gt;</button>
                 </div>
 
                 {/* Time running */}
-                <div key={key} ref={timeRef}
-                     className={`${styles.time} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''}`}></div>
+                <div
+                    key={key}
+                    ref={timeRef}
+                    className={`${styles.time} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''}`}></div>
             </div>
         </>
 

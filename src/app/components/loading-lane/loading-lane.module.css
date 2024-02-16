@@ -2,7 +2,8 @@
     width: 100%;
     background: linear-gradient(45deg, rgba(255, 0, 0, 0.5), rgba(0, 115, 255, 0.5), #ffffff);
     /*background: linear-gradient(45deg, #ffffff, #0073ff, #ff0006);*/
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     position: absolute;
     top: 0;
     left: 0;
