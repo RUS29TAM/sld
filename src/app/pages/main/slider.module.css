@@ -1,5 +1,4 @@
 .carousel {
-    /*border-top: 1px solid #eeeeee;*/
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -9,10 +8,6 @@
 .carousel .list .item {
     position: absolute;
     inset: 0 0 0 0;
-    /*top: 0;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
     overflow: hidden;
 }
 
@@ -32,7 +27,7 @@
     padding-right: 30%;
     box-sizing: border-box;
     color: #fff;
-    text-shadow: 0 5px 10px #000;
+    text-shadow: 10px 5px 10px #000;
     overflow: hidden;
 }
 
@@ -49,20 +44,20 @@
 }
 
 .carousel .list .item .content .topic {
+    padding: 5px 0;
     color: #f1683a;
 }
 
-.carousel .list .item .content .buttons {
+.carousel .list .item .content .buttonsWrapper {
     display: grid;
     grid-template-columns: repeat(2, 130px);
     grid-template-rows: 40px;
     gap: 5px;
     margin-top: 20px;
     color: #222222;
-
 }
 
-.carousel .list .item .content .buttons .button {
+.carousel .list .item .content .buttonsWrapper .button {
     color: #222222;
     display: flex;
     justify-content: center;
@@ -71,17 +66,6 @@
     letter-spacing: 3px;
     font-family: Popins, sans-serif;
     font-weight: 500;
-    /*cursor: pointer;*/
-
-}
-
-.carousel .list .item .content .button {
-    /*border: none;*/
-    /*background-color: #eee;*/
-    /*letter-spacing: 3px;*/
-    /*font-family: Popins, sans-serif;*/
-    /*font-weight: 500;*/
-    /*cursor: pointer;*/
 }
 
 .carousel .list .item .content .button:hover {
@@ -107,7 +91,7 @@
 .carousel .list .item:nth-child(1) .title,
 .carousel .list .item:nth-child(1) .topic,
 .carousel .list .item:nth-child(1) .des,
-.carousel .list .item:nth-child(1) .buttons {
+.carousel .list .item:nth-child(1) .buttonsWrapper {
     transform: translateY(50%);
     filter: blur(20px);
     opacity: 0;
@@ -135,7 +119,7 @@
     animation-delay: 1.6s;
 }
 
-.carousel .list .item:nth-child(1) .buttons {
+.carousel .list .item:nth-child(1) .buttonsWrapper {
     animation-delay: 1.8s;
 }
 
@@ -159,22 +143,22 @@
     }
 }
 
-.carousel.next .thumbnail .item:nth-last-child(1) {
+.carousel.next .miniature .item:nth-last-child(1) {
     width: 0;
     overflow: hidden;
     animation: showThumbnail .5s linear 1 forwards;
 }
 
-.carousel .thumbnail .img:hover {
+.carousel .miniature .img:hover {
     cursor: pointer;
     box-shadow: 0 0 15px 1px #eeeeee;
 }
 
-.carousel.next .thumbnail .item:nth-last-child(1):hover {
+.carousel.next .miniature .item:nth-last-child(1):hover {
     border-radius: 20px;
     box-shadow: 0 0 15px 1px #eeeeee;
 }
-.carousel.prev .thumbnail .item:nth-child(1):hover {
+.carousel.prev .miniature .item:nth-child(1):hover {
     border-radius: 20px;
     box-shadow: 0 0 15px 1px #eeeeee;
 }
@@ -185,7 +169,7 @@
     }
 }
 
-.carousel.next .thumbnail {
+.carousel.next .miniature {
     transform: translateX(150px);
     animation: transformThumbnail .5s linear 1 forwards;
 }
@@ -199,6 +183,7 @@
 .carousel.prev .list .item:nth-child(2) {
     z-index: 2;
 }
+
 .carousel.prev .list .item.animationInProgress:nth-child(2) {
     z-index: 0;
 }
@@ -220,18 +205,18 @@
     }
 }
 
-.carousel.prev .thumbnail .item:nth-child(1) {
+.carousel.prev .miniature .item:nth-child(1) {
     width: 0;
     overflow: hidden;
     opacity: 1;
-    animation: showThumbnail .5s linear 1 forwards;
+    animation: showMiniature .5s linear 1 forwards;
 }
 
 .carousel.prev .list .item:nth-child(2) .author,
 .carousel.prev .list .item:nth-child(2) .title,
 .carousel.prev .list .item:nth-child(2) .topic,
 .carousel.prev .list .item:nth-child(2) .des,
-.carousel.prev .list .item:nth-child(2) .buttons {
+.carousel.prev .list .item:nth-child(2) .buttonsWrapper {
     animation: contentOut 1.5s linear 1 forwards;
 }
 
@@ -243,8 +228,8 @@
     }
 }
 
-.carousel.next .arrows .button,
-.carousel.prev .arrows .button {
+.carousel.next .arrowsWrapper .buttonArrow,
+.carousel.prev .arrowsWrapper .buttonArrow {
     /*pointer-events: none;*/
 }
 
@@ -252,7 +237,9 @@
     width: 0;
     height: 10px;
     background-color: #f1683a;
-    border-radius: 20px;
+    /*border-radius: 20px;*/
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     position: absolute;
     z-index: 100;
     top: 0;
@@ -276,28 +263,7 @@
     }
 }
 
-@media screen and (max-width: 678px) {
-    .carousel .list .item .content {
-        padding-right: 0;
-    }
-    .carousel .list .item .content .title {
-        font-size: 30px;
-    }
-    .carousel .list .item .content .topic {
-        font-size: 30px;
-    }
-    .carousel .thumbnail .item {
-        /*width: 150px;*/
-        /*height: 240px;*/
-        flex-shrink: 0;
-        position: relative;
-    }
-    .carousel .thumbnail {
-        gap: 5px;
-    }
-}
-
-.thumbnail {
+.miniature {
     position: absolute;
     bottom: 50px;
     left: 50%;
@@ -307,21 +273,21 @@
     gap: 20px;
 }
 
-.thumbnail .item {
+.miniature .item {
     width: 150px;
     height: 220px;
     flex-shrink: 0;
     position: relative;
 }
 
-.thumbnail .item .img {
+.miniature .item .img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
 }
 
-.thumbnail .item .content {
+.miniature .item .content {
     position: absolute;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -331,15 +297,14 @@
     right: 0;
     background-color: white;
     color: rgba(116, 116, 116, 0.44);
-
 }
 
-.thumbnail .item .content .title {
+.miniature .item .content .title {
     font-weight: bold;
     color: #00d9ff;
 }
 
-.arrows {
+.arrowsWrapper {
     position: absolute;
     top: 80%;
     right: 52%;
@@ -351,7 +316,7 @@
     z-index: 100;
 }
 
-.arrows .button {
+.arrowsWrapper .buttonArrow {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -364,7 +329,100 @@
     transition: .5s;
 }
 
-.arrows .button:hover {
+.arrowsWrapper .buttonArrow:hover {
     background-color: #eee;
     color: #555;
+}
+
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content {
+        padding-right: 0;
+        top: 15%;
+    }
+
+    .carousel .list .item .content .author {
+        letter-spacing: 5px;
+        font-size: 10px;
+    }
+
+    .carousel .list .item .content .title {
+        font-size: 10px;
+    }
+
+    .carousel .list .item .content .topic {
+        font-size: 10px;
+    }
+
+    .carousel .list .item .content .des {
+        font-size: 10px;
+    }
+
+    .carousel .list .item .content .buttonsWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 80px);
+        grid-template-rows: 25px;
+        gap: 25px;
+        margin-top: 20px;
+        font-size: 10px;
+        color: #222222;
+    }
+
+    .carousel .list .item .content .button {
+        width: 100px;
+    }
+
+    .carousel .miniature {
+        left: 40%;
+        gap: 5px;
+
+    }
+
+    .carousel .miniature .item {
+        font-size: 8px;
+        width: 80px;
+        height: 120px;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .carousel .arrowsWrapper .buttonArrow {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel .arrowsWrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 70px;
+        left: 10%;
+    }
+
+    .miniature {
+        bottom: 20px;
+    }
+
+    .miniature .item .img {
+        border-radius: 10px;
+    }
+
+    .miniature .item .content {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    @keyframes outImage {
+        to {
+            width: 80px;
+            height: 120px;
+            border-radius: 20px;
+            left: 40%;
+            bottom: 20px;
+        }
+    }
+
+    @keyframes showMiniature {
+        to {
+            width: 80px;
+        }
+    }
 }
