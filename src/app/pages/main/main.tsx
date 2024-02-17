@@ -133,7 +133,7 @@ const Main = () => {
                     ))}
                 </div>
 
-                {/* Thumbnail */}
+                {/* Miniature */}
                 <div className={styles.miniature} ref={thumbnailBorderRef}>
                     {thumbnailItems.map((item, index) => (
                         <div className={styles.item} onClick={() => showSlider('thumbnail', index)} key={index}>
