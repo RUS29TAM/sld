@@ -3,12 +3,15 @@
     height: 100vh;
     overflow: hidden;
     margin-top: -50px;
+    position: relative;
 }
 
 .carousel .list .item {
+    width: 100%;
+    height: 100%;
     position: absolute;
     inset: 0 0 0 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .carousel .list .item .img {
@@ -41,11 +44,16 @@
     font-weight: bold;
     font-size: 5em;
     line-height: 1.3em;
+    width: 100%;
 }
 
 .carousel .list .item .content .topic {
     padding: 5px 0;
     color: #f1683a;
+}
+
+.carousel .list .item .content .des {
+    font-size: 1rem;
 }
 
 .carousel .list .item .content .buttonsWrapper {
@@ -83,10 +91,12 @@
     box-shadow: none;
 }
 
+/* animation */
 .carousel .list .item:nth-child(1) {
     z-index: 1;
 }
 
+/* animation text in first item */
 .carousel .list .item:nth-child(1) .author,
 .carousel .list .item:nth-child(1) .title,
 .carousel .list .item:nth-child(1) .topic,
@@ -100,27 +110,27 @@
 
 @keyframes showContent {
     to {
-        opacity: 1;
-        filter: blur(0);
         transform: translateY(0);
+        filter: blur(0);
+            opacity: 1;
     }
 }
 
 .carousel .list .item:nth-child(1) .title {
-    animation-delay: 1.2s;
+    animation-delay: 1.2s!important;
 }
 
 .carousel .list .item:nth-child(1) .topic {
-    animation-delay: 1.4s;
+    animation-delay: 1.4s!important;
 
 }
 
 .carousel .list .item:nth-child(1) .des {
-    animation-delay: 1.6s;
+    animation-delay: 1.6s!important;
 }
 
 .carousel .list .item:nth-child(1) .buttonsWrapper {
-    animation-delay: 1.8s;
+    animation-delay: 1.8s!important;
 }
 
 .carousel.next .list .item:nth-child(1) .img {
@@ -146,7 +156,7 @@
 .carousel.next .miniature .item:nth-last-child(1) {
     width: 0;
     overflow: hidden;
-    animation: showThumbnail .5s linear 1 forwards;
+    animation: showMiniature .5s linear 1 forwards;
 }
 
 .carousel .miniature .img:hover {
@@ -163,7 +173,7 @@
     box-shadow: 0 0 15px 1px #eeeeee;
 }
 
-@keyframes showThumbnail {
+@keyframes showMiniature {
     to {
         width: 150px;
     }
@@ -171,10 +181,10 @@
 
 .carousel.next .miniature {
     transform: translateX(150px);
-    animation: transformThumbnail .5s linear 1 forwards;
+    animation: transformMiniature .5s linear 1 forwards;
 }
 
-@keyframes transformThumbnail {
+@keyframes transformMiniature {
     to {
         transform: translateX(0);
     }
@@ -254,7 +264,7 @@
 
 @keyframes timeRunning {
     from {
-        background-color: #f1683a;
+        /*background-color: #f1683a;*/
     }
     to {
         /*background-color: transparent;*/
@@ -334,7 +344,115 @@
     color: #555;
 }
 
-@media screen and (max-width: 678px) {
+/* display 678 px*/
+
+@media screen and (min-width: 430px) and (max-width: 932px) {
+    .carousel .list .item .content {
+        padding-right: 20px;
+
+        top: 15%;
+    }
+
+    .carousel .list .item .content .author {
+        letter-spacing: 5px;
+        font-size: 14px;
+    }
+
+    .carousel .list .item .content .title {
+        font-size: 14px;
+    }
+
+    .carousel .list .item .content .topic {
+        font-size: 14px;
+    }
+
+    .carousel .list .item .content .des {
+        font-size: 14px;
+    }
+
+    .carousel .list .item .content .buttonsWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 80px);
+        grid-template-rows: 40px;
+        gap: 50px;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #222222;
+    }
+
+    .carousel .list .item .content .button {
+        width: 120px;
+    }
+
+    .carousel .miniature {
+        left: 50%;
+        gap: 5px;
+    }
+
+    .carousel .miniature .item {
+        font-size: 8px;
+        width: 100px;
+        height: 120px;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .carousel .arrowsWrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100px;
+        /*left: 10%;*/
+        /*top: 90%;*/
+        bottom: 0;
+        /*right: 70%;*/
+        left: 10%;
+    }
+
+    .carousel .arrowsWrapper .buttonArrow {
+        width: 50px;
+        height: 50px;
+    }
+
+    .miniature {
+        bottom: 20px;
+    }
+
+    .miniature .item .img {
+        border-radius: 10px;
+    }
+
+    .miniature .item .content {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    @keyframes showMiniature {
+        to {
+            width: 80px;
+        }
+    }
+
+    @keyframes outImage {
+        to {
+            width: 80px;
+            height: 120px;
+            border-radius: 20px;
+            left: 50%;
+            bottom: 20px;
+        }
+    }
+
+    @keyframes showMiniature {
+        to {
+            width: 100px;
+            height: 120px;
+        }
+    }
+}
+
+/* display 320 px*/
+
+@media screen and (min-width: 320px) and (max-width: 568px)  {
     .carousel .list .item .content {
         padding-right: 0;
         top: 15%;
@@ -374,7 +492,6 @@
     .carousel .miniature {
         left: 40%;
         gap: 5px;
-
     }
 
     .carousel .miniature .item {
@@ -408,6 +525,12 @@
     .miniature .item .content {
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+    }
+
+    @keyframes showMiniature {
+        to {
+            width: 80px;
+        }
     }
 
     @keyframes outImage {
