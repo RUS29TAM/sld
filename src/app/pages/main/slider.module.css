@@ -344,9 +344,114 @@
     color: #555;
 }
 
-/* display 430 px*/
+/* display 430 px orientation: portrait*/
 
-@media only screen and (min-width: 430px) and (max-width: 932px) {
+@media only screen and (min-width: 430px) and (max-width: 932px) and (orientation: portrait) {
+    .carousel .list .item .content {
+        padding-right: 20px;
+        top: 15%;
+    }
+
+    .carousel .list .item .content .author {
+        letter-spacing: 5px;
+        font-size: 14px;
+    }
+
+    .carousel .list .item .content .title {
+        font-size: 14px;
+    }
+
+    .carousel .list .item .content .topic {
+        font-size: 14px;
+    }
+
+    .carousel .list .item .content .des {
+        font-size: 14px;
+    }
+
+    .carousel .list .item .content .buttonsWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 80px);
+        grid-template-rows: 40px;
+        gap: 50px;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #222222;
+    }
+
+    .carousel .list .item .content .button {
+        width: 120px;
+    }
+
+    .carousel .miniature {
+        left: 50%;
+        gap: 5px;
+    }
+
+    .carousel .miniature .item {
+        font-size: 8px;
+        width: 100px;
+        height: 120px;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .carousel .arrowsWrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 120px;
+        /*left: 10%;*/
+        /*top: 90%;*/
+        bottom: 0;
+        /*right: 70%;*/
+        left: 10%;
+    }
+
+    .carousel .arrowsWrapper .buttonArrow {
+        width: 50px;
+        height: 50px;
+    }
+
+    .miniature {
+        bottom: 20px;
+    }
+
+    .miniature .item .img {
+        border-radius: 10px;
+    }
+
+    .miniature .item .content {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    @keyframes showMiniature {
+        to {
+            width: 80px;
+        }
+    }
+
+    @keyframes outImage {
+        to {
+            width: 80px;
+            height: 120px;
+            border-radius: 20px;
+            left: 50%;
+            bottom: 20px;
+        }
+    }
+
+    @keyframes showMiniature {
+        to {
+            width: 100px;
+            height: 120px;
+        }
+    }
+}
+
+/* display 430 px orientation: landscape*/
+
+@media only screen and (min-width: 430px) and (max-width: 932px) and (orientation: landscape) {
     .carousel .list .item .content {
         padding-right: 20px;
         top: 15%;
