@@ -344,12 +344,11 @@
     color: #555;
 }
 
-/* display 678 px*/
+/* display 430 px*/
 
 @media screen and (min-width: 430px) and (max-width: 932px) {
     .carousel .list .item .content {
         padding-right: 20px;
-
         top: 15%;
     }
 
@@ -400,7 +399,7 @@
     .carousel .arrowsWrapper {
         display: flex;
         justify-content: space-between;
-        width: 100px;
+        width: 120px;
         /*left: 10%;*/
         /*top: 90%;*/
         bottom: 0;
@@ -452,7 +451,8 @@
 
 /* display 320 px*/
 
-@media screen and (min-width: 320px) and (max-width: 568px)  {
+@media screen and (min-width: 320px) and (max-width: 429px)  {
+
     .carousel .list .item .content {
         padding-right: 0;
         top: 15%;
