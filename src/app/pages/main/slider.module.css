@@ -346,7 +346,7 @@
 
 /* display 430 px*/
 
-@media screen and (min-width: 430px) and (max-width: 932px) {
+@media only screen and (min-width: 430px) and (max-width: 932px) {
     .carousel .list .item .content {
         padding-right: 20px;
         top: 15%;
@@ -449,9 +449,9 @@
     }
 }
 
-/* display 320 px*/
+/* display 320 px orientation: portrait*/
 
-@media screen and (min-width: 320px) and (max-width: 429px)  {
+@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: portrait) {
 
     .carousel .list .item .content {
         padding-right: 0;
@@ -549,3 +549,109 @@
         }
     }
 }
+
+/* display 320 px orientation: landscape*/
+
+@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: landscape) {
+
+    .carousel .list .item .content {
+        padding-right: 0;
+        top: 15%;
+    }
+
+    .carousel .list .item .content .author {
+        letter-spacing: 5px;
+        font-size: 10px;
+    }
+
+    .carousel .list .item .content .title {
+        font-size: 10px;
+    }
+
+    .carousel .list .item .content .topic {
+        font-size: 10px;
+    }
+
+    .carousel .list .item .content .des {
+        font-size: 10px;
+    }
+
+    .carousel .list .item .content .buttonsWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 80px);
+        grid-template-rows: 25px;
+        gap: 25px;
+        margin-top: 20px;
+        font-size: 10px;
+        color: #222222;
+    }
+
+    .carousel .list .item .content .button {
+        width: 100px;
+    }
+
+    .carousel .miniature {
+        left: 50%;
+        gap: 5px;
+    }
+
+    .carousel .miniature .item {
+        font-size: 8px;
+        width: 70px;
+        height: 90px;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .carousel .arrowsWrapper .buttonArrow {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel .arrowsWrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 70px;
+        left: 10%;
+        bottom: -5%;
+    }
+
+    .miniature {
+        bottom: 10px;
+    }
+
+    .miniature .item .img {
+        border-radius: 10px;
+    }
+
+    .miniature .item .content {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .miniature .item .content .title {
+        font-size: .8em;
+    }
+
+    @keyframes showMiniature {
+        to {
+            width: 70px;
+        }
+    }
+
+    @keyframes outImage {
+        to {
+            width: 70px;
+            height: 90px;
+            border-radius: 20px;
+            left: 50%;
+            bottom: 10px;
+        }
+    }
+
+    @keyframes showMiniature {
+        to {
+            width: 70px;
+        }
+    }
+}
+
