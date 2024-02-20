@@ -6,9 +6,9 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <nav>
-                <Link href={'/'}>ГЛАВНАЯ</Link>
-                <Link href={'/'}>КОНТАКТЫ</Link>
-                <Link href={'/'}>ИНФО</Link>
+                <Link href={'/pages/main'}>ГЛАВНАЯ</Link>
+                <Link href={'/pages/contact'}>КОНТАКТЫ</Link>
+                <Link href={'/pages/info'}>ИНФО</Link>
             </nav>
         </header>
     );
