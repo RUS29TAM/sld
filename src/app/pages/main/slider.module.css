@@ -22,7 +22,7 @@
 
 .carousel .list .item .content {
     position: absolute;
-    top: 20%;
+    top: 10%;
     width: 1140px;
     max-width: 80%;
     left: 50%;
@@ -344,431 +344,13 @@
     color: #555;
 }
 
-
-/* Old configure layout display 430 px orientation: portrait*/
-
-@media only screen and (min-width: 430px) and (max-width: 932px) and (orientation: portrait) {
-/*    .carousel .list .item .content {*/
-/*        padding-right: 20px;*/
-/*        top: 15%;*/
-/*    }*/
-
-/*    .carousel .list .item .content .author {*/
-/*        letter-spacing: 5px;*/
-/*        font-size: 14px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .title {*/
-/*        font-size: 14px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .topic {*/
-/*        font-size: 14px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .des {*/
-/*        font-size: 14px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .buttonsWrapper {*/
-/*        display: grid;*/
-/*        grid-template-columns: repeat(2, 80px);*/
-/*        grid-template-rows: 40px;*/
-/*        gap: 50px;*/
-/*        margin-top: 20px;*/
-/*        font-size: 14px;*/
-/*        color: #222222;*/
-/*    }*/
-
-/*    .carousel .list .item .content .button {*/
-/*        width: 120px;*/
-/*    }*/
-
-/*    .carousel .miniature {*/
-/*        left: 50%;*/
-/*        gap: 5px;*/
-/*    }*/
-
-/*    .carousel .miniature .item {*/
-/*        font-size: 8px;*/
-/*        width: 100px;*/
-/*        height: 120px;*/
-/*        flex-shrink: 0;*/
-/*        position: relative;*/
-/*    }*/
-
-/*    .carousel .arrowsWrapper {*/
-/*        display: flex;*/
-/*        justify-content: space-between;*/
-/*        width: 120px;*/
-/*        !*left: 10%;*!*/
-/*        !*top: 90%;*!*/
-/*        bottom: 0;*/
-/*        !*right: 70%;*!*/
-/*        left: 10%;*/
-/*    }*/
-
-/*    .carousel .arrowsWrapper .buttonArrow {*/
-/*        width: 50px;*/
-/*        height: 50px;*/
-/*    }*/
-
-/*    .miniature {*/
-/*        bottom: 20px;*/
-/*    }*/
-
-/*    .miniature .item .img {*/
-/*        border-radius: 10px;*/
-/*    }*/
-
-/*    .miniature .item .content {*/
-/*        border-bottom-left-radius: 10px;*/
-/*        border-bottom-right-radius: 10px;*/
-/*    }*/
-
-/*    @keyframes showMiniature {*/
-/*        to {*/
-/*            width: 80px;*/
-/*        }*/
-/*    }*/
-
-/*    @keyframes outImage {*/
-/*        to {*/
-/*            width: 80px;*/
-/*            height: 120px;*/
-/*            border-radius: 20px;*/
-/*            left: 50%;*/
-/*            bottom: 20px;*/
-/*        }*/
-/*    }*/
-
-/*    @keyframes showMiniature {*/
-/*        to {*/
-/*            width: 100px;*/
-/*            height: 120px;*/
-/*        }*/
-/*    }*/
-/*}*/
-
-/*!* display 430 px orientation: landscape*!*/
-
-/*@media only screen and (min-width: 430px) and (max-width: 932px) and (orientation: landscape) {*/
-/*    .carousel .list .item .content {*/
-/*        padding-right: 20px;*/
-/*        top: 15%;*/
-/*    }*/
-
-/*    .carousel .list .item .content .author {*/
-/*        letter-spacing: 5px;*/
-/*        font-size: 14px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .title {*/
-/*        font-size: 14px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .topic {*/
-/*        font-size: 14px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .des {*/
-/*        font-size: 14px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .buttonsWrapper {*/
-/*        display: grid;*/
-/*        grid-template-columns: repeat(2, 80px);*/
-/*        grid-template-rows: 40px;*/
-/*        gap: 50px;*/
-/*        margin-top: 20px;*/
-/*        font-size: 14px;*/
-/*        color: #222222;*/
-/*    }*/
-
-/*    .carousel .list .item .content .button {*/
-/*        width: 120px;*/
-/*    }*/
-
-/*    .carousel .miniature {*/
-/*        left: 50%;*/
-/*        gap: 5px;*/
-/*    }*/
-
-/*    .carousel .miniature .item {*/
-/*        font-size: 8px;*/
-/*        width: 100px;*/
-/*        height: 120px;*/
-/*        flex-shrink: 0;*/
-/*        position: relative;*/
-/*    }*/
-
-/*    .carousel .arrowsWrapper {*/
-/*        display: flex;*/
-/*        justify-content: space-between;*/
-/*        width: 120px;*/
-/*        !*left: 10%;*!*/
-/*        !*top: 90%;*!*/
-/*        bottom: 0;*/
-/*        !*right: 70%;*!*/
-/*        left: 10%;*/
-/*    }*/
-
-/*    .carousel .arrowsWrapper .buttonArrow {*/
-/*        width: 50px;*/
-/*        height: 50px;*/
-/*    }*/
-
-/*    .miniature {*/
-/*        bottom: 20px;*/
-/*    }*/
-
-/*    .miniature .item .img {*/
-/*        border-radius: 10px;*/
-/*    }*/
-
-/*    .miniature .item .content {*/
-/*        border-bottom-left-radius: 10px;*/
-/*        border-bottom-right-radius: 10px;*/
-/*    }*/
-
-/*    @keyframes showMiniature {*/
-/*        to {*/
-/*            width: 80px;*/
-/*        }*/
-/*    }*/
-
-/*    @keyframes outImage {*/
-/*        to {*/
-/*            width: 80px;*/
-/*            height: 120px;*/
-/*            border-radius: 20px;*/
-/*            left: 50%;*/
-/*            bottom: 20px;*/
-/*        }*/
-/*    }*/
-
-/*    @keyframes showMiniature {*/
-/*        to {*/
-/*            width: 100px;*/
-/*            height: 120px;*/
-/*        }*/
-/*    }*/
-/*}*/
-
-/*!* display 320 px orientation: portrait*!*/
-
-/*@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: portrait) {*/
-
-/*    .carousel .list .item .content {*/
-/*        padding-right: 0;*/
-/*        top: 15%;*/
-/*    }*/
-
-/*    .carousel .list .item .content .author {*/
-/*        letter-spacing: 5px;*/
-/*        font-size: 10px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .title {*/
-/*        font-size: 10px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .topic {*/
-/*        font-size: 10px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .des {*/
-/*        font-size: 10px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .buttonsWrapper {*/
-/*        display: grid;*/
-/*        grid-template-columns: repeat(2, 80px);*/
-/*        grid-template-rows: 25px;*/
-/*        gap: 25px;*/
-/*        margin-top: 20px;*/
-/*        font-size: 10px;*/
-/*        color: #222222;*/
-/*    }*/
-
-/*    .carousel .list .item .content .button {*/
-/*        width: 100px;*/
-/*    }*/
-
-/*    .carousel .miniature {*/
-/*        left: 40%;*/
-/*        gap: 5px;*/
-/*    }*/
-
-/*    .carousel .miniature .item {*/
-/*        font-size: 8px;*/
-/*        width: 80px;*/
-/*        height: 120px;*/
-/*        flex-shrink: 0;*/
-/*        position: relative;*/
-/*    }*/
-
-/*    .carousel .arrowsWrapper .buttonArrow {*/
-/*        width: 30px;*/
-/*        height: 30px;*/
-/*    }*/
-
-/*    .carousel .arrowsWrapper {*/
-/*        display: flex;*/
-/*        justify-content: space-between;*/
-/*        width: 70px;*/
-/*        left: 10%;*/
-/*    }*/
-
-/*    .miniature {*/
-/*        bottom: 20px;*/
-/*    }*/
-
-/*    .miniature .item .img {*/
-/*        border-radius: 10px;*/
-/*    }*/
-
-/*    .miniature .item .content {*/
-/*        border-bottom-left-radius: 10px;*/
-/*        border-bottom-right-radius: 10px;*/
-/*    }*/
-
-/*    @keyframes showMiniature {*/
-/*        to {*/
-/*            width: 80px;*/
-/*        }*/
-/*    }*/
-
-/*    @keyframes outImage {*/
-/*        to {*/
-/*            width: 80px;*/
-/*            height: 120px;*/
-/*            border-radius: 20px;*/
-/*            left: 40%;*/
-/*            bottom: 20px;*/
-/*        }*/
-/*    }*/
-
-/*    @keyframes showMiniature {*/
-/*        to {*/
-/*            width: 80px;*/
-/*        }*/
-/*    }*/
-/*}*/
-
-/*!* display 320 px orientation: landscape*!*/
-
-/*@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: landscape) {*/
-
-/*    .carousel .list .item .content {*/
-/*        padding-right: 0;*/
-/*        top: 15%;*/
-/*    }*/
-
-/*    .carousel .list .item .content .author {*/
-/*        letter-spacing: 5px;*/
-/*        font-size: 10px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .title {*/
-/*        font-size: 10px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .topic {*/
-/*        font-size: 10px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .des {*/
-/*        font-size: 10px;*/
-/*    }*/
-
-/*    .carousel .list .item .content .buttonsWrapper {*/
-/*        display: grid;*/
-/*        grid-template-columns: repeat(2, 80px);*/
-/*        grid-template-rows: 25px;*/
-/*        gap: 25px;*/
-/*        margin-top: 20px;*/
-/*        font-size: 10px;*/
-/*        color: #222222;*/
-/*    }*/
-
-/*    .carousel .list .item .content .button {*/
-/*        width: 100px;*/
-/*    }*/
-
-/*    .carousel .miniature {*/
-/*        left: 50%;*/
-/*        gap: 5px;*/
-/*    }*/
-
-/*    .carousel .miniature .item {*/
-/*        font-size: 8px;*/
-/*        width: 70px;*/
-/*        height: 90px;*/
-/*        flex-shrink: 0;*/
-/*        position: relative;*/
-/*    }*/
-
-/*    .carousel .arrowsWrapper .buttonArrow {*/
-/*        width: 30px;*/
-/*        height: 30px;*/
-/*    }*/
-
-/*    .carousel .arrowsWrapper {*/
-/*        display: flex;*/
-/*        justify-content: space-between;*/
-/*        width: 70px;*/
-/*        left: 10%;*/
-/*        bottom: -5%;*/
-/*    }*/
-
-/*    .miniature {*/
-/*        bottom: 10px;*/
-/*    }*/
-
-/*    .miniature .item .img {*/
-/*        border-radius: 10px;*/
-/*    }*/
-
-/*    .miniature .item .content {*/
-/*        border-bottom-left-radius: 10px;*/
-/*        border-bottom-right-radius: 10px;*/
-/*    }*/
-/*    .miniature .item .content .title {*/
-/*        font-size: .8em;*/
-/*    }*/
-
-/*    @keyframes showMiniature {*/
-/*        to {*/
-/*            width: 70px;*/
-/*        }*/
-/*    }*/
-
-/*    @keyframes outImage {*/
-/*        to {*/
-/*            width: 70px;*/
-/*            height: 90px;*/
-/*            border-radius: 20px;*/
-/*            left: 50%;*/
-/*            bottom: 10px;*/
-/*        }*/
-/*    }*/
-
-/*    @keyframes showMiniature {*/
-/*        to {*/
-/*            width: 70px;*/
-/*        }*/
-/*    }*/
-}
-
-
 /* Iphone 5 display 320 px */
 
 @media only screen and (min-width: 320px) and (max-width: 374px){
 
     .carousel .list .item .content {
-        padding-right: 0;
-        top: 15%;
+        padding-right: 5%;
+        top: 10%;
     }
 
     .carousel .list .item .content .author {
@@ -872,8 +454,8 @@
 @media only screen and (min-width: 375px) and (max-width: 429px) {
 
     .carousel .list .item .content {
-        padding-right: 0;
-        top: 15%;
+        padding-right: 10%;
+        top: 10%;
     }
 
     .carousel .list .item .content .author {
@@ -977,8 +559,8 @@
 @media only screen and (min-width: 430px) and (max-width: 567px) {
 
     .carousel .list .item .content {
-        padding-right: 0;
-        top: 15%;
+        padding-right: 10%;
+        top: 10%;
     }
 
     .carousel .list .item .content .author {
@@ -1188,7 +770,7 @@
 
     .carousel .list .item .content {
         padding-right: 0;
-        top: 15%;
+        top: 13%;
     }
 
     .carousel .list .item .content .author {
@@ -1292,8 +874,8 @@
 @media only screen and (min-width: 932px) and (max-width: 1024px) {
 
     .carousel .list .item .content {
-        padding-right: 0;
-        top: 15%;
+        padding-right: 15%;
+        top: 13%;
     }
 
     .carousel .list .item .content .author {
@@ -1310,7 +892,7 @@
     }
 
     .carousel .list .item .content .des {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .carousel .list .item .content .buttonsWrapper {

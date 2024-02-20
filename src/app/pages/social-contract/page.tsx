@@ -1,7 +1,6 @@
 'use client'
 import React from 'react';
 import styles from './social-contract.module.css'
-import Header from "@/app/pages/header/page";
 import LoadingLane from "@/app/components/loading-lane/loading-lane";
 
 

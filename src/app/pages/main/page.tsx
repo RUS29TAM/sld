@@ -111,7 +111,7 @@ const Main = () => {
                 className={`${styles.carousel} ${direction === 'next' ? styles.next : 'carousel'} ${direction === 'prev' ? styles.prev : 'carousel'}`}
                 ref={carouselRef}>
                 {/* header and navigation */}
-                {/* Main */}
+                {/* Page */}
                 <div className={styles.list} ref={sliderRef}>
                     {sliderItems.map((item, index) => (
                         <div
@@ -126,7 +126,7 @@ const Main = () => {
                                 <div className={styles.des}>{item.description}</div>
                                 <div className={styles.buttonsWrapper}>
                                     <Link className={styles.button} href={'/pages/social-contract'}>СМОТРЕТЬ</Link>
-                                    <Link className={styles.button} href={'/pages/header'}>ПОДПИСКА</Link>
+                                    <Link className={styles.button} href={'/pages/loader'}>ПОДПИСКА</Link>
                                 </div>
                             </div>
                         </div>
