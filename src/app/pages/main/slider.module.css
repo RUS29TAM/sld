@@ -456,6 +456,8 @@
     .carousel .list .item .content {
         padding-right: 10%;
         top: 10%;
+        width: 100%;
+        height: 100%;
     }
 
     .carousel .list .item .content .author {
