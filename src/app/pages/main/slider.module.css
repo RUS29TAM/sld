@@ -1,9 +1,14 @@
 .carousel {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     margin-top: -50px;
-    position: relative;
+    position: absolute;
+}
+
+.carousel .list {
+    min-height: 500px;
+    background-color: #00d9ff;
 }
 
 .carousel .list .item {
