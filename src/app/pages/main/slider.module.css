@@ -457,7 +457,7 @@
         padding-right: 10%;
         top: 10%;
         width: 100%;
-        height: calc(100% + 120px);
+        height: 100%;
     }
 
     .carousel .list .item .content .author {
@@ -518,7 +518,7 @@
     }
 
     .miniature {
-        bottom: 10px;
+        /*bottom: 10px;*/
     }
 
     .miniature .item .img {
