@@ -6,6 +6,7 @@ import Link from "next/link";
 
 const Main = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [loaded, setLoaded] = useState(false);
     const [animationInProgress, setAnimationInProgress] = useState(true);
     const [direction, setDirection] = useState<'next' | 'prev' | 'carousel'>('carousel');
     const [key, setKey] = useState<number>(0);
@@ -17,6 +18,8 @@ const Main = () => {
     const timeRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        setLoaded(true);
+
         if (thumbnailBorderRef.current) {
             thumbnailBorderRef.current.appendChild(thumbnailBorderRef.current.children[0]);
         }
@@ -108,7 +111,7 @@ const Main = () => {
         <>
             {/*<Header/>*/}
             <div
-                className={`${styles.carousel} ${direction === 'next' ? styles.next : 'carousel'} ${direction === 'prev' ? styles.prev : 'carousel'}`}
+                className={`${styles.carousel} ${loaded ? styles.loaded : ''} ${direction === 'next' ? styles.next : 'carousel'} ${direction === 'prev' ? styles.prev : 'carousel'}`}
                 ref={carouselRef}>
                 {/* header and navigation */}
                 {/* Page */}
