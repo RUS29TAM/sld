@@ -95,7 +95,7 @@ const Main = () => {
         const handleTransitionEnd = () => {
            setTimeout(() => {
                setAnimationInProgress(true); // Сбрасываем состояние, когда анимация завершена
-           },2500)
+           },2000)
         };
 
         if (carouselRef.current) {
