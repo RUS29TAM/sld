@@ -9,7 +9,6 @@
     overflow: hidden;
     margin-top: -50px;
     position: absolute;
-
     opacity: 1;
 }
 
@@ -18,7 +17,6 @@
     height: 100%;
     position: absolute;
     inset: 0 0 0 0;
-    /*overflow: hidden;*/
 }
 
 .carousel .list .item .img {
@@ -40,28 +38,28 @@
     text-shadow: 10px 5px 10px #000;
 }
 
-.carousel .list .item .content .author {
+.carousel .list .item .author {
     font-weight: bold;
     letter-spacing: 10px;
 }
 
-.carousel .list .item .content .title,
-.carousel .list .item .content .topic {
+.carousel .list .item .title,
+.carousel .list .item .topic {
     font-weight: bold;
     font-size: 5em;
     line-height: 1.3em;
 }
 
-.carousel .list .item .content .topic {
+.carousel .list .item .topic {
     padding: 5px 0;
     color: #f1683a;
 }
 
-.carousel .list .item .content .des {
+.carousel .list .item .des {
     font-size: 1rem;
 }
 
-.carousel .list .item .content .buttonsWrapper {
+.carousel .list .item .buttonsWrapper {
     display: grid;
     grid-template-columns: repeat(2, 130px);
     grid-template-rows: 40px;
@@ -70,7 +68,7 @@
     color: #222222;
 }
 
-.carousel .list .item .content .buttonsWrapper .button {
+.carousel .list .item .buttonsWrapper .button {
     color: #222222;
     display: flex;
     justify-content: center;
@@ -81,201 +79,19 @@
     font-weight: 500;
 }
 
-.carousel .list .item .content .button:hover {
+.carousel .list .item .button:hover {
     box-shadow: 0 0 5px 1px #eeeeee;
 }
 
-.carousel .list .item .content .button:nth-child(2) {
+.carousel .list .item .button:nth-child(2) {
     background-color: transparent;
     color: #eee;
     border: 1px solid #eee;
 }
 
-.carousel .list .item .content .button:nth-child(2):hover {
+.carousel .list .item .button:nth-child(2):hover {
     text-shadow: #ffffff 0 0 10px;
     box-shadow: none;
-}
-
-/* animation */
-.carousel .list .item:nth-child(1) {
-    z-index: 1;
-}
-
-/* animation text in first item */
-.carousel .list .item:nth-child(1) .author,
-.carousel .list .item:nth-child(1) .title,
-.carousel .list .item:nth-child(1) .topic,
-.carousel .list .item:nth-child(1) .des,
-.carousel .list .item:nth-child(1) .buttonsWrapper {
-    transform: translateY(50%);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent 0.5s 1s linear 1 forwards;
-}
-
-@keyframes showContent {
-    to {
-        transform: translateY(0);
-        filter: blur(0);
-            opacity: 1;
-    }
-}
-
-.carousel .list .item:nth-child(1) .title {
-    animation-delay: 1.2s!important;
-}
-
-.carousel .list .item:nth-child(1) .topic {
-    animation-delay: 1.4s!important;
-
-}
-
-.carousel .list .item:nth-child(1) .des {
-    animation-delay: 1.6s!important;
-}
-
-.carousel .list .item:nth-child(1) .buttonsWrapper {
-    animation-delay: 1.8s!important;
-}
-
-.carousel.next .list .item:nth-child(1) .img {
-    width: 150px;
-    height: 220px;
-    position: absolute;
-    left: 50%;
-    bottom: 50px;
-    border-radius: 20px;
-    animation: showImage 0.5s linear 1 forwards;
-}
-
-@keyframes showImage {
-    to {
-        width: 100%;
-        height: 100%;
-        left: 0;
-        bottom: 0;
-        border-radius: 0;
-    }
-}
-
-.carousel.next .miniature .item:nth-last-child(1) {
-    width: 0;
-    overflow: hidden;
-    animation: showMiniature .5s linear 1 forwards;
-}
-
-.carousel .miniature .img:hover {
-    cursor: pointer;
-    box-shadow: 0 0 15px 1px #eeeeee;
-}
-
-.carousel.next .miniature .item:nth-last-child(1):hover {
-    border-radius: 20px;
-    box-shadow: 0 0 15px 1px #eeeeee;
-}
-.carousel.prev .miniature .item:nth-child(1):hover {
-    border-radius: 20px;
-    box-shadow: 0 0 15px 1px #eeeeee;
-}
-
-@keyframes showMiniature {
-    to {
-        width: 150px;
-    }
-}
-
-.carousel.next .miniature {
-    transform: translateX(150px);
-    animation: transformMiniature .5s linear 1 forwards;
-}
-
-@keyframes transformMiniature {
-    to {
-        transform: translateX(0);
-    }
-}
-
-.carousel.prev .list .item:nth-child(2) {
-    z-index: 2;
-}
-
-.carousel.prev .list .item.animationInProgress:nth-child(2) {
-    z-index: 0;
-}
-
-.carousel.prev .list .item:nth-child(2) .img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    animation: outImage .5s linear 1 forwards;
-}
-
-@keyframes outImage {
-    to {
-        width: 150px;
-        height: 220px;
-        border-radius: 20px;
-        left: 50%;
-        bottom: 50px;
-    }
-}
-
-.carousel.prev .miniature .item:nth-child(1) {
-    width: 0;
-    overflow: hidden;
-    opacity: 1;
-    animation: showMiniature .5s linear 1 forwards;
-}
-
-.carousel.prev .list .item:nth-child(2) .author,
-.carousel.prev .list .item:nth-child(2) .title,
-.carousel.prev .list .item:nth-child(2) .topic,
-.carousel.prev .list .item:nth-child(2) .des,
-.carousel.prev .list .item:nth-child(2) .buttonsWrapper {
-    animation: contentOut 1.5s linear 1 forwards;
-}
-
-@keyframes contentOut {
-    to {
-        transform: translateY(-150px);
-        filter: blur(20px);
-        opacity: 0;
-    }
-}
-
-.carousel.next .arrowsWrapper .buttonArrow,
-.carousel.prev .arrowsWrapper .buttonArrow {
-    /*pointer-events: none;*/
-}
-
-.time {
-    width: 0;
-    height: 10px;
-    background-color: #f1683a;
-    /*border-radius: 20px;*/
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    position: absolute;
-    z-index: 100;
-    top: 0;
-    left: 0;
-}
-
-.carousel.next .time,
-.carousel.prev .time {
-    width: 100%;
-    animation: timeRunning 2s linear 1 forwards;
-}
-
-@keyframes timeRunning {
-    from {
-        /*background-color: #f1683a;*/
-    }
-    to {
-        /*background-color: transparent;*/
-        width: 0;
-        /*height: 1px;*/
-    }
 }
 
 .miniature {
@@ -319,6 +135,12 @@
     color: #00d9ff;
 }
 
+.miniature .item .content .description{
+    font-weight: 300;
+}
+
+/* arrows */
+
 .arrowsWrapper {
     position: absolute;
     top: 80%;
@@ -340,13 +162,195 @@
     font-family: monospace;
     color: #fff;
     font-weight: bold;
-    font-size: large;
     transition: .5s;
 }
 
 .arrowsWrapper .buttonArrow:hover {
     background-color: #eee;
     color: #555;
+}
+
+/* animation */
+.carousel .list .item:nth-child(1) {
+    z-index: 1;
+}
+
+/* animation text in first item */
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttonsWrapper {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateY(0px);
+        filter: blur(0px);
+            opacity: 1;
+    }
+}
+
+.carousel .list .item:nth-child(1) .content .title {
+    animation-delay: 1.2s!important;
+}
+
+.carousel .list .item:nth-child(1) .content .topic {
+    animation-delay: 1.4s!important;
+
+}
+
+.carousel .list .item:nth-child(1) .content .des {
+    animation-delay: 1.6s!important;
+}
+
+.carousel .list .item:nth-child(1) .content .buttonsWrapper {
+    animation-delay: 1.8s!important;
+}
+
+/* create animation when next click */
+.carousel.next .list .item:nth-child(1) .img {
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    border-radius: 20px;
+    animation: showImage .5s linear 1 forwards;
+}
+
+@keyframes showImage {
+    to {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .miniature .item:nth-last-child(1) {
+    overflow: hidden;
+    animation: showMiniature .5s linear 1 forwards;
+}
+
+.carousel.prev .list .item .img {
+    z-index: 100;
+}
+
+@keyframes showMiniature {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+.carousel.next .miniature {
+    animation: transformMiniature .5s linear 1 forwards;
+}
+
+@keyframes transformMiniature {
+    from {
+        transform: translateX(150px);
+    }
+}
+
+/* running time */
+.carousel .time {
+    width: 0;
+    height: 10px;
+    background-color: #f1683a;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time {
+    animation: timeRunning 2s linear 1 forwards;
+}
+
+@keyframes timeRunning {
+    from {
+        width: 100%
+    }
+    to {
+        width: 0;
+    }
+}
+
+.carousel .miniature .img:hover {
+    cursor: pointer;
+    box-shadow: 0 0 15px 1px #eeeeee;
+}
+
+.carousel.next .miniature .item:nth-last-child(1):hover {
+    border-radius: 20px;
+    box-shadow: 0 0 15px 1px #eeeeee;
+}
+.carousel.prev .miniature .item:nth-child(1):hover {
+    border-radius: 20px;
+    box-shadow: 0 0 15px 1px #eeeeee;
+}
+
+/* prev click */
+.carousel.prev .list .item:nth-child(2) {
+    z-index: 2;
+}
+
+.carousel.prev .list .item.animationInProgress:nth-child(2) {
+    z-index: 0;
+}
+
+.carousel.prev .list .item:nth-child(2) .img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outImage .5s linear 1 forwards;
+}
+
+@keyframes outImage {
+    to {
+        width: 150px;
+        height: 220px;
+        border-radius: 20px;
+        left: 50%;
+        bottom: 50px;
+    }
+}
+
+.carousel.prev .miniature .item:nth-child(1) {
+    overflow: hidden;
+    opacity: 1;
+    animation: showMiniature .5s linear 1 forwards;
+}
+
+/*.carousel.next .arrowsWrapper .buttonArrow,*/
+/*.carousel.prev .arrowsWrapper .buttonArrow {*/
+/*    pointer-events: none;*/
+/*}*/
+
+.carousel.prev .list .item:nth-child(2) .content .author,
+.carousel.prev .list .item:nth-child(2) .content .title,
+.carousel.prev .list .item:nth-child(2) .content .topic,
+.carousel.prev .list .item:nth-child(2) .content .des,
+.carousel.prev .list .item:nth-child(2) .content .buttonsWrapper {
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut {
+    to {
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
 }
 
 /* Iphone 5 display 320 px */
