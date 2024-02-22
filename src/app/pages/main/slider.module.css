@@ -1,6 +1,7 @@
 .carousel {
     opacity: 0;
-    transition: opacity 1s ease-in-out;}
+    transition: opacity 1s ease-in-out;
+}
 
 .carousel.loaded {
     width: 100%;
@@ -37,7 +38,6 @@
     box-sizing: border-box;
     color: #fff;
     text-shadow: 10px 5px 10px #000;
-    overflow: hidden;
 }
 
 .carousel .list .item .content .author {
@@ -50,7 +50,6 @@
     font-weight: bold;
     font-size: 5em;
     line-height: 1.3em;
-    width: 100%;
 }
 
 .carousel .list .item .content .topic {
