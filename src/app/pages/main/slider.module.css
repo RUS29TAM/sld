@@ -1,14 +1,9 @@
 .carousel {
-    opacity: 0;
-}
-.carousel.loaded {
     width: 100%;
     height: 100%;
     overflow: hidden;
     margin-top: -50px;
     position: absolute;
-    transition: opacity 1s ease-in-out;
-    opacity: 1;
 }
 
 .carousel .list .item {
@@ -26,6 +21,12 @@
 }
 
 .carousel .list .item .content {
+    opacity: 0;
+    transition: opacity 0s ease-in-out;
+}
+
+.carousel .list .item .content.loaded {
+    opacity: 1;
     position: absolute;
     top: 10%;
     width: 1140px;

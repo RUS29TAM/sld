@@ -111,7 +111,7 @@ const Main = () => {
         <>
             {/*<Header/>*/}
             <div
-                className={`${styles.carousel} ${loaded ? styles.loaded : ''} ${direction === 'next' ? styles.next : 'carousel'} ${direction === 'prev' ? styles.prev : 'carousel'}`}
+                className={`${styles.carousel}  ${direction === 'next' ? styles.next : 'carousel'} ${direction === 'prev' ? styles.prev : 'carousel'}`}
                 ref={carouselRef}>
                 {/* header and navigation */}
                 {/* Page */}
@@ -122,7 +122,7 @@ const Main = () => {
                             key={index}>
                             <img className={styles.img} src={typeof item.src === 'string' ? item.src : String(item.src)}
                                  alt={`Slide ${index + 1}`}/>
-                            <div className={styles.content}>
+                            <div className={`${styles.content} ${loaded ? styles.loaded : ''}`}>
                                 <div className={styles.author}>{item.author}</div>
                                 <div className={styles.title}>{item.title}</div>
                                 <div className={styles.topic}>{item.topic}</div>
