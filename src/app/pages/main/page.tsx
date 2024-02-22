@@ -90,9 +90,12 @@ const Main = () => {
             */
         }
     };
+
     useEffect(() => {
         const handleTransitionEnd = () => {
-            setAnimationInProgress(true); // Сбрасываем состояние, когда анимация завершена
+           setTimeout(() => {
+               setAnimationInProgress(true); // Сбрасываем состояние, когда анимация завершена
+           },2500)
         };
 
         if (carouselRef.current) {
