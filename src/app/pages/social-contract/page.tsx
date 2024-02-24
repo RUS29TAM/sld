@@ -1,18 +1,22 @@
 'use client'
 import React from 'react';
+import { useTheme } from '../../ThemeContext';
+
 import styles from './social-contract.module.css'
 import LoadingLane from "@/app/components/loading-lane/loading-lane";
 
 
 const SocialContract = () => {
+    const { isDarkTheme } = useTheme();
+
     return (
         <>
-            <div className={styles.container}>
+            <div className={`${styles.container} ${isDarkTheme ? styles.darkTheme : styles.lightTheme }`}>
                 <LoadingLane/>
-
                 <h1 className={styles.title}>Цели социального контракта и размеры выплат</h1>
                 <div className={styles.subtitle}>
-                    <h2 className={styles.h2}>Государство предоставляет социальную помощь в рамках социального контракта по разным
+                    <h2 className={styles.h2}>Государство предоставляет социальную помощь в рамках социального контракта
+                        по разным
                         направлениям, и каждое направление имеет свои условия финансовой поддержки. Если, например,
                         сумма для обучения составляет не более 30 000 рублей, то для открытия собственного бизнеса
                         предоставляется возможность получить единовременное пособие, которое может достигать 350 000
