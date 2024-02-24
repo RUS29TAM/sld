@@ -11,6 +11,7 @@ const Header = () => {
     const handleButtonClick = () => {
         toggleTheme();
         document.querySelector("#toggle-theme")?.parentElement?.classList.toggle("checked");
+        document.body.classList.toggle('checked');
     };
     return (
         <header className={styles.header}>
