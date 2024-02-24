@@ -28,9 +28,7 @@ body.lightTheme {
 
 @keyframes lt {
   from {
-    opacity: 1;
-    background-color: #ffffff;
-
+    opacity: 0;
   }
   to {
     opacity: 1;
