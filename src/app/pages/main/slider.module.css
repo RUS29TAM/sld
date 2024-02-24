@@ -25,6 +25,7 @@
     object-fit: cover;
 }
 
+
 .carousel .list .item .content {
     position: absolute;
     top: 10%;
@@ -37,6 +38,28 @@
     color: #fff;
     text-shadow: 10px 5px 10px #000;
 }
+
+/*theme mode*/
+.carousel .list .item .content.lightTheme {
+    animation: lt linear .5s 1 forwards;
+}
+
+@keyframes lt {
+    to {
+        color: #FFF;
+    }
+}
+
+.carousel .list .item .content.darkTheme {
+    animation: dt linear .5s 1 forwards;
+}
+
+@keyframes dt {
+    to {
+        color: #222;
+    }
+}
+/*end theme mode*/
 
 .carousel .list .item .author {
     font-weight: bold;
