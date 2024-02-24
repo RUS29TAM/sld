@@ -3,8 +3,11 @@ import React, {useEffect, useRef, useState} from 'react';
 import styles from './slider.module.css'
 import {sliderItems, thumbnailItems} from "@/utils/constants";
 import Link from "next/link";
+import {useTheme} from "@/app/ThemeContext";
 
 const Main = () => {
+    const { isDarkTheme } = useTheme();
+
     const [loaded, setLoaded] = useState(false);
     const [animationInProgress, setAnimationInProgress] = useState(true);
     const [direction, setDirection] = useState<'next' | 'prev' | 'carousel'>('carousel');
@@ -122,9 +125,9 @@ const Main = () => {
                         <div
                             className={`${styles.item} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''} ${animationInProgress ? styles.animationInProgress : ''}`}
                             key={index}>
-                            <img className={styles.img} src={typeof item.src === 'string' ? item.src : String(item.src)}
+                            <img className={`${styles.img} `} src={typeof item.src === 'string' ? item.src : String(item.src)}
                                  alt={`Slide ${index + 1}`}/>
-                            <div className={styles.content}>
+                            <div className={`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}> {/*`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`*/}
                                 <div className={styles.author}>{item.author}</div>
                                 <div className={styles.title}>{item.title}</div>
                                 <div className={styles.topic}>{item.topic}</div>
