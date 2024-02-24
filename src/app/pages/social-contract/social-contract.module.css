@@ -1,18 +1,12 @@
 .container {
     border-top: 1px solid #eeeeee;
     width: 1140px;
-    /*width: 100vw;*/
     max-width: 80%;
     height: 100%;
     margin: auto;
     justify-content: center;
-    /*display: grid;*/
-    /*grid-template-columns: repeat(4, 1fr);*/
-    /*grid-auto-rows: minmax(50px, auto);;*/
     box-sizing: border-box;
     overflow: hidden;
-
-    /*align-items: center;*/
     background: #222222;
     gap: 10px;
     padding-top: 10px;
@@ -20,10 +14,43 @@
     font-family: monospace;
 }
 
+.container.lightTheme {
+    animation: lt linear .5s 1 forwards;
+}
+
+@keyframes lt {
+    from {
+        opacity: 1;
+        background-color: #ffffff;
+
+    }
+    to {
+        opacity: 1;
+        background-color: #222222;
+        color: #ffffff;
+        transition: 1s;
+    }
+}
+
+.container.darkTheme {
+    animation: dt linear .5s 1 forwards;
+}
+
+@keyframes dt {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        background-color: #ffffff;
+        color: rgb(116, 116, 116);
+        transition: 1s;
+    }
+}
+
 .title {
     grid-column-start: 1;
     grid-column-end: 4;
-    /*width: 100%;*/
     font-family: Popins, sans-serif;
     margin: 0;
     padding: 0;
@@ -39,9 +66,6 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: minmax(50px, auto);;
-
-    /*grid-column-start: 2;*/
-    /*grid-column-end: 4;*/
     margin: 0;
     padding: 0;
 
@@ -88,9 +112,10 @@
     .subtitle {
         font-size: 0.5em;
     }
-        .table {
-            padding: 5px;
-            gap: 5px;
+
+    .table {
+        padding: 5px;
+        gap: 5px;
         font-size: 1.2em;
     }
 }
