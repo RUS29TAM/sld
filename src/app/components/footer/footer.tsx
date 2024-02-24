@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <nav>
-                <Link href={'/'}>
+                <Link className={styles.link} href={'https://github.com/RUS29TAM'} target={"_blank"}>
                     <span className={`text text_type_main-default ${styles.span}`}>C</span>
                     <span className={`text text_type_main-default ${styles.span}`}>R</span>
                     <span className={`text text_type_main-default ${styles.span}`}>E</span>
