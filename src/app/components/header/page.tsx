@@ -11,25 +11,23 @@ const Header = () => {
     const handleButtonClick = () => {
         toggleTheme();
         document.querySelector("#toggle-theme")?.parentElement?.classList.toggle("checked");
-        document.body.classList.toggle('checked');
+        // document.body.classList.toggle('checked');
     };
     return (
-        <header className={styles.header}>
+        <header className={`${styles.header} ${isDarkTheme ? styles.lightTheme : styles.darkTheme}`}>
             <nav>
-                <Link href={'/pages/main'}>ГЛАВНАЯ</Link>
-                <Link href={'/pages/contact'}>КОНТАКТЫ</Link>
-                <Link href={'/pages/info'}>ИНФО</Link>
-                <Link href={'/pages/draft'}>draft</Link>
-
-            </nav>
-            <input onChange={handleButtonClick} className={styles.input} type="checkbox" id="switch"/>
-            <label className={styles.label} htmlFor="switch">
-                {isDarkTheme
-                    ?
-                    <span className={styles.spanLight}>Light</span>
-                    :
-                    <span className={styles.spanNight}>Night</span>}
-            </label>
+                    <Link className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`} href={'/pages/main'}>ГЛАВНАЯ</Link>
+                    <Link className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`} href={'/pages/contact'}>КОНТАКТЫ</Link>
+                    <Link className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`} href={'/pages/info'}>ИНФО</Link>
+                </nav>
+                <input onChange={handleButtonClick} className={styles.input} type="checkbox" id="switch"/>
+                <label className={styles.label} htmlFor="switch">
+                    {isDarkTheme
+                        ?
+                        <span className={styles.spanLight}>Light</span>
+                        :
+                        <span className={styles.spanNight}>Night</span>}
+                </label>
         </header>
     );
 };
