@@ -37,14 +37,43 @@
 
 .label {
     cursor: pointer;
-    text-indent: -9999px;
-    width: 50px;
+    text-indent: 8px;
+    width: 25px;
     height: 25px;
-    background: grey;
-    display: block;
+    display: flex;
+    align-items: center;
     border-radius: 100px;
     position: relative;
     z-index: 100;
+    /*color: #222222;*/
+}
+
+.label .lightTheme {
+    cursor: pointer;
+    text-indent: 8px;
+    width: 50px;
+    height: 25px;
+    background: rgb(255, 214, 0);
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    position: relative;
+    z-index: 100;
+    transition: .5s;
+}
+
+.label .darkTheme {
+    cursor: pointer;
+    text-indent: 8px;
+    width: 50px;
+    height: 25px;
+    background: rgba(0, 119, 255, 0.44);
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    position: relative;
+    z-index: 100;
+    transition: .5s;
 
 }
 
@@ -55,13 +84,13 @@
     left: 5px;
     width: 15px;
     height: 15px;
-    background: #fff;
+    background: transparent;
     border-radius: 90px;
     transition: 0.3s;
 }
 
 .input:checked + .label {
-    background: rgba(116, 116, 116, 0.44);
+    background: rgb(248, 196, 0);
 }
 
 .input:checked + .label:after {
@@ -71,4 +100,14 @@
 
 .label:active:after {
     width: 20px;
+}
+
+.spanLight {
+    text-shadow: 2px 2px 2px 2px #222222;
+
+}
+
+.spanNight {
+    text-shadow: 2px 2px 2px 2px #222222;
+
 }

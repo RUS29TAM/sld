@@ -18,15 +18,15 @@ const Header = () => {
             <nav>
                     <Link className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`} href={'/pages/main'}>ГЛАВНАЯ</Link>
                     <Link className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`} href={'/pages/contact'}>КОНТАКТЫ</Link>
-                    <Link className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`} href={'/pages/info'}>ИНФО</Link>
+                    <Link className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`} href={'/pages/draft'}>ИНФО</Link>
                 </nav>
                 <input onChange={handleButtonClick} className={styles.input} type="checkbox" id="switch"/>
                 <label className={styles.label} htmlFor="switch">
                     {isDarkTheme
                         ?
-                        <span className={styles.spanLight}>Light</span>
+                        <span className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`}>&#9728;</span>
                         :
-                        <span className={styles.spanNight}>Night</span>}
+                        <span className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`}>&#9790;</span>}
                 </label>
         </header>
     );
