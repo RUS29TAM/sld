@@ -133,7 +133,7 @@ const Main = () => {
                                 <div className={styles.topic}>{item.topic}</div>
                                 <div className={styles.des}>{item.description}</div>
                                 <div className={styles.buttonsWrapper}>
-                                    <Link className={styles.button} href={'/pages/social-contract'}>СМОТРЕТЬ</Link>
+                                    <Link className={styles.button} href={item.buttonLink}>СМОТРЕТЬ</Link>
                                     <Link className={styles.button} href={'/pages/loader'}>ПОДПИСКА</Link>
                                 </div>
                             </div>
