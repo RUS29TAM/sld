@@ -134,7 +134,7 @@ const Main = () => {
                                 <div className={styles.des}>{item.description}</div>
                                 <div className={styles.buttonsWrapper}>
                                     <Link className={styles.button} href={item.buttonLink}>СМОТРЕТЬ</Link>
-                                    <Link className={styles.button} href={'/pages/loader'}>ПОДПИСКА</Link>
+                                    <Link className={styles.button} href={'/pages/new'}>ПОДПИСКА</Link>
                                 </div>
                             </div>
                         </div>
