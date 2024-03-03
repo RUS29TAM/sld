@@ -7,6 +7,48 @@ const SPIN_BACKWARD_CLASS = styles.jsSpinBwd;
 const DISABLE_TRANSITIONS_CLASS = styles.jsTransitionsDisabled;
 const SPIN_DUR = 1000;
 
+interface ContentData {
+    type: string;
+    bg: string;
+    title: string;
+    subTitle: string;
+    description: string;
+    index: string;
+}
+const data: ContentData[] = [
+    {
+        type: 'ФРАНЧАЙЗИНГ',
+        bg: '#27323c',
+        title: 'ICELAND',
+        subTitle: 'EUROPE',
+        description: 'As I flew north to begin my third circuit of Iceland in four years...',
+        index: '01',
+    },
+    {
+        type: 'СОЦИАЛЬНЫЙ КОНТРАКТ',
+        bg: '#19304a',
+        title: 'CHINA',
+        subTitle: 'ASIA',
+        description: "Its modern face is dazzling, but China is no one-trick pony...",
+        index: '02',
+    },
+    {
+        type: 'БИЗНЕС ПЛАН',
+        bg: '#2b2533',
+        title: 'USA',
+        subTitle: 'NORTH AMERICA',
+        description: "When it comes to travel, America has always floored me with its staggering range of possibilities...",
+        index: '03',
+    },
+    {
+        type: 'КОРОБОЧНЫЕ РЕШЕНИЯ',
+        bg: '#312f2d',
+        title: 'PERU',
+        subTitle: 'SOUTH AMERICA',
+        description: 'For me, Peru is the molten core of South America, a distillation of the oldest traditions...',
+        index: '04',
+    },
+];
 const Page: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [limit, setLimit] = useState(0);
@@ -22,9 +64,7 @@ const Page: React.FC = () => {
     }, []);
 
     const appendControls = () => {
-        console.log('Appending controls');
         const controls: JSX.Element[] = [];
-        console.log(controls)
         for (let i = 0; i < limit; i++) {
             controls.push(<a href="#" key={i} data-index={i}></a>);
         }
@@ -207,11 +247,18 @@ const Page: React.FC = () => {
         <div className={styles.container}>
             <div className={styles.carousel}>
                 <div className={styles.carouselControl}>
-                    <a href="#" className={styles.a}></a>
-                    <a href="#" className={styles.a}></a>
-                    <a href="#" className={styles.a}></a>
-                    <a href="#" className={styles.a}></a>
-
+                    {data.map((_, index) => (
+                        <a
+                            href="#"
+                            key={index}
+                            data-index={index}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                spin(index - activeIndex);
+                            }}
+                            className={`${styles.a} ${index === activeIndex ? styles.active : ''}`}
+                        ></a>
+                    ))}
                 </div>
                 <div className={styles.carouselStage}>
                     <div className={`${styles.spinner} ${styles.spinnerLeft}`}>
