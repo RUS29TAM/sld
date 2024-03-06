@@ -1,74 +1,278 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --page-margin-y: 20px;
-  --page-margin-x: 20px;
-  --width: calc(50vw - var(--page-margin-x));
-  --half-width: calc(50vw - var(--page-margin-x) / 2);
-  --neg-half-width: calc(-25vw + var(--page-margin-x) / 2);
-  --height: calc(100vh - var(--page-margin-y) * 2);
-  --half-height: calc(50vh - var(--page-margin-y));
-  --neg-half-height: calc(-50vh + var(--page-margin-y));
-  --transition-dur: 1s;
+    --page-margin-y: 20px;
+    --page-margin-x: 20px;
+    --width: calc(50vw - var(--page-margin-x));
+    --half-width: calc(50vw - var(--page-margin-x) / 2);
+    --neg-half-width: calc(-25vw + var(--page-margin-x) / 2);
+    --height: calc(100vh - var(--page-margin-y) * 2);
+    --half-height: calc(50vh - var(--page-margin-y));
+    --neg-half-height: calc(-50vh + var(--page-margin-y));
+    --transition-dur: 1s;
 }
 
+::-webkit-scrollbar {
+    display: none !important;
+}
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  /*background: #222;*/
-  font-family: Popins, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /*background: #222;*/
+    font-family: Popins, sans-serif;
 }
 
 html,
 body {
-  max-width: 100%;
-  max-height: 100%;
-  overflow-x: hidden;
-  background: #222;
-  /*position: fixed;*/
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    background: #222;
+    /*position: fixed;*/
+
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 body.lightTheme {
-  animation: lt linear .5s 1 forwards;
+    animation: lt linear .5s 1 forwards;
 }
 
 @keyframes lt {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    background-color: #222222;
-    color: #ffffff;
-    transition: 1s;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        background-color: #222222;
+        color: #ffffff;
+        transition: 1s;
+    }
 }
 
 body.dark-theme {
-  animation: dt linear .5s 1 forwards;
+    animation: dt linear .5s 1 forwards;
 }
 
 @keyframes dt {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    background-color: #ffffff;
-    color: rgb(116, 116, 116);
-    transition: 1s;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        background-color: #ffffff;
+        color: rgb(116, 116, 116);
+        transition: 1s;
+    }
 }
 
 body {
-  color: #fff;
-  font-size: 12px;
-  overflow: hidden;
+    color: #fff;
+    font-size: 12px;
+    overflow: hidden;
 }
 
 a {
-  color: rgb(0, 204, 250);
-  text-decoration: none;
+    color: rgb(0, 204, 250);
+    text-decoration: none;
+}
+
+
+#fwxWindow::before {
+    position: absolute;
+    width: calc(100% + 19px);
+    height: calc(100% + 20px);
+    content: "";
+    z-index: -1;
+    border-radius: 7px;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Purple Block */
+
+#Purple {
+    background: linear-gradient(210deg, #5f0596 50%, #9e16f2 50%);
+    --blockclr: #9e16f2;
+}
+
+#Purple > #fwxWindow {
+    background: url("https://flakeworks.com/images/codepen/city.jpg");
+}
+
+#Purple > #fwxWindow::before,
+#Purple > #fwxWindow > .label::before {
+    background: linear-gradient(210deg, #9e16f2 50%, #5f0596 50%);
+}
+
+/* Green Block */
+
+#Green {
+    background: linear-gradient(330deg, #19e672 50%, #1f8049 50%);
+    --blockclr: #1f8049;
+}
+
+#Green > #fwxWindow {
+    background: url("https://flakeworks.com/images/codepen/grass.jpg");
+}
+
+#Green > #fwxWindow::before,
+#Green > #fwxWindow > .label::before {
+    background: linear-gradient(330deg, #1f8049 50%, #19e672 50%);
+}
+
+/* Chocolate Block */
+
+#Chocolate {
+    background: linear-gradient(
+            210deg,
+            rgba(66, 49, 23, 1) 50%,
+            rgba(245, 187, 100, 1) 50%
+    );
+    --blockclr: rgba(66, 49, 23, 1);
+}
+
+#Chocolate > #fwxWindow {
+    background: url("https://flakeworks.com/images/codepen/dusty.jpg");
+}
+
+#Chocolate > #fwxWindow::before,
+#Chocolate > #fwxWindow > .label::before {
+    background: linear-gradient(
+            210deg,
+            rgba(245, 187, 100, 1) 50%,
+            rgba(66, 49, 23, 1) 50%
+    );
+}
+
+/* Blue Block */
+
+#Blue {
+    background: linear-gradient(
+            330deg,
+            rgba(45, 130, 183, 1) 50%,
+            rgba(7, 0, 77, 1) 50%
+    );
+    --blockclr: rgba(45, 130, 183, 1);
+}
+
+#Blue > #fwxWindow {
+    background: url("https://flakeworks.com/images/codepen/mountain.jpg");
+}
+
+#Blue > #fwxWindow::before,
+#Blue > #fwxWindow > .label::before {
+    background: linear-gradient(
+            330deg,
+            rgba(7, 0, 77, 1) 50%,
+            rgba(45, 130, 183, 1) 50%
+    );
+}
+
+/* Yellow Block */
+
+#Yellow {
+    background: linear-gradient(
+            210deg,
+            rgba(21, 23, 6, 1) 50%,
+            rgba(211, 235, 33, 1) 50%
+    );
+    --blockclr: rgba(211, 235, 33, 1);
+}
+
+#Yellow > #fwxWindow {
+    background: url("https://flakeworks.com/images/codepen/canal.jpg");
+}
+
+#Yellow > #fwxWindow > .leftContent > h2 {
+    color: black;
+    text-shadow: 1px 1px 0px var(--blockclr), 2px 2px 0px var(--blockclr);
+}
+
+#Yellow > #fwxWindow > .rightContent > a:hover {
+    color: black;
+}
+
+#Yellow > #fwxWindow::before,
+#Yellow > #fwxWindow > .label::before {
+    background: linear-gradient(
+            210deg,
+            rgba(211, 235, 33, 1) 50%,
+            rgba(21, 23, 6, 1) 50%
+    );
+}
+
+/* Red Block */
+
+#Red {
+    background: linear-gradient(
+            330deg,
+            rgba(219, 2, 56, 1) 50%,
+            rgba(97, 20, 39, 1) 50%
+    );
+    --blockclr: rgba(219, 2, 56, 1);
+}
+
+#Red > #fwxWindow {
+    background: url("https://flakeworks.com/images/codepen/flowers.jpg");
+}
+
+#Red > #fwxWindow::before,
+#Red > #fwxWindow > .label::before {
+    background: linear-gradient(
+            330deg,
+            rgba(97, 20, 39, 1) 50%,
+            rgba(219, 2, 56, 1) 50%
+    );
+}
+
+/* Pink Block */
+
+#Pink {
+    background: linear-gradient(
+            210deg,
+            rgba(138, 13, 143, 1) 50%,
+            rgba(239, 56, 245, 1) 50%
+    );
+    --blockclr: rgba(239, 56, 245, 1);
+}
+
+#Pink > #fwxWindow {
+    background: url("https://flakeworks.com/images/codepen/cuties.jpg");
+}
+
+#Pink > #fwxWindow::before,
+#Pink > #fwxWindow > .label::before {
+    background: linear-gradient(
+            210deg,
+            rgba(239, 56, 245, 1) 50%,
+            rgba(138, 13, 143, 1) 50%
+    );
+}
+
+/* Orange Block */
+
+#Orange {
+    background: linear-gradient(
+            330deg,
+            rgba(255, 120, 23, 1) 50%,
+            rgba(138, 74, 29, 1) 50%
+    );
+    --blockclr: rgba(255, 120, 23, 1);
+}
+
+#Orange > #fwxWindow {
+    background: url("https://flakeworks.com/images/codepen/oranges.jpg");
+}
+
+#Orange > #fwxWindow::before,
+#Orange > #fwxWindow > .label::before {
+    background: linear-gradient(
+            330deg,
+            rgba(138, 74, 29, 1) 50%,
+            rgba(255, 120, 23, 1) 50%
+    );
 }
