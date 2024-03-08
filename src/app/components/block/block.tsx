@@ -1,6 +1,5 @@
-import React, {useEffect} from 'react';
-import '../../components/block/block.css'
-import {blocksData} from '@/utils/blocksData';
+import React from 'react';
+import styles from './block.module.css'
 
 interface IBlock {
     id: string;
@@ -12,21 +11,21 @@ interface IBlock {
 
 const Block = ({id, title, leftContent, rightContent}: IBlock) => {
     return (
-        <section className="block" id={id}>
-            <input type="radio" id={`window-${id}`} name="windows" value={`window-${id}`}/>
-            <div className="fwx-window">
-                <label className="label" htmlFor={`window-${id}`}>
+        <section className={styles.block} id={id}>
+            <input className={styles.input} type="radio" id={`window-${id}`} name="windows" value={`window-${id}`}/>
+            <div className={styles.fwxWindow} id={'fwxWindow'}>
+                <label className={styles.label} htmlFor={`window-${id}`}>
                     EXPLORE
                 </label>
 
-                <div className="left-content">
-                    <h2>{title}</h2>
-                    <p>{leftContent}</p>
+                <div className={styles.leftContent}>
+                    <h2 className={styles.h2}>{title}</h2>
+                    <p className={styles.p}>{leftContent}</p>
                 </div>
 
-                <div className="right-content">
-                    <p>{rightContent}</p>
-                    <a href="javascript:void(0);" title="Learn More">
+                <div className={styles.rightContent}>
+                    <p className={styles.p}>{rightContent}</p>
+                    <a className={styles.a} href="##" title="Learn More">
                         Learn More
                     </a>
                 </div>
