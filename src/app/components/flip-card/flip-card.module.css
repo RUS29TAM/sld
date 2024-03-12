@@ -1,0 +1,40 @@
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.card div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    backface-visibility: hidden;
+    border-radius: 6px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-smoothing: antialiased;
+    color: #47525D;
+}
+
+.card .back {
+    transform: rotateY(180deg);
+    background: #00d9ff;
+    color: #fff;
+}
+.front:hover {
+    box-shadow: 0 0 5px 5px rgba(116, 116, 116, 0.44) inset;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
