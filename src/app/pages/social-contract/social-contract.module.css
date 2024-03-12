@@ -73,25 +73,6 @@
     animation: showContent 0.5s 1s linear 1 forwards;
 
     font-size: 1em;
-
-}
-
-.subtitle .h2 {
-    grid-column-start: 1;
-    grid-column-end: 4;
-}
-
-.table {
-    display: grid;
-    grid-template-columns: minmax(auto, auto) minmax(auto, auto) minmax(auto, auto) minmax(auto, auto);
-    grid-auto-rows: minmax(auto, auto);
-    border: 1px solid #fff;
-    gap: 20px;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    font-size: 1em;
-
-
 }
 
 @keyframes showContent {
@@ -100,6 +81,24 @@
         filter: blur(0);
         transform: translateY(0);
     }
+}
+
+.cardContainer {
+    width: 100%;
+    margin: 0 auto;
+    height: 200px;
+    position: relative;
+    perspective: 800px;
+    border-radius: 4px;
+    display: flex;
+    padding: 10px;
+    gap: 5px;
+
+
+    transform: translateY(50%);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
 }
 
 @media screen and (max-width: 678px) {
