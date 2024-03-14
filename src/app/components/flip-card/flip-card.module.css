@@ -24,11 +24,12 @@
     font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-smoothing: antialiased;
     color: #47525D;
+
 }
 
 .card .back {
     transform: rotateY(180deg);
-    background: #00d9ff;
+    background: rgba(116, 116, 116, 0.44);
     color: #fff;
 }
 .front:hover {
@@ -37,4 +38,8 @@
 
 .card.flipped {
     transform: rotateY(180deg);
+}
+.card.flipped:hover {
+    transform: rotateY(180deg);
+    box-shadow: 0 0 5px 5px rgb(0, 213, 255) inset;
 }
