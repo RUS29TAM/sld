@@ -2,14 +2,14 @@ import React, {useEffect, useState} from 'react';
 import styles from './flip-card.module.css';
 
 interface IFlipCard {
-    title: string;
+    num: string | number;
     frontContent: string;
     backContent: string;
     isOpen: boolean;
     onClick: () => void;
 }
 
-const FlipCard = ({title, frontContent, backContent, isOpen, onClick}: IFlipCard) => {
+const FlipCard = ({num, frontContent, backContent, isOpen, onClick}: IFlipCard) => {
     const [isFlipped, setFlipped] = useState(false);
 
     useEffect(() => {
