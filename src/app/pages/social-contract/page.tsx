@@ -7,11 +7,11 @@ import LoadingLane from "@/app/components/loading-lane/loading-lane";
 import FlipCard from "@/app/components/flip-card/flip-card";
 
 const cardData = [
-    { title: 'Поиск работы', frontContent: 'Поиск работы', backContent: 'Выплаты при заключении контракта и три месяца после трудоустройства, стипендия на период обучения, оплачиваемая стажировка' },
-    { title: 'Открытие бизнеса', frontContent: 'Открытие бизнеса', backContent: 'До 350 000 руб.' },
-    { title: 'Развитие подсобного хозяйства', frontContent: 'Развитие подсобного хозяйства', backContent: 'До 200 000 руб.' },
-    { title: 'Обучение или переобучение', frontContent: 'Обучение или переобучение', backContent: 'До 30 000 руб. на получение навыков предпринимательской деятельности или ведения хозяйства, на освоение новой профессии' },
-    { title: 'Преодоление сложной жизненной ситуации', frontContent: 'Преодоление сложной жизненной ситуации', backContent: 'Единоразовая или ежемесячная финансовая помощь' },
+    { num: 1, frontContent: 'Поиск работы', backContent: 'Выплаты при заключении контракта и три месяца после трудоустройства, стипендия на период обучения, оплачиваемая стажировка' },
+    { num: 2, frontContent: 'Открытие бизнеса', backContent: 'До 350 000 руб.' },
+    { num: 3, frontContent: 'Развитие подсобного хозяйства', backContent: 'До 200 000 руб.' },
+    { num: 4, frontContent: 'Обучение или переобучение', backContent: 'До 30 000 руб. на получение навыков предпринимательской деятельности или ведения хозяйства, на освоение новой профессии' },
+    { num: 5, frontContent: 'Преодоление сложной жизненной ситуации', backContent: 'Единоразовая или ежемесячная финансовая помощь' },
 ];
 const SocialContract = () => {
     const { isDarkTheme } = useTheme();
@@ -38,7 +38,7 @@ const SocialContract = () => {
                             key={index}
                             isOpen={cardStates[index]}
                             onClick={() => handleCardClick(index)}
-                            title={data.title}
+                            num={data.num}
                             frontContent={data.frontContent}
                             backContent={data.backContent}
                         />
