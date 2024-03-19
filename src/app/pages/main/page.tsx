@@ -130,7 +130,7 @@ const Main = () => {
                             <div className={`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}> {/*`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`*/}
                                 <div className={styles.author}>{item.author}</div>
                                 <div className={styles.title}>{item.title}</div>
-                                <div className={styles.topic}>{item.topic}</div>
+                                <div className={`${styles.topic} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>{item.topic}</div>
                                 <div className={styles.des}>{item.description}</div>
                                 <div className={styles.buttonsWrapper}>
                                     <Link className={styles.button} href={item.buttonLink}>СМОТРЕТЬ</Link>
@@ -142,18 +142,22 @@ const Main = () => {
                 </div>
 
                 {/* Miniature */}
-                <div className={styles.miniature} ref={thumbnailBorderRef}>
-                    {thumbnailItems.map((item, index) => (
-                        <div className={styles.item} onClick={() => showSlider('thumbnail', index)} key={index}>
-                            <img className={styles.img} src={typeof item.src === 'string' ? item.src : String(item.src)}
-                                 alt={`Thumbnail ${index + 1}`}/>
-                            <div className={styles.content}>
-                                <div className={styles.title}>{item.title}</div>
-                                <div className={styles.description}>{item.description}</div>
+                <div className={styles.miniatureWrapper}>
+                    <div className={styles.miniature} ref={thumbnailBorderRef}>
+                        {thumbnailItems.map((item, index) => (
+                            <div className={styles.item} onClick={() => showSlider('thumbnail', index)} key={index}>
+                                <img className={styles.img}
+                                     src={typeof item.src === 'string' ? item.src : String(item.src)}
+                                     alt={`Thumbnail ${index + 1}`}/>
+                                <div className={styles.content}>
+                                    <div className={styles.title}>{item.title}</div>
+                                    <div className={styles.description}>{item.description}</div>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
+
 
                 {/* Navigation buttons */}
                 <div className={styles.arrowsWrapper}>
