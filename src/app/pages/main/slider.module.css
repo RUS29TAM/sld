@@ -57,7 +57,8 @@
 
 @keyframes dt {
     to {
-        color: #222;
+        color: #ffffff;
+        text-shadow: 0 0  5px #FFF;
     }
 }
 /*end theme mode*/
@@ -77,6 +78,12 @@
 .carousel .list .item .topic {
     padding: 5px 0;
     color: #f1683a;
+}
+.carousel .list .item .topic.darkTheme {
+    padding: 5px 0;
+    color: #00b3ff;
+    text-shadow: 10px 5px 10px #000;
+
 }
 
 .carousel .list .item .des {
@@ -118,10 +125,24 @@
     box-shadow: none;
 }
 
-.miniature {
+.miniatureWrapper {
     position: absolute;
     bottom: 50px;
     left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+
+    transform: translateX(550px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 1s 1.3s linear forwards;
+}
+
+.miniature {
+    position: relative; /*prev = absolute*/
+    /*bottom: 50px;*/
+    /*left: 50%;*/
     width: max-content;
     z-index: 100;
     display: flex;
@@ -176,6 +197,10 @@
     align-items: center;
     z-index: 100;
 
+    transform: translateX(-550px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 0.5s linear 1 forwards;
 }
 
 .arrowsWrapper .buttonArrow {
