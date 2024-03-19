@@ -24,7 +24,7 @@
     font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-smoothing: antialiased;
     color: #47525D;
-
+    text-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .card .back {
@@ -41,5 +41,5 @@
 }
 .card.flipped:hover {
     transform: rotateY(180deg);
-    box-shadow: 0 0 5px 5px rgb(0, 213, 255) inset;
+    box-shadow: 0 0 5px 5px rgba(116, 116, 116, 0.44) inset;
 }
