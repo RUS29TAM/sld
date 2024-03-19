@@ -1,5 +1,8 @@
 'use client'
-import { createContext, useContext, useState, ReactNode } from 'react';
+import {createContext, useContext, useState, ReactNode, useEffect} from 'react';
+interface ThemeProviderProps {
+    children: React.ReactNode;
+}
 
 interface ThemeContextProps {
     isDarkTheme: boolean;
@@ -8,23 +11,37 @@ interface ThemeContextProps {
 
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
-interface ThemeProviderProps {
-    children: ReactNode;
-}
-
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-    const [isDarkTheme, setIsDarkTheme] = useState(false);
+    const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() => {
+        // Проверяем, сохранена ли тема в localStorage
+        const savedTheme = localStorage.getItem('theme');
+        return savedTheme === 'dark';
+    });
 
     const toggleTheme = () => {
-        setIsDarkTheme((prevTheme) => !prevTheme);
-        // Здесь можно добавить логику сохранения текущей темы (например, в localStorage)
-        document.body.classList.toggle('dark-theme');
+        setIsDarkTheme((prevTheme) => {
+            // Инвертируем текущую тему и сохраняем ее в localStorage
+            const newTheme = !prevTheme;
+            localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+            return newTheme;
+        });
+
+        document.body.classList.toggle('darkTheme');
     };
 
     const contextValue: ThemeContextProps = {
         isDarkTheme,
         toggleTheme,
     };
+
+    useEffect(() => {
+        // Устанавливаем класс темы при загрузке страницы
+        if (isDarkTheme) {
+            document.body.classList.add('darkTheme');
+        } else {
+            document.body.classList.remove('darkTheme');
+        }
+    }, [isDarkTheme]);
 
     return (
         <ThemeContext.Provider value={contextValue}>
