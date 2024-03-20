@@ -20,16 +20,14 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
             const savedTheme = localStorage.getItem('theme');
             return savedTheme === 'dark';
         } else {
-            // Возвращаем значение по умолчанию, если localStorage не доступен
-            const savedTheme = localStorage.getItem('theme');
-            return savedTheme === 'light';
+            return false; //Возвращаем значение по умолчанию, если localStorage не доступен
         }
     });
 
     useEffect(() => {
         if (typeof window !== 'undefined' && window.localStorage) {
             const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
+            if (savedTheme) {
                 document.body.classList.toggle('darkTheme', savedTheme === 'dark');
             }
         }
@@ -46,7 +44,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
         isDarkTheme,
         toggleTheme,
     };
-
 
     return (
         <ThemeContext.Provider value={contextValue}>
