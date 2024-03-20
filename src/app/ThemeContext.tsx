@@ -28,11 +28,14 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     useEffect(() => {
         if (typeof window !== 'undefined' && window.localStorage) {
             const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
+            if (savedTheme === 'dark') {
                 document.body.classList.toggle('darkTheme', savedTheme === 'dark');
             }
+            if (savedTheme === 'light') {
+                document.body.classList.toggle('darkLight', savedTheme === 'light');
+            }
         }
-    }, []); // Вызываем эффект только при монтировании компонента
+    }, [localStorage]); // Вызываем эффект только при монтировании компонента
 
     const toggleTheme = () => {
         setIsDarkTheme((prevTheme) => !prevTheme);
