@@ -15,7 +15,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() => {
         // Проверяем, сохранена ли тема в localStorage
 
-        if (localStorage) {
+        if (typeof window !== 'undefined' && window.localStorage) {
             // Проверяем, доступен ли localStorage в браузере
             const savedTheme = localStorage.getItem('theme');
             return savedTheme === 'dark';
@@ -26,7 +26,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     });
 
     useEffect(() => {
-        if (localStorage) {
+        if (typeof window !== 'undefined' && window.localStorage) {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
                 document.body.classList.toggle('darkTheme', savedTheme === 'dark');
