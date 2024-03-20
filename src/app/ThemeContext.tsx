@@ -14,9 +14,17 @@ const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() => {
         // Проверяем, сохранена ли тема в localStorage
-        const savedTheme = localStorage.getItem('theme');
-        return savedTheme === 'dark';
+
+        if (typeof window !== 'undefined') {
+            // Проверяем, доступен ли localStorage в браузере
+            const savedTheme = localStorage.getItem('theme');
+            return savedTheme === 'dark';
+        } else {
+            // Возвращаем значение по умолчанию, если localStorage не доступен
+            return false; // или true, в зависимости от вашей логики
+        }
     });
+
 
     const toggleTheme = () => {
         setIsDarkTheme((prevTheme) => {
@@ -38,6 +46,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
         // Устанавливаем класс темы при загрузке страницы
         if (isDarkTheme) {
             document.body.classList.add('darkTheme');
+
         } else {
             document.body.classList.remove('darkTheme');
         }
