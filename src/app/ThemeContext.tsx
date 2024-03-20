@@ -26,7 +26,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     });
 
     useEffect(() => {
-        if (typeof window !== 'undefined' && window.localStorage) {
+        if (localStorage) {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
                 document.body.classList.toggle('darkTheme', savedTheme === 'dark');
