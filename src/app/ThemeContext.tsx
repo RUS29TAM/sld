@@ -21,7 +21,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
             return savedTheme === 'dark';
         } else {
             // Возвращаем значение по умолчанию, если localStorage не доступен
-            return false; // или true
+            const savedTheme = localStorage.getItem('theme');
+            return savedTheme === 'light';
         }
     });
 
@@ -31,11 +32,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
             if (savedTheme === 'dark') {
                 document.body.classList.toggle('darkTheme', savedTheme === 'dark');
             }
-            if (savedTheme === 'light') {
-                document.body.classList.toggle('darkLight', savedTheme === 'light');
-            }
         }
-    }, [localStorage]); // Вызываем эффект только при монтировании компонента
+    }, []); // Вызываем эффект только при монтировании компонента
 
     const toggleTheme = () => {
         setIsDarkTheme((prevTheme) => !prevTheme);
