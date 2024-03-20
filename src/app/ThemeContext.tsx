@@ -15,25 +15,29 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() => {
         // Проверяем, сохранена ли тема в localStorage
 
-        if (typeof window !== 'undefined') {
+        if (window.localStorage) {
             // Проверяем, доступен ли localStorage в браузере
             const savedTheme = localStorage.getItem('theme');
             return savedTheme === 'dark';
         } else {
             // Возвращаем значение по умолчанию, если localStorage не доступен
-            return false; // или true, в зависимости от вашей логики
+            return false; // или true
         }
     });
 
+    useEffect(() => {
+        if (typeof window !== 'undefined' && window.localStorage) {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.classList.toggle('darkTheme', savedTheme === 'dark');
+            }
+        }
+    }, []); // Вызываем эффект только при монтировании компонента
 
     const toggleTheme = () => {
-        setIsDarkTheme((prevTheme) => {
-            // Инвертируем текущую тему и сохраняем ее в localStorage
-            const newTheme = !prevTheme;
-            localStorage.setItem('theme', newTheme ? 'dark' : 'light');
-            return newTheme;
-        });
-
+        setIsDarkTheme((prevTheme) => !prevTheme);
+        const newTheme = isDarkTheme ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
         document.body.classList.toggle('darkTheme');
     };
 
@@ -42,15 +46,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
         toggleTheme,
     };
 
-    useEffect(() => {
-        // Устанавливаем класс темы при загрузке страницы
-        if (isDarkTheme) {
-            document.body.classList.add('darkTheme');
-
-        } else {
-            document.body.classList.remove('darkTheme');
-        }
-    }, [isDarkTheme]);
 
     return (
         <ThemeContext.Provider value={contextValue}>
