@@ -29,8 +29,12 @@
 
 .card .back {
     transform: rotateY(180deg);
-    background: rgba(116, 116, 116, 0.44);
+    background: rgb(53, 53, 53);
     color: #fff;
+}
+
+.card .back:hover {
+    box-shadow: 0 0 5px 5px rgba(251, 251, 251, 0.44) inset;
 }
 .front:hover {
     box-shadow: 0 0 5px 5px rgba(116, 116, 116, 0.44) inset;
