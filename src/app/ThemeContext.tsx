@@ -1,5 +1,5 @@
 'use client'
-import {createContext, useContext, useState, ReactNode, useEffect} from 'react';
+import React, {createContext, useContext, useState, ReactNode, useEffect} from 'react';
 interface ThemeProviderProps {
     children: ReactNode;
 }
@@ -25,6 +25,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     });
 
     useEffect(() => {
+        // console.clear()
+
         if (typeof window !== 'undefined' && window.localStorage) {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
