@@ -10,22 +10,22 @@
     justify-content: space-between;
 }
 
-.header a {
+.header .a {
     margin-right: 40px;
     position: relative;
     z-index: 100;
 }
 
-.header a.lightTheme {
-    color: #0c0fd3;
+.header .a.lightTheme {
+    color: #f1683a;
     text-shadow: 10px 5px 10px #000;
     font-weight: 700;
 
 }
-.header a.darkTheme {
-    color: #f1683a;
-    text-shadow: 10px 5px 10px #000;
-
+.header .a.darkTheme {
+    color: rgb(0, 204, 250);
+    text-shadow: 10px 5px 10px #ffffff;
+    font-weight: 700;
 }
 
 .input[type=checkbox]{
@@ -67,7 +67,7 @@
     text-indent: 8px;
     width: 50px;
     height: 25px;
-    background: rgba(0, 119, 255, 0.44);
+    background: rgb(0, 66, 151);
     display: flex;
     align-items: center;
     border-radius: 100px;
@@ -104,6 +104,7 @@
 
 .spanLight {
     text-shadow: 2px 2px 2px 2px #222222;
+    color: #ffd700;
 
 }
 
