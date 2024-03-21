@@ -14,19 +14,19 @@ const Header = () => {
         // document.body.classList.toggle('checked');
     };
     return (
-        <header className={`${styles.header} ${isDarkTheme ? styles.lightTheme : styles.darkTheme}`}>
+        <header className={`${styles.header} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
             <nav>
-                    <Link className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`} href={'/pages/main'}>ГЛАВНАЯ</Link>
-                    <Link className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`} href={'/pages/contact'}>КОНТАКТЫ</Link>
-                    <Link className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`} href={'/pages/two'}>ИНФО</Link>
+                    <Link className={`${styles.a} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} href={'/pages/main'}>ГЛАВНАЯ</Link>
+                    <Link className={`${styles.a} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} href={'/pages/contact'}>КОНТАКТЫ</Link>
+                    <Link className={`${styles.a} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} href={'/pages/two'}>ИНФО</Link>
                 </nav>
                 <input onChange={handleButtonClick} className={styles.input} type="checkbox" id="switch"/>
                 <label className={styles.label} htmlFor="switch">
                     {isDarkTheme
                         ?
-                        <span className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`}>&#9728;</span>
+                        <span className={`${styles.spanLight} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>&#9790;</span>
                         :
-                        <span className={`${isDarkTheme ? styles.lightTheme : styles.darkTheme}`}>&#9790;</span>}
+                        <span className={`${styles.spanNight} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>&#9728;</span>}
                 </label>
         </header>
     );
