@@ -1,0 +1,64 @@
+.container {
+    animation: fade-in 1s ease-out forwards;
+    width: 1140px;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-contract-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.social-contract-table th,
+.social-contract-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.social-contract-table th {
+    background-color: #00d5ff;
+}
+
+.row {
+    animation: row-fade-in 0.5s ease-out;
+}
+
+@keyframes row-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contract-description {
+    animation: description-fade-in 0.8s ease-out;
+}
+
+@keyframes description-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
