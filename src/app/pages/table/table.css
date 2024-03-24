@@ -45,10 +45,10 @@
 
 .social-contract-table th {
     opacity: 0;
+    background-color: #fff;
 
 }
 .social-contract-table th:nth-child(1) {
-    background-color: #eee5f3;
     color: #222222;
     animation: fade-new 1s ease-out 0s forwards;
     text-align: center;
@@ -59,7 +59,6 @@
 }
 
 .social-contract-table th:nth-child(2) {
-    background-color: #eee5f3;
     color: #222222;
     text-align: center;
 
@@ -70,7 +69,6 @@
 .social-contract-table th:nth-child(3) {
     color: #222222;
     text-align: center;
-    background-color: #eee5f3;
     animation: fade-new 1.5s ease-out 2s forwards;
 
 }
