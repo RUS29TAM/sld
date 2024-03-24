@@ -19,6 +19,18 @@
     }
 }
 
+
+@keyframes fade-new {
+    from {
+        opacity: 0;
+        transform: translateX(-520px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .social-contract-table {
     border-collapse: collapse;
     width: 100%;
@@ -32,7 +44,35 @@
 }
 
 .social-contract-table th {
-    background-color: #00d5ff;
+    opacity: 0;
+
+}
+.social-contract-table th:nth-child(1) {
+    background-color: #eee5f3;
+    color: #222222;
+    animation: fade-new 1s ease-out 0s forwards;
+    text-align: center;
+
+}
+.social-contract-table th:nth-child(1):hover {
+
+}
+
+.social-contract-table th:nth-child(2) {
+    background-color: #eee5f3;
+    color: #222222;
+    text-align: center;
+
+    animation: fade-new 1.25s ease-out 1s forwards;
+
+}
+
+.social-contract-table th:nth-child(3) {
+    color: #222222;
+    text-align: center;
+    background-color: #eee5f3;
+    animation: fade-new 1.5s ease-out 2s forwards;
+
 }
 
 .row {
