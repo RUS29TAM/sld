@@ -48,10 +48,10 @@ const Page = () => {
             <p className="contract-description">
                 Социальный контракт заключается на срок от 3 до 12 месяцев в зависимости от цели.
             </p>
-            <div style={{display: 'flex', flexDirection: 'row', }}>
+            <div style={{display: 'flex', flexDirection: 'row',}}>
                 <div style={{
                     width: '600px',
-                    margin: '20px',
+                    margin: '20px 0',
                     padding: '20px',
                     border: '1px solid #ccc',
                     borderRadius: '5px'
@@ -82,7 +82,7 @@ const Page = () => {
                 </div>
                 <div style={{
                     width: '600px',
-                    margin: '20px',
+                    margin: '20px 0',
                     padding: '20px',
                     border: '1px solid #ccc',
                     borderRadius: '5px'
@@ -97,7 +97,7 @@ const Page = () => {
                 </div>
 
             </div>
-            <p style={{maxWidth: '600px', margin: '20px'}}>
+            <p style={{maxWidth: '600px', margin: '20px 0'}}>
                 При оценке материального состояния семьи учитывается имущественная обеспеченность. Критерии
                 устанавливаются на уровне регионов и разнятся от субъекта к субъекту. Но если доход у семьи
                 небольшой, но при этом она владеет машиной и двумя квартирами, то вряд ли ей будет оказана помощь. В
