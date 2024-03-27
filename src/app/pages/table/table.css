@@ -52,10 +52,6 @@
     color: #222222;
     animation: fade-new 1s ease-out 0s forwards;
     text-align: center;
-
-}
-.social-contract-table th:nth-child(1):hover {
-
 }
 
 .social-contract-table th:nth-child(2) {
