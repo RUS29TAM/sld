@@ -6,7 +6,7 @@ const Page = () => {
     return (
         <div className="container">
             <table className="social-contract-table">
-                <thead>
+                <thead className="thead">
                 <tr>
                     <th>Цели социального контракта</th>
                     <th>Размер выплат</th>
