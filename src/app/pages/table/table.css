@@ -19,7 +19,6 @@
     }
 }
 
-
 @keyframes fade-new {
     from {
         opacity: 0;
@@ -46,7 +45,6 @@
 .social-contract-table th {
     opacity: 0;
     background-color: #fff;
-
 }
 .social-contract-table th:nth-child(1) {
     color: #222222;
@@ -57,7 +55,6 @@
 .social-contract-table th:nth-child(2) {
     color: #222222;
     text-align: center;
-
     animation: fade-new 1.25s ease-out 1s forwards;
 
 }
@@ -66,7 +63,6 @@
     color: #222222;
     text-align: center;
     animation: fade-new 1.5s ease-out 2s forwards;
-
 }
 
 .row {
