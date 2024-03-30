@@ -81,6 +81,7 @@
 }
 
 .contract-description {
+    margin-top: 20px;
     animation: description-fade-in 0.8s ease-out;
 }
 
