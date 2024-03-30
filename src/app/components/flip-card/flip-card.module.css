@@ -36,6 +36,7 @@
 .card .back:hover {
     box-shadow: 0 0 5px 5px rgba(251, 251, 251, 0.44) inset;
 }
+
 .front:hover {
     box-shadow: 0 0 5px 5px rgba(116, 116, 116, 0.44) inset;
 }
@@ -43,6 +44,7 @@
 .card.flipped {
     transform: rotateY(180deg);
 }
+
 .card.flipped:hover {
     transform: rotateY(180deg);
     box-shadow: 0 0 5px 5px rgba(116, 116, 116, 0.44) inset;
