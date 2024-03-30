@@ -157,14 +157,11 @@ const Main = () => {
                         ))}
                     </div>
                 </div>
-
-
                 {/* Navigation buttons */}
                 <div className={styles.arrowsWrapper}>
                     <button className={styles.buttonArrow} onClick={() => showSlider('prev')}>&lt;</button>
                     <button className={styles.buttonArrow} onClick={() => showSlider('next')}>&gt;</button>
                 </div>
-
                 {/* Time running */}
                 <div
                     key={key}
@@ -172,7 +169,6 @@ const Main = () => {
                     className={`${styles.time} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''}`}></div>
             </div>
         </>
-
     );
 };
 
