@@ -3,6 +3,7 @@ import React from 'react';
 import './table.css'
 
 const Page = () => {
+
     return (
         <div className="container">
             <table className="social-contract-table">
