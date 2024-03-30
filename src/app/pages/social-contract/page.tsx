@@ -1,7 +1,6 @@
 'use client'
 import React, {useState} from 'react';
 import {useTheme} from '../../ThemeContext';
-
 import styles from './social-contract.module.css'
 import LoadingLane from "@/app/components/loading-lane/loading-lane";
 import FlipCard from "@/app/components/flip-card/flip-card";
@@ -100,7 +99,6 @@ const SocialContract = () => {
                     будущем оценку имущественной обеспеченности при заключении социального контракта планируют
                     осуществлять по аналогии с детскими выплатами.
                 </p>
-
             </div>
         </>
     );
