@@ -58,7 +58,14 @@
     stroke-dasharray: 500px;
     stroke-dashoffset:500px;
     animation: line-anim 2s linear forwards;
+}
 
+.circle {
+    fill: #55ff00;
+    r: 3;
+    width: 3px;
+    height: 3px;
+    box-shadow: 0 0 15px 15px #ff0000;
 }
 
 @keyframes line-anim {
