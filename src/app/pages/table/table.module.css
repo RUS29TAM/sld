@@ -30,36 +30,36 @@
     }
 }
 
-.social-contract-table {
+.socialContractTable {
     border-collapse: collapse;
     width: 100%;
 }
 
-.social-contract-table th,
-.social-contract-table td {
+.socialContractTable th,
+.socialContractTable td {
     border: 1px solid #dddddd;
     padding: 8px;
     text-align: left;
 }
 
-.social-contract-table th {
+.socialContractTable th {
     opacity: 0;
     background-color: #fff;
 }
 
-.social-contract-table th:nth-child(1) {
+.socialContractTable th:nth-child(1) {
     color: #222222;
     animation: fade-new 1s ease-out 0s forwards;
     text-align: center;
 }
 
-.social-contract-table th:nth-child(2) {
+.socialContractTable th:nth-child(2) {
     color: #222222;
     text-align: center;
     animation: fade-new 1.25s ease-out 1s forwards;
 }
 
-.social-contract-table th:nth-child(3) {
+.socialContractTable th:nth-child(3) {
     color: #222222;
     text-align: center;
     animation: fade-new 1.5s ease-out 2s forwards;
@@ -80,7 +80,7 @@
     }
 }
 
-.contract-description {
+.contractDescription {
     margin-top: 20px;
     animation: description-fade-in 0.8s ease-out;
 }
