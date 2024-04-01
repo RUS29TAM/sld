@@ -1,13 +1,13 @@
 'use client'
 import React from 'react';
-import './table.css'
+import styles from './table.module.css'
 
 const Page = () => {
 
     return (
-        <div className="container">
-            <table className="social-contract-table">
-                <thead className="thead">
+        <div className={styles.container}>
+            <table className={styles.socialContractTable}>
+                <thead className={styles.thead}>
                 <tr>
                     <th>Цели социального контракта</th>
                     <th>Размер выплат</th>
@@ -15,38 +15,38 @@ const Page = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr className="row">
+                <tr className={styles.row}>
                     <td>Поиск работы</td>
                     <td>Выплаты при заключении контракта и три месяца после трудоустройства, стипендия на период
                         обучения, оплачиваемая стажировка
                     </td>
                     <td>Размер выплат зависит от условий контракта</td>
                 </tr>
-                <tr className="row">
+                <tr className={styles.row}>
                     <td>Открытие бизнеса</td>
                     <td>До 350 000 руб.</td>
                     <td>Финансовая поддержка для начала бизнеса</td>
                 </tr>
-                <tr className="row">
+                <tr className={styles.row}>
                     <td>Развитие подсобного хозяйства</td>
                     <td>До 200 000 руб.</td>
                     <td>Финансовая поддержка для развития подсобного хозяйства</td>
                 </tr>
-                <tr className="row">
+                <tr className={styles.row}>
                     <td>Обучение или переобучение</td>
                     <td>До 30 000 руб. на получение навыков предпринимательской деятельности или ведения хозяйства,
                         на освоение новой профессии
                     </td>
                     <td>Финансовая поддержка для обучения или переобучения</td>
                 </tr>
-                <tr className="row">
+                <tr className={styles.row}>
                     <td>Преодоление сложной жизненной ситуации</td>
                     <td>Единоразовая или ежемесячная финансовая помощь</td>
                     <td>Финансовая поддержка для преодоления сложной жизненной ситуации</td>
                 </tr>
                 </tbody>
             </table>
-            <p className="contract-description">
+            <p className={styles.contractDescription}>
                 Социальный контракт заключается на срок от 3 до 12 месяцев в зависимости от цели. Например, срок действия контракта на открытие бизнеса составляет 12 месяцев, на поиск работы — 9 месяцев, на преодоление сложной жизненной ситуации — максимум на 6 месяцев.
             </p>
             <div style={{display: 'flex', flexDirection: 'row',}}>
