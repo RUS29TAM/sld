@@ -7,9 +7,10 @@ interface IFlipCard {
     backContent: string;
     isOpen: boolean;
     onClick: () => void;
+    details: string;
 }
 
-const FlipCard = ({num, frontContent, backContent, isOpen, onClick}: IFlipCard) => {
+const FlipCard = ({num, details, frontContent, backContent, isOpen, onClick}: IFlipCard) => {
     const [isFlipped, setFlipped] = useState(false);
 
     useEffect(() => {
