@@ -48,7 +48,7 @@ const SocialContract = () => {
                     сумма для обучения составляет не более 30 000 рублей, то для открытия собственного бизнеса
                     предоставляется возможность получить единовременное пособие, которое может достигать 350 000
                     рублей.</h2>
-                <div className={styles.cardContainer}>
+                <div className={styles.flipCardContainer}>
                     {cardData.map((data, index) => (
                         <FlipCard
                             key={index}
@@ -65,46 +65,28 @@ const SocialContract = () => {
                     зависимости от цели. Например, срок
                     действия контракта на открытие бизнеса составляет 12 месяцев, на поиск работы — 9 месяцев, на
                     преодоление сложной жизненной ситуации — максимум на 6 месяцев.</h2>
-                <div style={{display: 'flex', flexDirection: 'row',}}>
-                    <div style={{
-                        width: '600px',
-                        margin: '20px 0',
-                        padding: '20px',
-                        border: '1px solid #ccc',
-                        borderRadius: '5px',
-                    }}>
-                        <div style={{marginBottom: '20px', display: "flex", flexDirection: "column", justifyContent: "space-between", gap: '20px', height: '100%'}}>
+                <div className={styles.cardContainer}>
+                    <div className={styles.card}>
+                        <div className={styles.cardContent}>
                             <h3>Малоимущие одинокие граждане</h3>
-                            <p style={{marginBottom: '10px'}}>Требование: среднедушевой доход за три последних месяца не
+                            <p>Требование: среднедушевой доход за три последних месяца не
                                 должен превышать прожиточный минимум по региону.</p>
                             <p>Описание: Размер выплат зависит от условий контракта.</p>
                         </div>
                     </div>
-                    <div style={{
-                        width: '600px',
-                        margin: '20px',
-                        padding: '20px',
-                        border: '1px solid #ccc',
-                        borderRadius: '5px'
-                    }}>
-                        <div style={{marginBottom: '20px', display: "flex", flexDirection: "column", justifyContent: "space-between", gap: '20px', height: '100%'}}>
+                    <div className={styles.card}>
+                        <div className={styles.cardContent}>
                             <h3>Оказавшиеся безработными в период введения санкций</h3>
-                            <p style={{marginBottom: '10px'}}>Требование: учитывается период потери работы — с 1 марта 2022
+                            <p>Требование: учитывается период потери работы — с 1 марта 2022
                                 года; на момент обращения должны иметь статус безработного. Для таких граждан период
                                 заключения контракта установлен с 20 марта 2022 года по 31 декабря 2022 года</p>
                             <p>Описание: Финансовая поддержка для начала бизнеса</p>
                         </div>
                     </div>
-                    <div style={{
-                        width: '600px',
-                        margin: '20px 0',
-                        padding: '20px',
-                        border: '1px solid #ccc',
-                        borderRadius: '5px'
-                    }}>
-                        <div style={{marginBottom: '20px', display: "flex", flexDirection: "column", justifyContent: "space-between", gap: '20px', height: '100%'}}>
+                    <div className={styles.card}>
+                        <div className={styles.cardContent}>
                             <h3>Малообеспеченные граждане</h3>
-                            <p style={{marginBottom: '10px'}}>Требование: среднедушевой доход семьи за три последних месяца
+                            <p>Требование: среднедушевой доход семьи за три последних месяца
                                 не должен превышать прожиточный минимум на душу населения по региону.</p>
                             <p>Описание: Финансовая поддержка для развития подсобного хозяйства</p>
                         </div>
