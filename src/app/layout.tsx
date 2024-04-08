@@ -25,12 +25,10 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
                 <body className={inter.className}>
                 <Header/>
                 {children}
-                <Footer />
+                <Footer/>
                 </body>
                 </html>
-
             </ThemeProvider>
-
         </>
     );
 }
