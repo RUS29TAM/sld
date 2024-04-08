@@ -13,9 +13,6 @@ const Page = () => {
 
     }, []);
 
-
-
-
     return (
         <div className={styles.wrapperSvg}>
             <svg className={styles.svg} width="587" height="63" viewBox="0 0 587 63" fill="none"
