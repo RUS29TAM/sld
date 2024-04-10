@@ -4,30 +4,9 @@ import {useTheme} from '../../ThemeContext';
 import styles from './social-contract.module.css'
 import LoadingLane from "@/app/components/loading-lane/loading-lane";
 import FlipCard from "@/app/components/flip-card/flip-card";
+import {flipCardData} from "@/utils/flipCardData";
 
-const cardData = [
-    {
-        num: 1,
-        frontContent: 'Поиск работы',
-        backContent: 'Выплаты при заключении контракта и три месяца после трудоустройства, стипендия на период обучения, оплачиваемая стажировка',
-        details: 'описание'
-    },
-    {num: 2, frontContent: 'Открытие бизнеса', backContent: 'До 350 000 руб.', details: 'описание'
-    },
-    {num: 3, frontContent: 'Развитие подсобного хозяйства', backContent: 'До 200 000 руб.', details: 'описание'},
-    {
-        num: 4,
-        frontContent: 'Обучение или переобучение',
-        backContent: 'До 30 000 руб. на получение навыков предпринимательской деятельности или ведения хозяйства, на освоение новой профессии',
-        details: 'описание'
-    },
-    {
-        num: 5,
-        frontContent: 'Преодоление сложной жизненной ситуации',
-        backContent: 'Единоразовая или ежемесячная финансовая помощь',
-        details: 'описание'
-    },
-];
+
 const SocialContract = () => {
     const {isDarkTheme} = useTheme();
     const [cardStates, setCardStates] = useState([false, false, false, false, false]);
@@ -49,7 +28,7 @@ const SocialContract = () => {
                     предоставляется возможность получить единовременное пособие, которое может достигать 350 000
                     рублей.</h2>
                 <div className={styles.flipCardContainer}>
-                    {cardData.map((data, index) => (
+                    {flipCardData.map((data, index) => (
                         <FlipCard
                             key={index}
                             isOpen={cardStates[index]}
