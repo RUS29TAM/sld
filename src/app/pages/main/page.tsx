@@ -157,6 +157,7 @@ const Main = () => {
                         ))}
                     </div>
                 </div>
+
                 {/* Navigation buttons */}
                 <div className={styles.arrowsWrapper}>
                     <button className={styles.buttonArrow} onClick={() => showSlider('prev')}>&lt;</button>
