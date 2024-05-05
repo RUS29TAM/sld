@@ -30,7 +30,6 @@ const Block = ({id, title, leftContent, rightContent}: IBlock) => {
                     </a>
                 </div>
             </div>
-
             {/* Навигационные ссылки */}
             {/*{blocksData.map((block, index) => (*/}
             {/*    <React.Fragment key={index}>*/}
