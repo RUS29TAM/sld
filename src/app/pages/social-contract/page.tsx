@@ -84,4 +84,3 @@ const SocialContract = () => {
     );
 };
 export default SocialContract;
-
