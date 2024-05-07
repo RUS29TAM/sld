@@ -163,6 +163,7 @@ const Main = () => {
                     <button className={styles.buttonArrow} onClick={() => showSlider('prev')}>&lt;</button>
                     <button className={styles.buttonArrow} onClick={() => showSlider('next')}>&gt;</button>
                 </div>
+
                 {/* Time running */}
                 <div
                     key={key}
