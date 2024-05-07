@@ -108,7 +108,6 @@
     animation-delay: 2s;
 }
 
-
 @keyframes animate {
     0%, 80% {
         color: rgba(116, 116, 116, 0.44);
