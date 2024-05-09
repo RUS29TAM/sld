@@ -50,4 +50,5 @@ export const blocksData: { id: string, title: string, leftContent: string, right
         leftContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
         rightContent: "Nunc aliquet bibendum enim facilisis gravida neque convallis a...",
         num: 8,
-    },];
+    },
+];
