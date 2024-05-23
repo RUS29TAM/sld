@@ -1,0 +1,18 @@
+.container {
+    width: 1140px;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+    height: 100vh;
+}
+
+.category {
+    opacity: 0;
+    transform: translateY(150px);
+    transition: opacity 0.5s, transform 3.5s;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
