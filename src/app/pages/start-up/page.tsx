@@ -271,6 +271,7 @@ const Page = () => {
     //     });
     // }, []);
 
+
     return (
         <div className={`${styles.container} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
             <h1 className={styles.center}>Как начать свое дело: 10 шагов для тех, кто только начинает свой путь в
