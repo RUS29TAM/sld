@@ -110,3 +110,14 @@
 .spanNight {
     text-shadow: 2px 2px 2px 2px #222222;
 }
+
+@media (max-width: 576px) {
+    .header {
+        width: 1140px;
+        max-width: 90%;
+    }
+    .header .a {
+        margin-right: 20px;
+        font-size: 14px;
+    }
+}
