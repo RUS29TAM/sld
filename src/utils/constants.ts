@@ -74,3 +74,4 @@ export const thumbnailItems: { src: string | StaticImageData, title: string, des
 ];
 
 
+
