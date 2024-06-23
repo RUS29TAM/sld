@@ -1,13 +1,9 @@
 import React from 'react';
 import styles from './solution-selection.module.css';
-import {AiFillHome, AiOutlineBuild, AiOutlinePicture} from "react-icons/ai";
-import {IoIosInformationCircleOutline} from "react-icons/io";
+import {AiOutlineBuild, AiOutlinePicture} from "react-icons/ai";
 import {
     MdCleaningServices,
-    MdOutlineAddAPhoto,
     MdOutlineBakeryDining, MdOutlineCarpenter,
-    MdOutlineMiscellaneousServices,
-    MdOutlinePriceCheck
 } from "react-icons/md";
 import {
     GiAutoRepair, GiBookshelf, GiCircularSawblade, GiClothes,
@@ -16,12 +12,11 @@ import {
     GiElectricalResistance, GiEyeOfHorus, GiFingernail, GiFlatTire,
     GiFootprint, GiFullPizza, GiHairStrands,
     GiHotMeal, GiMicrophone, GiNeedleDrill, GiPartyFlags, GiPathDistance,
-    GiPhone, GiPhotoCamera, GiSalamander, GiSewingMachine, GiSlicedBread,
+    GiPhotoCamera, GiSalamander, GiSewingMachine, GiSlicedBread,
     GiStrawberry, GiThreeKeys, GiTiredEye
 } from "react-icons/gi";
-import {FaDatabase, FaRProject, FaTeamspeak} from "react-icons/fa";
-import {PiAddressBookLight, PiBuildings, PiLinkSimple} from "react-icons/pi";
-import {IoCarSportOutline, IoDocumentsOutline} from "react-icons/io5";
+import {PiBuildings} from "react-icons/pi";
+import {IoCarSportOutline} from "react-icons/io5";
 import {
     style1,
     style10,
