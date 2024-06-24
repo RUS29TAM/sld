@@ -1,0 +1,244 @@
+.container {
+    display: flex;
+    /*gap: 50px;*/
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);
+    height: 90vh;
+}
+
+.wrapperRight {
+    padding-right: 2%;
+}
+
+.wrapperLeft {
+    padding-right: 6%;
+}
+
+.ul {
+    position: relative;
+    transform: skewY(-15deg);
+}
+
+.ul2 {
+    position: relative;
+    transform: skewY(15deg);
+}
+
+.ul .li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    min-width: 200px;
+    padding: 15px;
+    background: #3e3f46;
+    z-index: calc(1 * var(--i));
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.ul2 .li2 {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    min-width: 200px;
+    padding: 15px;
+    background: #3e3f46;
+    z-index: calc(1 * var(--i));
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.ul .li:hover {
+    background: #02abff;
+    transform: translate(40px, 40px);
+}
+
+.ul2 .li2:hover {
+    background: #02abff;
+    transform: translate(-40px, 40px);
+}
+
+.ul .li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background: #494a51;
+    filter: brightness(0.7);
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.5s;
+}
+
+.ul2 .li2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    /*left: 230px;*/
+    right: -40px;
+    width: 40px;
+    height: 100%;
+    background: #494a51;
+    filter: brightness(0.7);
+    transform-origin: left;
+    transform: skewY(-45deg);
+    transition: 0.5s;
+}
+
+.ul .li:hover::before {
+    background: #02abff;
+}
+
+.ul2 .li2:hover::before {
+    background: #02abff;
+}
+
+.ul .li::after {
+    content: attr(data-text);
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: calc(100% - 20px);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    color: rgba(0, 0, 0, 0.15);
+    font-weight: 600;
+    font-size: 1em;
+    /*letter-spacing: 0.05em;*/
+    text-transform: uppercase;
+    background: #3e3f46;
+    /*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);*/
+
+    filter: brightness(0.9);
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5s;
+}
+
+.ul2 .li2::after {
+    content: attr(data-text);
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: calc(100% - 20px);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    color: rgba(0, 0, 0, 0.15);
+    font-weight: 600;
+    font-size: 1em;
+    text-transform: uppercase;
+    background: #3e3f46;
+    filter: brightness(0.9);
+    transform-origin: bottom;
+    transform: skewX(-45deg);
+    transition: 0.5s;
+}
+
+.ul .li:hover::after {
+    background: #02abff;
+}
+
+.ul2 .li2:hover::after {
+    background: #02abff;
+}
+
+.ul .li .a {
+    text-decoration: none;
+    color: #999;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.ul2 .li2 .a2 {
+    text-decoration: none;
+    color: #999;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.ul .li:hover .a {
+    color: #fff;
+}
+
+.ul2 .li2:hover .a2 {
+    color: #fff;
+}
+
+.ul .li:last-child::after {
+    box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+}
+
+.ul2 .li2:last-child::after {
+    box-shadow: 120px 120px 20px rgba(0, 0, 0, 0.25);
+}
+
+.ul .li .a .span {
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    text-align: center;
+    height: 100%;
+    transform-origin: right;
+    transform: skewY(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    opacity: 0.5;
+}
+
+.ul2 .li2 .a2 .span2 {
+    position: absolute;
+    top: 0;
+    /*left: 230px;*/
+    right: -40px;
+    width: 40px;
+    text-align: center;
+    height: 100%;
+    transform-origin: left;
+    transform: skewY(-45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    opacity: 0.5;
+}
+
+.ul .li:hover .a .span {
+    opacity: 1;
+}
+
+.ul2 .li2:hover .a2 .span2 {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 1280px){
+    .container {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 50px;
+        row-gap: 120px;
+        height: 100%;
+        padding: 100px 0;
+    }
+
+}
+
+@media only screen and (max-width: 576px){
+    .container {
+        grid-template-columns: auto;
+    }
+}
