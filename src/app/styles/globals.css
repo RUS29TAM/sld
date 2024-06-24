@@ -10,6 +10,7 @@
     --half-height: calc(50vh - var(--page-margin-y));
     --neg-half-height: calc(-50vh + var(--page-margin-y));
     --transition-dur: 1s;
+    --i: 0;
 }
 
 body::-webkit-scrollbar {
