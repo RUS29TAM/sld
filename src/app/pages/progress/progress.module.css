@@ -1,0 +1,54 @@
+.scrollIndicator {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scrollIndicator::before {
+    content: '';
+    position: absolute;
+    inset: 15px;
+    background: rgba(34, 34, 34, 0);
+    z-index: -1;
+
+}
+
+.text {
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ffeb00;
+}
+
+.textValue {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    z-index: 1;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    line-height: 0.5em;
+}
+
+.textValue span {
+    font-size: 0.5em;
+}
+
+.text small {
+    color: #fff;
+    font-size: 0.8em;
+    text-align: center;
+}
