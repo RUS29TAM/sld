@@ -75,4 +75,57 @@ export const thumbnailItems: { src: string | StaticImageData, title: string, des
 ];
 
 
+export const style1 = {'--i': '1'} as React.CSSProperties;
+export const style2 = {'--i': '2'} as React.CSSProperties;
+export const style3 = {'--i': '3'} as React.CSSProperties;
+export const style4 = {'--i': '4'} as React.CSSProperties;
+export const style5 = {'--i': '5'} as React.CSSProperties;
+export const style6 = {'--i': '6'} as React.CSSProperties;
+export const style7 = {'--i': '7'} as React.CSSProperties;
+export const style8 = {'--i': '8'} as React.CSSProperties;
+export const style9 = {'--i': '9'} as React.CSSProperties;
+export const style10 = {'--i': '10'} as React.CSSProperties;
+export const style11 = {'--i': '11'} as React.CSSProperties;
+export const style12 = {'--i': '12'} as React.CSSProperties;
+export const style13 = {'--i': '13'} as React.CSSProperties;
+export const style14 = {'--i': '14'} as React.CSSProperties;
+export const style15 = {'--i': '15'} as React.CSSProperties;
+export const style16 = {'--i': '16'} as React.CSSProperties;
+export const style17 = {'--i': '17'} as React.CSSProperties;
+export const style18 = {'--i': '18'} as React.CSSProperties;
+export const style19 = {'--i': '19'} as React.CSSProperties;
+export const style20 = {'--i': '20'} as React.CSSProperties;
+export const style21 = {'--i': '21'} as React.CSSProperties;
+export const style22 = {'--i': '22'} as React.CSSProperties;
+export const style23 = {'--i': '23'} as React.CSSProperties;
+export const style24 = {'--i': '24'} as React.CSSProperties;
+export const style25 = {'--i': '25'} as React.CSSProperties;
+export const style26 = {'--i': '26'} as React.CSSProperties;
+export const style27 = {'--i': '27'} as React.CSSProperties;
+export const style28 = {'--i': '28'} as React.CSSProperties;
+export const style29 = {'--i': '29'} as React.CSSProperties;
+export const style30 = {'--i': '30'} as React.CSSProperties;
+export const style31 = {'--i': '31'} as React.CSSProperties;
+export const style32 = {'--i': '32'} as React.CSSProperties;
+export const style33 = {'--i': '33'} as React.CSSProperties;
+export const style34 = {'--i': '34'} as React.CSSProperties;
+export const style35 = {'--i': '35'} as React.CSSProperties;
+export const style36 = {'--i': '36'} as React.CSSProperties;
+export const style37 = {'--i': '37'} as React.CSSProperties;
+export const style38 = {'--i': '38'} as React.CSSProperties;
+export const style39 = {'--i': '39'} as React.CSSProperties;
+export const style40 = {'--i': '40'} as React.CSSProperties;
+export const style41 = {'--i': '41'} as React.CSSProperties;
+export const style42 = {'--i': '42'} as React.CSSProperties;
+export const style43 = {'--i': '43'} as React.CSSProperties;
+export const style44 = {'--i': '44'} as React.CSSProperties;
+export const style45 = {'--i': '45'} as React.CSSProperties;
+export const style46 = {'--i': '46'} as React.CSSProperties;
+export const style47 = {'--i': '47'} as React.CSSProperties;
+export const style48 = {'--i': '48'} as React.CSSProperties;
+export const style49 = {'--i': '49'} as React.CSSProperties;
+export const style50 = {'--i': '50'} as React.CSSProperties;
+
+
+
 
