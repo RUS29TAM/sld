@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import styles from './solution-selection.module.css';
 import {AiOutlineBuild, AiOutlinePicture} from "react-icons/ai";
