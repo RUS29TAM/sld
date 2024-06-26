@@ -40,6 +40,9 @@
     text-align: center;
     height: calc(10vw + 20px);
     transition: all 0.2s ease-in;
+
+    animation: fade-left 2s ease-in-out forwards;
+
 }
 
 .episodeContent {
@@ -58,6 +61,28 @@
 
 .episodeContent .story {
     line-height: 26px;
+    animation: fade-up 2s ease-out forwards;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fade-left {
+    from {
+        opacity: 0;
+        transform: translateX(-450px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 600px) {
