@@ -1,11 +1,9 @@
+'use client'
 import React, {FC, ReactNode, useEffect, useState} from 'react';
 import styleModal from './modal.module.css';
 import ReactDOM from 'react-dom';
 import ModalOverlay from '../modal-overlay/modal-overlay';
 import {IoCloseSharp} from "react-icons/io5";
-
-
-const modalNode = document.getElementById('modal');
 
 interface IModal {
     setOpen: (b: boolean) => void,
