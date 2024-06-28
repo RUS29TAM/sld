@@ -1,4 +1,4 @@
-import React, {FC, ReactNode, useEffect} from 'react';
+import React, {FC, ReactNode, useEffect, useState} from 'react';
 import styleModal from './modal.module.css';
 import ReactDOM from 'react-dom';
 import ModalOverlay from '../modal-overlay/modal-overlay';
@@ -13,11 +13,17 @@ interface IModal {
 }
 
 const Modal: FC<IModal> = ({setOpen, children}) => {
-    const closeModal = () => {
-        setOpen(false);
-    };
+    const [modalContainer, setModalContainer] = useState<Element | null>(null);
 
     useEffect(() => {
+        let container = document.getElementById('modal');
+        if (!container) {
+            container = document.createElement('div');
+            container.setAttribute('id', 'modal');
+            document.body.appendChild(container);
+        }
+        setModalContainer(container);
+
         const handleCloseEscape = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
                 closeModal();
@@ -26,10 +32,16 @@ const Modal: FC<IModal> = ({setOpen, children}) => {
 
         document.addEventListener('keydown', handleCloseEscape);
 
-        return () => document.removeEventListener('keydown', handleCloseEscape);
-
+        return () => {
+            document.removeEventListener('keydown', handleCloseEscape);
+        };
     }, []);
 
+    const closeModal = () => {
+        setOpen(false);
+    };
+
+    if (!modalContainer) return null;
 
     const modal = (
         <div>
@@ -43,7 +55,7 @@ const Modal: FC<IModal> = ({setOpen, children}) => {
         </div>
     );
 
-    return ReactDOM.createPortal(modal, modalNode as Element);
+    return ReactDOM.createPortal(modal, modalContainer);
 };
 
 export default Modal
