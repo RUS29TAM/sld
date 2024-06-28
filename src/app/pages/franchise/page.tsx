@@ -1,7 +1,6 @@
 'use client'
 import React, {useState} from 'react';
 import styles from './franchise.module.css'
-import Link from 'next/link';
 import Modal from '@/app/components/modal/modal';
 import {MdCurrencyRuble, MdOutlineStarBorderPurple500, MdSupportAgent} from 'react-icons/md';
 import {GoLaw} from 'react-icons/go';
@@ -25,8 +24,8 @@ const Page = () => {
                         <div onClick={() => handleClickNum(<div className={styles.description}><p>Помогут Вам оценить
                             качественные и количественные характеристики франчайзера, риски работы с
                             данной компанией, увидеть, насколько она серьезно подходит к построению сети и выбору
-                            партнеров.</p><Link className={styles.link} href={'/pages/solution-selection'}>Перейти к
-                            ознакомлению</Link></div>)} className={styles.faIcons}>1
+                            партнеров.</p> <button>Перейти к
+                            ознакомлению</button></div>)} className={styles.faIcons}>1
                         </div>
                     </i>
                     <div className={styles.popup}>
