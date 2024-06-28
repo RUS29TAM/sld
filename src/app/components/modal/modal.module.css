@@ -11,6 +11,7 @@
 }
 
 .closeBtn {
+    z-index: 1;
     color: #FFFFFF;
     right: 40px;
     top: 54px;
