@@ -24,7 +24,7 @@ const Page = () => {
                     <i className={`${styles.faSolid} ${styles.faIcons}`}>
                         <div onClick={() => handleClickNum(<div className={styles.description}><p>Помогут Вам оценить качественные и количественные характеристики франчайзера, риски работы с
                             данной компанией, увидеть, насколько она серьезно подходит к построению сети и выбору
-                            партнеров.</p><Link style={{background: "rgba(16, 16, 16, 50%)", padding: "20px", marginTop: "20px", borderRadius: "16px"}} href={'./solution-selection'}>Перейти к ознакомлению</Link></div>)} className={styles.faIcons}>1</div>
+                            партнеров.</p><Link className={styles.link} href={'./solution-selection'}>Перейти к ознакомлению</Link></div>)} className={styles.faIcons}>1</div>
                     </i>
                     <div className={styles.popup}>
                         <div className={styles.popupNumber}><MdOutlineStarBorderPurple500 /></div>
