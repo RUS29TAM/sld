@@ -50,13 +50,14 @@
     box-shadow: 13.4px 13.4px 40.2px #1c1f23, -13.4px -13.4px 40.2px #262b2f;
     display: grid;
     z-index: 5;
-    color: #fff;
+    /*color: #fff;*/
     width: 134px;
     height: 134px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    /*font-style: normal;*/
+    color: var(--color);
+    font-style: normal;
 
 }
 
@@ -177,7 +178,8 @@
     /*cursor: auto;*/
     overflow: hidden;
     font-size: 0.8rem;
-    text-align: justify;
+    text-align: justify-all;
+
     background: linear-gradient(145deg, #16181b, #22262b);
     margin: 3.35px;
     animation: fadeIn 0.5s linear calc(var(--delay) + 0.7s) forwards;
