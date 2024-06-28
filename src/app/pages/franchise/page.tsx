@@ -1,24 +1,20 @@
 'use client'
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styles from './franchise.module.css'
+import Link from 'next/link';
 import Modal from '@/app/components/modal/modal';
 import {MdCurrencyRuble, MdOutlineStarBorderPurple500, MdSupportAgent} from 'react-icons/md';
 import {GoLaw} from 'react-icons/go';
 import {FaRegHandshake} from 'react-icons/fa6';
-import Link from 'next/link';
 
 const Page = () => {
     const [openPopup, setOpenPopup] = useState(false);
-    const [popupContent, setPopupContent] = useState(null);
+    const [popupContent, setPopupContent] = useState(false);
 
     const handleClickNum = (content: any) => {
         setPopupContent(content);
         setOpenPopup(true)
     };
-
-    useEffect(() => {
-
-    },[])
 
     return (
         <div className={styles.container}>
@@ -59,7 +55,6 @@ const Page = () => {
                         <div className={styles.popupNumber}><MdCurrencyRuble/></div>
                         <div className={styles.popupDetails}>
                             <div className={styles.popupTitle}>Экономический блок вопросов</div>
-
                         </div>
                     </div>
                 </div>
