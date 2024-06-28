@@ -4,6 +4,8 @@ import React from 'react';
 import styles from './header.module.css'
 import Link from "next/link";
 import {useTheme} from "../../ThemeContext";
+import {BsFillMoonStarsFill} from "react-icons/bs";
+import {BiSolidSun} from "react-icons/bi";
 
 const Header = () => {
     const { toggleTheme, isDarkTheme  } = useTheme();
@@ -24,9 +26,9 @@ const Header = () => {
                 <label className={styles.label} htmlFor="switch">
                     {isDarkTheme
                         ?
-                        <span className={`${styles.spanLight} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>&#9790;</span>
+                        <span className={`${styles.spanLight} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}><BsFillMoonStarsFill /></span>
                         :
-                        <span className={`${styles.spanNight} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>&#9728;</span>}
+                        <span className={`${styles.spanNight} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}><BiSolidSun /></span>}
                 </label>
         </header>
     );
