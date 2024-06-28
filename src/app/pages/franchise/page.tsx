@@ -39,8 +39,8 @@ const Page = () => {
                 {/*Individual timeline point*/}
                 <div className={styles.timelinePoint}>
                     <i className={`${styles.faSolid} ${styles.faCopyright}`}>
-                        <div onClick={() => handleClickNum(<div className={styles.description}><p>&quot;Экономический
-                            блок&quot; вопросов поможет Вам оценить собственные ресурсы, грамотно
+                        <div onClick={() => handleClickNum(<div className={styles.description}><p>Экономический
+                            блок; вопросов поможет Вам оценить собственные ресурсы, грамотно
                             спланировать
                             бюджет открытия, рассчитать прибыль и необходимые дополнительные вливания. Кроме того, часто
                             франчайзеры занижают объем необходимых в открытие средств или не афишируют те или иные
