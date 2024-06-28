@@ -25,7 +25,7 @@ const Page = () => {
                         <div onClick={() => handleClickNum(<div className={styles.description}><p>Помогут Вам оценить
                             качественные и количественные характеристики франчайзера, риски работы с
                             данной компанией, увидеть, насколько она серьезно подходит к построению сети и выбору
-                            партнеров.</p><Link className={styles.link} href="./solution-selection">Перейти к
+                            партнеров.</p><Link className={styles.link} href={'/pages/solution-selection'}>Перейти к
                             ознакомлению</Link></div>)} className={styles.faIcons}>1
                         </div>
                     </i>
