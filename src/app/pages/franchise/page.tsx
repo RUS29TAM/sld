@@ -1,5 +1,5 @@
 'use client'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './franchise.module.css'
 import Modal from '@/app/components/modal/modal';
 import {MdCurrencyRuble, MdOutlineStarBorderPurple500, MdSupportAgent} from 'react-icons/md';
@@ -15,6 +15,10 @@ const Page = () => {
         setPopupContent(content);
         setOpenPopup(true)
     };
+
+    useEffect(() => {
+
+    },[])
 
     return (
         <div className={styles.container}>
