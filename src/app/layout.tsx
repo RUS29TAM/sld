@@ -25,6 +25,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
                 <Header/>
                 {children}
                 <Footer/>
+                <div id="modal"></div>
                 </body>
                 </html>
             </ThemeProvider>
