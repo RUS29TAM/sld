@@ -1,9 +1,10 @@
 import React from 'react';
-import './anima.css'
+import styles from './anima.module.css'
+
 const Anima = () => {
     return (
-        <div className="content">
-            <div className="cube"></div>
+        <div className={styles.content}>
+            <div className={styles.cube}></div>
         </div>
     );
 };
