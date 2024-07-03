@@ -1,0 +1,58 @@
+/* styles/Accordion.module.css */
+
+.container {
+    overflow-x: hidden;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.heading {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab {
+    margin-bottom: 10px;
+}
+
+.tabToggle {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tabToggle.active {
+    background-color: #0056b3;
+}
+
+.content {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease, opacity 1s ease;
+    opacity: 0;
+}
+
+.content.active {
+    max-height: 1000px; /* Ensure this is large enough to fit your content */
+    opacity: 1;
+}
+
+.description {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
