@@ -1,57 +1,104 @@
-'use client'
-import React, { useState, useEffect, useRef } from 'react';
-import styles from './Accordion.module.css';
+import React from 'react';
+import styles from './accordion.module.css'
 
-const Accordion: React.FC = () => {
-    const [activeIndex, setActiveIndex] = useState<number | null>(0);
-    const wrapperRef = useRef<HTMLDivElement>(null);
-
-    const toggleTab = (index: number) => {
-        console.log(`Toggling tab: ${index}`);
-        setActiveIndex(activeIndex === index ? null : index);
-    };
-
-    useEffect(() => {
-        if (wrapperRef.current) {
-            const activeContent = wrapperRef.current.querySelector(`.${styles.content}.${styles.active}`);
-            console.log('Active content:', activeContent);
-            if (activeContent) {
-                wrapperRef.current.style.minHeight = `${(activeContent as HTMLElement).offsetHeight}px`;
-            }
-        }
-    }, [activeIndex]);
-
-    useEffect(() => {
-        toggleTab(0); // Open the first tab on load
-    }, []);
-
+const Accordion = () => {
     return (
-        <div className={styles.container}>
-            <div ref={wrapperRef} className={styles.wrapper}>
-                <h1 className={`${styles.heading}`}>Responsive Accordion to Vertical Tab System</h1>
-                <div className={styles.tabs}>
-                    {[1, 2, 3].map((tab, index) => (
-                        <React.Fragment key={index}>
-                            <div className={styles.tab}>
-                                <button
-                                    className={`${styles.tabToggle} ${activeIndex === index ? styles.active : styles.tabToggle}`}
-                                    onClick={() => toggleTab(index)}
-                                >
-                                    Tab {tab}
-                                </button>
+        <section className={styles.section}>
+            <div className={styles.container}>
+                <div className={styles.accordion}>
+                    <div className={styles.accordionItem} id="question1">
+                        <a className={styles.accordionLink} href="#question1">
+                            <div className={styles.flex}>
+                                <h3>BRANDING</h3>
+                                <ul>
+                                    <li>#Figma</li>
+                                    <li>#Sketch</li>
+                                    <li>#Adobe</li>
+                                    <li>#Invision</li>
+                                    <li>#Protopie</li>
+                                </ul>
                             </div>
-                            <div className={`${styles.content} ${activeIndex === index ? styles.active : ''}`}>
-                                <h3 className={styles.heading}>Tab {tab} Content</h3>
-                                <p className={styles.description}>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis id, eos quo sed obcaecati itaque porro praesentium tempore, ratione quasi deleniti neque rem, recusandae. Tenetur mollitia optio possimus fugiat cumque.
-                                </p>
+                            <i className={`${styles.icon} ${styles.ionMdArrowForward}`}></i>
+                            <i className={`${styles.icon} ${styles.ionMdArrowDown}`}></i>
+                        </a>
+                        <div className={styles.answer}>
+                            <p> We believe in the greater good, we strive to do something for people, we aim to make
+                                their lives easier and more enjoyable, we love businesses that keep this</p>
+                        </div>
+                        <hr/>
+                    </div>
+                    <div className={styles.accordionItem} id="question2">
+                        <a className={styles.accordionLink} href="#question2">
+                            <div className={styles.flex}>
+                                <h3>UX/UI DESIGN</h3>
+                                <ul>
+                                    <li>#Figma</li>
+                                    <li>#Sketch</li>
+                                    <li>#Adobe</li>
+                                    <li>#Invision</li>
+                                    <li>#Protopie</li>
+                                </ul>
                             </div>
-                        </React.Fragment>
-                    ))}
+                            <i className={`${styles.icon} ${styles.ionMdArrowForward}`}></i>
+                            <i className={`${styles.icon} ${styles.ionMdArrowDown}`}></i>
+                        </a>
+                        <div className={styles.answer}>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                reprehenderit in voluptate velit esse cillum.</p>
+                        </div>
+                        <hr/>
+                    </div>
+                    <div className={styles.accordionItem} id="question3">
+                        <a className={styles.accordionLink} href="#question3">
+                            <div className={styles.flex}>
+                                <h3>FRONTEND DEVELOPMENT</h3>
+                                <ul>
+                                    <li>#Figma</li>
+                                    <li>#Sketch</li>
+                                    <li>#Adobe</li>
+                                    <li>#Invision</li>
+                                    <li>#Protopie</li>
+                                </ul>
+                            </div>
+                            <i className={`${styles.icon} ${styles.ionMdArrowForward}`}></i>
+                            <i className={`${styles.icon} ${styles.ionMdArrowDown}`}></i>
+                        </a>
+                        <div className={styles.answer}>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                reprehenderit in voluptate velit esse cillum.</p>
+                        </div>
+                        <hr/>
+                    </div>
+                    <div className={styles.accordionItem} id="question4">
+                        <a className={styles.accordionLink} href="#question4">
+                            <div>
+                                <h3>BACKEND DEVELOPMENT</h3>
+                                <ul>
+                                    <li>#Figma</li>
+                                    <li>#Sketch</li>
+                                    <li>#Adobe</li>
+                                    <li>#Invision</li>
+                                    <li>#Protopie</li>
+                                </ul>
+                            </div>
+                            <i className={`${styles.icon} ${styles.ionMdArrowForward}`}></i>
+                            <i className={`${styles.icon} ${styles.ionMdArrowDown}`}></i>
+                        </a>
+                        <div className={styles.answer}>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                reprehenderit in voluptate velit esse cillum.</p>
+                        </div>
+                        <hr/>
+                    </div>
                 </div>
             </div>
-        </div>
-
+        </section>
     );
 };
 
