@@ -1,5 +1,4 @@
 import React from 'react';
-import Accordion from "@/app/components/accordion/accordion";
 
 const Page = () => {
     return (
