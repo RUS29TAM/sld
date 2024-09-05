@@ -1,10 +1,12 @@
+'use client'
 import React from 'react';
-import Anima from "@/app/components/anima/anima";
 import styles from './business-plan.module.css'
+
+import Accordion from "@/app/components/accordion/accordion";
 const Page = () => {
     return (
         <div className={styles.div} >
-            <Anima />
+            <Accordion />
         </div>
     );
 };
