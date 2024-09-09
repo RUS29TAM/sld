@@ -7,9 +7,11 @@ const Map = () => {
     const [selectedContent, setSelectedContent] = useState<React.ReactNode>(null);
     const [showContent, setShowContent] = useState(false);
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
     const handleItemClick = (index: number) => {
-        setExpandedIndex(prevIndex => prevIndex === index ? 0 : index);
+        setExpandedIndex(prevIndex => prevIndex === index ? 1 : index);
         setShowContent(false);
+        setSelectedContent(mapsData[index].content);
         setTimeout(() => {
             setSelectedContent(mapsData[index].content);
             setShowContent(true);
@@ -25,9 +27,10 @@ const Map = () => {
     useEffect(() => {
         const paths = pathsRef.current;
 
-        const handleMouseClick = (index: number) => {
+        const handleItemClick = (index: number) => {
             paths.forEach((path, i) => {
                 if (path) {
+                    setExpandedIndex(prevIndex => prevIndex === index ? 0 : index);
                     path.style.fill = i === index ? '#b8cfe5' : '#eeeeee';
                 }
             });
@@ -35,7 +38,7 @@ const Map = () => {
 
         paths.forEach((path, index) => {
             if (path) {
-                const onClick = () => handleMouseClick(index);
+                const onClick = () => handleItemClick(index);
                 path.addEventListener("click", onClick);
                 return () => {
                     path.removeEventListener("click", onClick);
@@ -47,7 +50,7 @@ const Map = () => {
     return (
         <div className={`${styles.wrapper}`}>
             <div className={`${styles.leftElement}`}>
-                <svg className={styles.svg} width="200mm" height="200.01mm" version="1.1" viewBox="0 0 200 200.01" xmlns="http://www.w3.org/2000/svg"
+                <svg className={`${styles.svg}`} width="200mm" height="200.01mm" version="1.1" viewBox="0 0 200 200.01" xmlns="http://www.w3.org/2000/svg"
                 >
                     <g transform="matrix(.98481 0 0 1.1382 -.57509 -116.28)">
                         <g id={'map'} fill="#ccc" fillRule="evenodd" stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".237">
@@ -145,11 +148,11 @@ const Map = () => {
                     </g>
                 </svg>
             </div>
-            <div className={styles.rightElement}>
-                {selectedContent ? (
-                    <div className={`${styles.contentRight} ${showContent ? styles.show : ''}`}>{selectedContent}</div>
+            <div className={`${styles.rightElement}`}>
+                {selectedContent && expandedIndex ? (
+                    <div className={`${styles.contentRight} ${showContent ? styles.fadeIn : styles.fadeOut}`}>{selectedContent}</div>
                 ) : (
-                    <div className={`${styles.contentRightStart} ${showContent ? styles.show : ''}`}>Выберите мцниципальное образование</div>
+                    <div className={`${styles.contentRightStart} ${!expandedIndex? styles.fadeIn : styles.fadeOut}`}>Выберите мцниципальное образование</div>
                 )}
             </div>
         </div>
