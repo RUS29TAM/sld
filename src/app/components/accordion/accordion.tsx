@@ -3,12 +3,12 @@ import styles from './accordion.module.css'
 
 const Accordion = () => {
     return (
-        <section className={styles.section}>
-            <div className={styles.container}>
-                <div className={styles.accordion}>
-                    <div className={styles.accordionItem} id="question1">
-                        <a className={styles.accordionLink} href="#question1">
-                            <div className={styles.flex}>
+        <section className={`${styles.section}`}>
+            <div className={`${styles.container}`}>
+                <div className={`${styles.accordion}`}>
+                    <div className={`${styles.accordionItem}`} id="question1">
+                        <a className={`${styles.accordionLink}`} href="#question1">
+                            <div className={`${styles.flex}`}>
                                 <h3>BRANDING</h3>
                                 <ul>
                                     <li>#Figma</li>
