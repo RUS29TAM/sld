@@ -1,13 +1,16 @@
 import React from "react";
 import Accordion from "@/app/components/accordion/accordion";
-import Lensky from '../app/components/districts/District'
+import Lensky from '../app/components/cardsGrid/CardsGrid'
 interface DataItem {
     id: number;
     content: React.ReactNode;
 }
 const data: DataItem[] = [
-    { id: 0, content: React.createElement<typeof Accordion>(Accordion) },
-    { id: 1, content: React.createElement<typeof Lensky>(Lensky) },
+    // { id: 0, content: React.createElement<typeof Accordion>(Accordion)},
+    { id: 0, content: 'Content for Вилегодский округ'},
+
+    { id: 1, content: React.createElement<typeof Lensky>(Lensky)},
+    // { id: 1, content: 'Content for Ленский район'},
     { id: 2, content: 'Content for Котласский округ' },
     { id: 3, content: 'Content for Красноборский округ' },
     { id: 4, content: 'Content for Устьянский округ' },
