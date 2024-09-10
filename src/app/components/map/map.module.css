@@ -60,10 +60,10 @@
     opacity: 1;
 }
 
-.contentRight.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+/*.contentRight.show {*/
+/*    opacity: 1;*/
+/*    transform: translateY(0);*/
+/*}*/
 
 .rightElement {
     display: flex;
@@ -89,7 +89,7 @@
 
     transition: transform 2.5s ease-in-out;
     cursor: pointer;
-    animation: pathStart ease-in-out 1.5s;
+    animation: pathStart ease-in-out 1s;
 }
 
 @keyframes pathStart {
@@ -127,7 +127,7 @@
     animation: line-anim 2.5s ease forwards, pathStart none;
     /*stroke-width: 1;*/
 
-    filter: url(#highlight);
+    /*filter: url(#highlight);*/
 }
 
 
@@ -199,7 +199,7 @@
     stroke-opacity: 1;
     pointer-events: none;
 
-    animation: pathStart ease-in-out 3s;
+    animation: pathStart ease-in-out 1s;
 
     /*animation: dotOnMapLoad 3s linear forwards;*/
 }
@@ -220,11 +220,9 @@
     /*animation: pathStart ease-in-out 2s;*/
 
     transform: translateX(150px);
-    filter: blur(3px);
+    /*filter: blur(3px);*/
     opacity: 0;
-    animation: textDistrictLoad 3s linear forwards;
-
-
+    animation: textDistrictLoad 1s linear forwards;
 }
 
 .textCity {
@@ -242,9 +240,9 @@
     font-variant-numeric: normal;
 
     transform: translateX(250px);
-    filter: blur(3px);
+    /*filter: blur(3px);*/
     opacity: 0;
-    animation: cityTextLoad 2s linear 1s forwards;
+    animation: cityTextLoad 1s linear 0.5s forwards;
 }
 
 @keyframes dotOnMapLoad {
@@ -262,7 +260,7 @@
 @keyframes textDistrictLoad {
     to {
         transform: translateX(0px);
-        filter: blur(0px);
+        /*filter: blur(0px);*/
         opacity: 1;
     }
 }
@@ -270,8 +268,22 @@
 @keyframes cityTextLoad {
     to {
         transform: translateX(0px);
-        filter: blur(0px);
+        /*filter: blur(0px);*/
         opacity: 1;
     }
+}
+
+/* Анимация появления */
+.fadeIn {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Анимация скрытия */
+.fadeOut {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
