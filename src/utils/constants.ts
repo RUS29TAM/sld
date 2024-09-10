@@ -57,6 +57,19 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
             'Так что не откладывайте, начните с составления своего бизнес-плана сегодня! Это ваш первый шаг к процветающему бизнесу.',
         buttonLink: '/pages/business-plan'
     },
+    {   src: 'https://images.unsplash.com/photo-1588152850700-c82ecb8ba9b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        author: 'RUS29TAM',
+        title: 'ОТДЕЛ ПО РАБОТЕ С МО',
+        topic: 'РАЙОНЫ',
+        description: 'Добро пожаловать в мир успешного предпринимательства!\n' +
+            'Бизнес-план — это не просто документ, это ваш надежный навигатор в мире бизнеса. Это подробный план вашего предприятия, который поможет вам добиться успеха.\n' +
+            'Что включает в себя бизнес-план? Все! От описания вашей бизнес-идеи до стратегии маркетинга, от финансового плана до анализа конкурентов. ' +
+            'Он выступает в роли вашего личного гида, указывая на ключевые моменты и помогая избежать преград на пути к успеху.\n' +
+            'Зачем он нужен? Бизнес-план — это необходимый инструмент для привлечения инвестиций, партнерств и покупателей. ' +
+            'Он помогает вам понять ваш рынок, цели, и как вы собираетесь их достичь.\n' +
+            'Так что не откладывайте, начните с составления своего бизнес-плана сегодня! Это ваш первый шаг к процветающему бизнесу.',
+        buttonLink: '/pages/districts'
+    },
 ];
 
 export const thumbnailItems: { src: string | StaticImageData, title: string, description: string }[] = [
@@ -71,6 +84,9 @@ export const thumbnailItems: { src: string | StaticImageData, title: string, des
         description: 'Description', },
     {   src: 'https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         title: 'БИЗНЕС ПЛАН',
+        description: 'Description', },
+    {   src: 'https://images.unsplash.com/photo-1588152850700-c82ecb8ba9b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: 'РАЙОНЫ',
         description: 'Description', },
 ];
 

@@ -1,0 +1,289 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden;*/
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .svg {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .rightElement {
+        align-items: start;
+    }
+}
+
+.leftElement {
+    position: relative;
+    padding: 0 50px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentRight {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fbfbff;
+    font-size: 2em;
+    padding: 0 50px ;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    overflow: hidden;
+}
+
+.contentRightStart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fbfbff;
+    font-size: 2em;
+    padding: 0 20px;
+
+    opacity: 1;
+}
+
+/*.contentRight.show {*/
+/*    opacity: 1;*/
+/*    transform: translateY(0);*/
+/*}*/
+
+.rightElement {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.svg {
+    animation: filling 2.2s ease forwards;
+    height: 100%;
+    padding: 50px 0;
+    /*display: flex;*/
+
+}
+
+.path {
+    stroke-dashoffset: 0;
+    stroke: #4aa1d1;
+    stroke-width: 1;
+    fill: #eeeeee;
+
+    transition: transform 2.5s ease-in-out;
+    cursor: pointer;
+    animation: pathStart ease-in-out 1s;
+}
+
+@keyframes pathStart {
+    from{
+        transform: scale(1.1) rotate(-45deg) rotate(45deg) rotate(90deg);
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+    }
+}
+@-webkit-keyframes pathStart {
+    from {
+        -webkit-transform: scale(1.1) rotate(-45deg) rotate(45deg) rotate(90deg);
+        transform: scale(1.1) rotate(-45deg) rotate(45deg) rotate(90deg);
+    }
+}
+
+@keyframes pathStart {
+    from {
+        -webkit-transform: scale(1.1) rotate(-45deg) rotate(45deg) rotate(90deg);
+        transform: scale(1.1) rotate(-45deg) rotate(45deg) rotate(90deg);
+    }
+
+}
+
+/*.expanded {*/
+/*    transform-origin: 50% 50%;*/
+/*    !*transform: scale(2); !* Adjust the scale as needed *!*!*/
+/*    transform: matrix(2.6666666, 0, 0, -2.6666666, 679.35381, 686.88528);*/
+/*}*/
+
+.path:hover {
+    /*stroke-dasharray: 100%;*/
+    /*stroke-dashoffset: 0;*/
+    animation: line-anim 2.5s ease forwards, pathStart none;
+    /*stroke-width: 1;*/
+
+    /*filter: url(#highlight);*/
+}
+
+
+@keyframes line-anim {
+    from {
+        stroke-dashoffset: 100%;
+        fill: #b8cfe5;
+        /*fill: transparent;*/
+        /*stroke-width: 2;*/
+    }
+    to {
+        vector-effect: non-scaling-stroke;
+        stroke-dashoffset: 0;
+        fill: #b8cfe5;
+        stroke: #4aa1d1;
+        stroke-width: 1;
+    }
+}
+
+@keyframes filling {
+    from {
+        fill: transparent;
+    }
+    to {
+        fill: #eeeeee;
+    }
+}
+
+/*.path.highlight {*/
+/*    fill: #b8cfe5;*/
+/*}*/
+
+/*.path.dimmed {*/
+/*    !*animation: visible-map 3.5s ease forwards 0.2s;*!*/
+/*    fill: #eeeeee;*/
+/*    stroke-width: 1;*/
+/*}*/
+
+
+/*@keyframes visible-map {*/
+/*    0% {*/
+/*        opacity: 0;*/
+/*    }*/
+/*    10% {*/
+/*        opacity: 0;*/
+/*    }*/
+/*    25% {*/
+
+/*        opacity: 1;*/
+/*    }*/
+/*    50% {*/
+/*        opacity: 1;*/
+/*    }*/
+/*    100% {*/
+/*        opacity: 1;*/
+/*    }*/
+/*}*/
+
+.dot {
+    fill: #4aa1d1;
+    fill-opacity: 1;
+    stroke: #ffffff;
+    fill-rule: evenodd;
+    stroke-width: 0.949;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    stroke-miterlimit: 10;
+    stroke-dasharray: none;
+    stroke-opacity: 1;
+    pointer-events: none;
+
+    animation: pathStart ease-in-out 1s;
+
+    /*animation: dotOnMapLoad 3s linear forwards;*/
+}
+
+.textDistrict {
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    paint-order: markers fill stroke;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 1);
+
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    pointer-events: none;
+    /*animation: pathStart ease-in-out 2s;*/
+
+    transform: translateX(150px);
+    /*filter: blur(3px);*/
+    opacity: 0;
+    animation: textDistrictLoad 1s linear forwards;
+}
+
+.textCity {
+    pointer-events: none;
+    fill: #004a95;
+    stroke-opacity: .5;
+    stroke-width: .15px;
+    stroke: rgb(255, 255, 255);
+    font-size: 1.2em;
+    text-shadow: 8px 4px 8px rgba(0, 0, 0, 0.8);
+
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+
+    transform: translateX(250px);
+    /*filter: blur(3px);*/
+    opacity: 0;
+    animation: cityTextLoad 1s linear 0.5s forwards;
+}
+
+@keyframes dotOnMapLoad {
+    0% {
+        fill-opacity: 0;
+        visibility: hidden;
+        stroke: none;
+        fill: none;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes textDistrictLoad {
+    to {
+        transform: translateX(0px);
+        /*filter: blur(0px);*/
+        opacity: 1;
+    }
+}
+
+@keyframes cityTextLoad {
+    to {
+        transform: translateX(0px);
+        /*filter: blur(0px);*/
+        opacity: 1;
+    }
+}
+
+/* Анимация появления */
+.fadeIn {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Анимация скрытия */
+.fadeOut {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
