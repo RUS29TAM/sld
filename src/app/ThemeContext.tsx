@@ -7,11 +7,15 @@ interface ThemeProviderProps {
 interface ThemeContextProps {
     isDarkTheme: boolean;
     toggleTheme: () => void;
+    selectedTopic: string;
+    setSelectedTopic: (topic: string) => void;
 }
 
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+    const [selectedTopic, setSelectedTopic] = useState<string>('economy'); // по умолчанию "economy"
+
     const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() => {
         // Проверяем, сохранена ли тема в localStorage
 
@@ -43,8 +47,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     };
 
     const contextValue: ThemeContextProps = {
-        isDarkTheme,
-        toggleTheme,
+        isDarkTheme, toggleTheme,
+        selectedTopic, setSelectedTopic
     };
 
     return (
