@@ -2,11 +2,11 @@
 import React from 'react';
 import styles from './business-plan.module.css'
 
-import QuestionsList from "@/app/components/questions-list/Questions-list";
+import Accordion from "@/app/components/accordion/accordion";
 const Page = () => {
     return (
         <div className={styles.div} >
-            <QuestionsList />
+            <Accordion />
         </div>
     );
 };
