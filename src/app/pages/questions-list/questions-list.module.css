@@ -6,7 +6,6 @@
     width: 100%;
     min-height: 90vh;
     overflow: hidden;
-
     align-items: center;
     justify-content:  flex-start;
     background: #212121;
@@ -167,7 +166,6 @@
 
     .commentContent {
         padding: 10px 10px 50px 10px;
-        /*font-size: 10px;*/
     }
 
     .text {
@@ -180,12 +178,10 @@
     }
 }
 
-
 @media screen and (min-width: 787px) and (max-width: 1024px) {
     .div {
         height: 100%;
         font-size: 10px;
-
     }
 
     .container {
@@ -193,7 +189,6 @@
         flex-direction: column;
         height: inherit;
         justify-content:  flex-start;
-
     }
 
     .questionsList {
@@ -211,7 +206,6 @@
         padding: 10px 0 0 0;
         margin: 0 auto;
     }
-
 
     .text {
         font-size: 16px;
