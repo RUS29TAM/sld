@@ -32,7 +32,7 @@ const SocialContract = () => {
     }, []);
 
     return (
-        <div className={`${styles.div}`}>
+        <div className={`${styles.wrapper}`}>
             <div className={`${styles.container} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
                 <LoadingLane/>
                 <h1 className={styles.title}>Цели социального контракта и размеры выплат</h1>
