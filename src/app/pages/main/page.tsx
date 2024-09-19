@@ -4,6 +4,7 @@ import styles from './slider.module.css'
 import {sliderItems, thumbnailItems} from "@/utils/constants";
 import Link from "next/link";
 import {useTheme} from "@/app/ThemeContext";
+import LoadingLane from "@/app/components/loading-lane/loading-lane";
 
 const Main = () => {
     const { isDarkTheme } = useTheme();
@@ -114,6 +115,7 @@ const Main = () => {
 
     return (
         <>
+            <LoadingLane/>
             {/*<Header/>*/}
             <div
                 className={`${styles.carousel} ${loaded ? styles.loaded : ''} ${direction === 'next' ? styles.next : 'carousel'} ${direction === 'prev' ? styles.prev : 'carousel'}`}
