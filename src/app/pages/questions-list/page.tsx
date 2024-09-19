@@ -10,6 +10,7 @@ import {
 import styles from './questions-list.module.css';
 import Link from "next/link";
 import {useTheme} from "@/app/ThemeContext";
+import LoadingLane from "@/app/components/loading-lane/loading-lane";
 
 const Page: React.FC = () => {
     const { selectedTopic } = useTheme(); // Получаем выбранную тему из контекста
@@ -56,6 +57,7 @@ const Page: React.FC = () => {
 
     return (
         <div className={styles.div}>
+            <LoadingLane/>
             <h1 className={`${styles.h1}`}>Экономический блок вопросов</h1>
             <div className={styles.container}>
                 {/* Левая часть с вопросами */}
