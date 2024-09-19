@@ -38,10 +38,12 @@ import {HiScissors} from "react-icons/hi2";
 import {SlMustache} from "react-icons/sl";
 import {RiCustomerService2Line} from "react-icons/ri";
 import {TbTargetArrow} from "react-icons/tb";
+import LoadingLane from "@/app/components/loading-lane/loading-lane";
 
 const Page = () => {
     return (
         <div className={styles.container}>
+            <LoadingLane />
             <div className={styles.wrapperRight}>
                 <ul className={styles.ul}>
                     <li style={style10} data-text={'КОСМЕТОЛОГИЯ'} className={styles.li}><a className={styles.a} target={"_blank"} rel={'noopener noreferrer'} href={'https://docs.yandex.ru/docs/view?url=ya-disk-public%3A%2F%2FImpTyMA2ULrB1CJp1KaU6Gh2oTcSwdvEM7%2FxHqMYZD3IdTSYnLYPz7p1HzHeUYYFLnwuG65u%2BCaUWt4uUumLKA%3D%3D&name=%D0%91%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D0%BF%D0%BB%D0%B0%D0%BD%20-%20%20%D0%9A%D0%BE%D1%81%D0%BC%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%2B.xlsx'}><span className={styles.span}><BiSpa /></span>КОСМЕТОЛОГИЯ</a></li>
