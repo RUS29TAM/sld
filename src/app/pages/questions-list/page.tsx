@@ -1,6 +1,12 @@
 'use client'
 import React, {useEffect, useState} from 'react';
-import { economyQuestionsData, generalQuestionsData, lawQuestionData, supportQuestionsData, partnershipQuestionData, Question  } from '../../../utils/questions-list-data';
+import {
+    economyQuestionsData,
+    generalQuestionsData,
+    lawQuestionData,
+    supportQuestionsData,
+    partnershipQuestionData,
+    Question  } from '@/utils/questions-list-data';
 import styles from './questions-list.module.css';
 import Link from "next/link";
 import {useTheme} from "@/app/ThemeContext";
@@ -44,7 +50,7 @@ const Page: React.FC = () => {
             setTimeout(() => {
                 setActiveQuestion(question); // устанавливаем новый вопрос после анимации
                 setIsCommentVisible(true); // отображаем новый комментарий
-            }, 300);
+            }, 500);
         }
     };
 
@@ -62,7 +68,7 @@ const Page: React.FC = () => {
                             }`}
                             onClick={() => handleQuestionClick(question)}
                         >
-                            Вопрос № {question.id}
+                            {question.id}
                         </div>
                     ))}
                 </div>
@@ -72,9 +78,9 @@ const Page: React.FC = () => {
                     {activeQuestion !== null && (
                         <div className={`${styles.commentContent} ${isCommentVisible ? styles.show : styles.hide}`}>
                             <h2>{activeQuestion && activeQuestion.question}</h2>
-                            <p style={{fontStyle: 'italic'}}>Комментарий эксперта: </p>
+                            <p className={`${styles.text}`} style={{fontStyle: 'italic'}}>Комментарий эксперта: </p>
 
-                            <p>{activeQuestion && activeQuestion.comment}</p>
+                            <p className={`${styles.text}`}>{activeQuestion && activeQuestion.comment}</p>
                             <Link className={`${styles.linkBack}`} href={'/pages/franchise'}>Вернуться к выбору тем</Link>
                         </div>
                     )}
