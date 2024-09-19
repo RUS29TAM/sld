@@ -1,5 +1,5 @@
 'use client'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useTheme} from '../../ThemeContext';
 import styles from './social-contract.module.css'
 import LoadingLane from "@/app/components/loading-lane/loading-lane";
@@ -10,13 +10,29 @@ import {flipCardData} from "@/utils/flipCardData";
 const SocialContract = () => {
     const {isDarkTheme} = useTheme();
     const [cardStates, setCardStates] = useState([false, false, false, false, false]);
-
+    const [flipSequence, setFlipSequence] = useState<number[]>([]);
+    const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
     const handleCardClick = (index: number) => {
         const updatedCardStates = cardStates.map((state, i) => (i === index ? !state : false));
         setCardStates(updatedCardStates);
     };
+
+    // Анимация открытия карточек при первом рендере
+    useEffect(() => {
+        const sequence = async () => {
+            for (let i = 0; i < flipCardData.length; i++) {
+                await new Promise((resolve) => setTimeout(resolve, 200)); // Задержка перед переворотом каждой карточки
+                setFlipSequence((prev) => [...prev, i]);
+
+                await new Promise((resolve) => setTimeout(resolve, 150)); // Держим карточку открытой
+                setFlipSequence((prev) => prev.filter((index) => index !== i)); // Возвращаем карточку в исходное состояние
+            }
+        };
+        sequence();
+    }, []);
+
     return (
-        <>
+        <div className={`${styles.div}`}>
             <div className={`${styles.container} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
                 <LoadingLane/>
                 <h1 className={styles.title}>Цели социального контракта и размеры выплат</h1>
@@ -31,7 +47,7 @@ const SocialContract = () => {
                     {flipCardData.map((data, index) => (
                         <FlipCard
                             key={index}
-                            isOpen={cardStates[index]}
+                            isOpen={flipSequence.includes(index) || activeCardIndex === index}
                             onClick={() => handleCardClick(index)}
                             num={data.num}
                             frontContent={data.frontContent}
@@ -80,7 +96,7 @@ const SocialContract = () => {
                     осуществлять по аналогии с детскими выплатами.
                 </p>
             </div>
-        </>
+        </div>
     );
 };
 export default SocialContract;
