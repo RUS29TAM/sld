@@ -121,7 +121,7 @@ const Main = () => {
                 className={`${styles.carousel} ${loaded ? styles.loaded : ''} ${direction === 'next' ? styles.next : 'carousel'} ${direction === 'prev' ? styles.prev : 'carousel'}`}
                 ref={carouselRef}>
                 {/* header and navigation */}
-                <div className={styles.list} ref={sliderRef}>
+                <div className={`${styles.list}`} ref={sliderRef}>
                     {sliderItems.map((item, index) => (
                         <div
                             className={`${styles.item} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''} ${animationInProgress ? styles.animationInProgress : ''}`}
