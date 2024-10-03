@@ -1,4 +1,3 @@
-// questionsData.ts
 export interface Question {
     id: number;
     question: string;
