@@ -11,6 +11,7 @@
     --neg-half-height: calc(-50vh + var(--page-margin-y));
     --transition-dur: 1s;
     --i: 0;
+    --diameter: 1432px;
 }
 
 body::-webkit-scrollbar {

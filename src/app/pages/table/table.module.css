@@ -166,7 +166,7 @@
     }
 }
 
-.arrows .button.d-none{
+.arrows .button:disabled{
     opacity: 0;
     pointer-events: none;
 }
