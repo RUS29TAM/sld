@@ -1,5 +1,4 @@
 .slider{
-    /* background-color: red; */
     color: #eee;
     width: 100vw;
     height: 100vh;
@@ -35,7 +34,7 @@
     text-shadow: 0 0 80px #000;
 }
 .slider .list .item .content .h2{
-    font-size: 10em;
+    font-size: 7em;
     font-family: 'Bebas Neue', sans-serif;
     line-height: 0.9em;
     transform: translateY(-100%);
@@ -44,11 +43,13 @@
     grid-row-end: 3;
 }
 .slider .list .item .content .p{
+    /*transform: translateX(100%);*/
+
 }
 .slider .list .item .content .p:last-child{
     display: flex;
-    justify-content: start;
-    align-items: end;
+    justify-content: flex-start;
+    align-items: flex-end;
     padding-bottom: 25px;
 }
 /* item default */
@@ -85,7 +86,7 @@
     width: 30%;
     height: 30%;
     /*background-image: var(--url);*/
-    border: 3px solid #fff2;
+    border: 2px solid #fff2;
     transform: translate(-50%, -50%) rotate(-170deg);
 }
 
