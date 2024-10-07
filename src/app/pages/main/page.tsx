@@ -10,7 +10,7 @@ const Main = () => {
     const { isDarkTheme } = useTheme();
 
     const [loaded, setLoaded] = useState(false);
-    const [animationInProgress, setAnimationInProgress] = useState(true);
+    const [animationInProgress, setAnimationInProgress] = useState(false);
     const [direction, setDirection] = useState<'next' | 'prev' | 'carousel'>('carousel');
     const [key, setKey] = useState<number>(0);
     const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -140,6 +140,10 @@ const Main = () => {
     const handleDragEnd = () => {
         setIsDragging(false);
         setStartX(null);
+
+            setTimeout(() => {
+                setAnimationInProgress(true); // Сбрасываем состояние, когда анимация завершена
+            },2000)
     };
 
     return (
