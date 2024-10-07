@@ -7,6 +7,7 @@ import {GoLaw} from 'react-icons/go';
 import {FaRegHandshake} from 'react-icons/fa6';
 import Link from "next/link";
 import {useTheme} from "@/app/ThemeContext";
+import LoadingLane from "@/app/components/loading-lane/loading-lane";
 
 const Page = () => {
     const {setSelectedTopic} = useTheme();
@@ -21,6 +22,7 @@ const Page = () => {
 
     return (
         <div className={styles.container}>
+            <LoadingLane/>
             <div className={styles.timelineContainer}>
                 {/*general timeline point*/}
                 <div className={styles.timelinePoint}

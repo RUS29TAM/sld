@@ -11,10 +11,11 @@
     --neg-half-height: calc(-50vh + var(--page-margin-y));
     --transition-dur: 1s;
     --i: 0;
+    --diameter: 1432px;
 }
 
 body::-webkit-scrollbar {
-    /*display: none !important;*/
+    display: none !important;
 }
 
 body::-webkit-scrollbar {
@@ -43,8 +44,7 @@ body::-webkit-scrollbar-track {
     font-family: Popins, sans-serif;
 }
 
-html,
-body {
+html, body {
     max-width: 100%;
     max-height: 100%;
     /*overflow-x: hidden; 23.05 add page start-up*/

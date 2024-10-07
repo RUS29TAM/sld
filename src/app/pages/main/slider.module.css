@@ -1,6 +1,8 @@
 .carousel {
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    user-select: none;
+    cursor: grab;
 }
 
 .carousel.loaded {
@@ -17,7 +19,6 @@
     height: 100%;
     position: absolute;
     inset: 0 0 0 0;
-
 }
 
 .carousel .list .item .img {

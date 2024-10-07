@@ -4,15 +4,19 @@ import styles from './slider.module.css'
 import {sliderItems, thumbnailItems} from "@/utils/constants";
 import Link from "next/link";
 import {useTheme} from "@/app/ThemeContext";
+import LoadingLane from "@/app/components/loading-lane/loading-lane";
 
 const Main = () => {
     const { isDarkTheme } = useTheme();
 
     const [loaded, setLoaded] = useState(false);
-    const [animationInProgress, setAnimationInProgress] = useState(true);
+    const [animationInProgress, setAnimationInProgress] = useState(false);
     const [direction, setDirection] = useState<'next' | 'prev' | 'carousel'>('carousel');
     const [key, setKey] = useState<number>(0);
     const [activeIndex, setActiveIndex] = useState<number>(0);
+
+    const [startX, setStartX] = useState<number | null>(null);
+    const [isDragging, setIsDragging] = useState(false);
 
     const carouselRef = useRef<HTMLDivElement>(null);
     const sliderRef = useRef<HTMLDivElement>(null);
@@ -112,14 +116,53 @@ const Main = () => {
         };
     }, [carouselRef]);
 
+    const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+        const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+        setStartX(clientX);
+        setIsDragging(true);
+    };
+
+    const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+        if (!isDragging || startX === null) return;
+
+        const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+        const deltaX = clientX - startX;
+
+        if (deltaX > 50) {
+            showSlider('next');
+            setIsDragging(false); // Остановить перетаскивание после перелистывания
+        } else if (deltaX < -50) {
+            showSlider('prev');
+            setIsDragging(false); // Остановить перетаскивание после перелистывания
+        }
+    };
+
+    const handleDragEnd = () => {
+        setIsDragging(false);
+        setStartX(null);
+
+            setTimeout(() => {
+                setAnimationInProgress(true); // Сбрасываем состояние, когда анимация завершена
+            },2000)
+    };
+
     return (
         <>
+            <LoadingLane/>
             {/*<Header/>*/}
             <div
                 className={`${styles.carousel} ${loaded ? styles.loaded : ''} ${direction === 'next' ? styles.next : 'carousel'} ${direction === 'prev' ? styles.prev : 'carousel'}`}
-                ref={carouselRef}>
+                ref={carouselRef}
+                onMouseDown={handleDragStart}
+                onMouseMove={handleDragMove}
+                onMouseUp={handleDragEnd}
+                onMouseLeave={handleDragEnd}
+                onTouchStart={handleDragStart}
+                onTouchMove={handleDragMove}
+                onTouchEnd={handleDragEnd}
+            >
                 {/* header and navigation */}
-                <div className={styles.list} ref={sliderRef}>
+                <div className={`${styles.list}`} ref={sliderRef}>
                     {sliderItems.map((item, index) => (
                         <div
                             className={`${styles.item} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''} ${animationInProgress ? styles.animationInProgress : ''}`}
