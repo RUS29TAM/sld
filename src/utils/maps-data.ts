@@ -1,5 +1,4 @@
 import React from "react";
-import Accordion from "@/app/components/accordion/accordion";
 import Lensky from '../app/components/cardsGrid/CardsGrid'
 interface DataItem {
     id: number;
