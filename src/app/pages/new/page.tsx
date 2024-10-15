@@ -1,7 +1,7 @@
 'use client';
 import React, {useRef, useState} from 'react';
 import style from './new.module.css'
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import first from '../../images/img1.jpg';
 import second from '../../images/img2.jpg';
 import third from '../../images/img3.jpg';
@@ -10,7 +10,106 @@ import fifth from '../../images/img5.jpg';
 import sixth from '../../images/img6.jpg';
 
 
-const Page: React.FC = () => {
+const slidesData = [
+    {
+        id: 1,
+        image: first,
+        title: 'DESIGN SLIDER 1',
+        topic: 'Aerphone',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos error fuga impedit magnam mollitia nulla sint.',
+        detailTitle: 'Aerphone LD',
+        detailDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        specifications: [
+            { key: 'Used time', value: '6 Hours' },
+            { key: 'Charging port', value: 'Type - C' },
+            { key: 'Compatible', value: 'Android' },
+            { key: 'Bluetooth', value: '5.3' },
+            { key: 'Controlled', value: 'Touch' },
+        ],
+    },
+    {
+        id: 2,
+        image: second,
+        title: 'DESIGN SLIDER 2',
+        topic: 'Headphones',
+        description: 'A new experience in sound.',
+        detailTitle: 'Headphone X2',
+        detailDescription: 'Experience the latest in headphone technology.',
+        specifications: [
+            { key: 'Used time', value: '8 Hours' },
+            { key: 'Charging port', value: 'Micro USB' },
+            { key: 'Compatible', value: 'iOS, Android' },
+            { key: 'Bluetooth', value: '5.1' },
+            { key: 'Controlled', value: 'Button' },
+        ],
+    },
+    {
+        id: 3,
+        image: third,
+        title: 'DESIGN SLIDER 3',
+        topic: 'Aerphone',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos error fuga impedit magnam mollitia nulla sint.',
+        detailTitle: 'Aerphone LD',
+        detailDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        specifications: [
+            { key: 'Used time', value: '6 Hours' },
+            { key: 'Charging port', value: 'Type - C' },
+            { key: 'Compatible', value: 'Android' },
+            { key: 'Bluetooth', value: '5.3' },
+            { key: 'Controlled', value: 'Touch' },
+        ],
+    },
+    {
+        id: 4,
+        image: fourth,
+        title: 'DESIGN SLIDER 4',
+        topic: 'Aerphone',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos error fuga impedit magnam mollitia nulla sint.',
+        detailTitle: 'Aerphone LD',
+        detailDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        specifications: [
+            { key: 'Used time', value: '6 Hours' },
+            { key: 'Charging port', value: 'Type - C' },
+            { key: 'Compatible', value: 'Android' },
+            { key: 'Bluetooth', value: '5.3' },
+            { key: 'Controlled', value: 'Touch' },
+        ],
+    },
+    {
+        id: 5,
+        image: fifth,
+        title: 'DESIGN SLIDER 5',
+        topic: 'Aerphone',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos error fuga impedit magnam mollitia nulla sint.',
+        detailTitle: 'Aerphone LD',
+        detailDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        specifications: [
+            { key: 'Used time', value: '6 Hours' },
+            { key: 'Charging port', value: 'Type - C' },
+            { key: 'Compatible', value: 'Android' },
+            { key: 'Bluetooth', value: '5.3' },
+            { key: 'Controlled', value: 'Touch' },
+        ],
+    },
+];
+
+interface Slide {
+    id: number;
+    image: StaticImageData; // Укажите тип, если это локальные изображения, или `string` для URL
+    title: string;
+    topic: string;
+    description: string;
+    detailTitle: string;
+    detailDescription: string;
+    specifications: { key: string; value: string }[];
+}
+
+interface CarouselProps {
+    slides: Slide[];
+}
+
+
+const Page: React.FC<CarouselProps> = ({ slides })=> {
     const carouselRef = useRef<HTMLDivElement | null>(null);
     const listRef = useRef<HTMLDivElement | null>(null);
     const [isClickable, setClickable] = useState(true);
@@ -30,7 +129,6 @@ const Page: React.FC = () => {
             carouselRef.current?.classList.add(style.prev);
         }
 
-        // Очистка классов и восстановление возможности клика
         setTimeout(() => {
             setClickable(true);
             carouselRef.current?.classList.remove(style.next, style.prev);
@@ -39,262 +137,46 @@ const Page: React.FC = () => {
 
     const handleSeeMore = () => {
         setShowDetail(true);
+        console.log('showDetail')
     };
 
     return (
-        <div className={`${style.carousel} ${showDetail ? style.showDetail : ''}`} ref={carouselRef}>
+        <div className={`${style.carousel}`} ref={carouselRef}>
             <div className={`${style.list}`} ref={listRef}>
-                {/*item 1*/}
-                <div className={`${style.item}`}>
-                    <Image className={`${style.img}`} width={10000} height={10000} src={first} alt="one"/>
-                    <div className={`${style.intro}`}>
-                        <div className={`${style.title}`}>DESIGN SLIDER</div>
-                        <div className={`${style.topic}`}>Aerphone</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos error fuga impedit magnam mollitia nulla sint. Blanditiis delectus earum est hic, minima perspiciatis, quis quod, repellendus sunt voluptatem voluptatum!</div>
-                        <button className={`${style.seeMore}`}>See more &#8599;</button>
-                    </div>
-                    <div className={`${style.detail}`}>
-                        <div className={`${style.title}`}>Aerphone LD</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-                        <div className={`${style.specifications}`}>
-                            <div>
-                                <p>Used time</p>
-                                <p>6 Hours</p>
-                            </div>
-                            <div>
-                                <p>Charging port</p>
-                                <p>Type - C</p>
-                            </div>
-                            <div>
-                                <p>Compatible</p>
-                                <p>Android</p>
-                            </div>
-                            <div>
-                                <p>Bluetooth</p>
-                                <p>5.3</p>
-                            </div>
-                            <div>
-                                <p>Controlled</p>
-                                <p>Touch</p>
-                            </div>
-                            <div className={`${style.checkout}`}>
-                                <button className={`${style.addBtn}`}>ADD TO CART</button>
-                                <button className={`${style.addBtn}`}>CHECKOUT</button>
-                            </div>
+                {slidesData.map((slide) => (
+                    <div key={slide.id} className={`${style.item}`}>
+                        <Image className={`${style.img}`} width={10000} height={10000} src={slide.image} alt="slide" />
+                        <div className={`${style.intro}`}>
+                            <div className={`${style.title}`}>{slide.title}</div>
+                            <div className={`${style.topic}`}>{slide.topic}</div>
+                            <div className={`${style.des}`}>{slide.description}</div>
+                            <button className={`${style.seeMore}`} onClick={handleSeeMore}>See more &#8599;</button>
                         </div>
+                        {showDetail && (
+                            <div className={`${style.detail}`}>
+                                <div className={`${style.title}`}>{slide.detailTitle}</div>
+                                <div className={`${style.des}`}>{slide.detailDescription}</div>
+                                <div className={`${style.specifications}`}>
+                                    {slide.specifications.map((spec, index) => (
+                                        <div key={index}>
+                                            <p>{spec.key}</p>
+                                            <p>{spec.value}</p>
+                                        </div>
+                                    ))}
+                                    <div className={`${style.checkout}`}>
+                                        <button className={`${style.addBtn}`}>ADD TO CART</button>
+                                        <button className={`${style.addBtn}`}>CHECKOUT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
-                </div>
-
-                {/*item 2*/}
-                <div className={`${style.item}`}>
-                    <Image className={`${style.img}`} width={10000} height={10000} src={second} alt="one"/>
-                    <div className={`${style.intro}`}>
-                        <div className={`${style.title}`}>DESIGN SLIDER</div>
-                        <div className={`${style.topic}`}>Aerphone</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam distinctio ea esse explicabo ipsa laboriosam maiores nisi odit officia omnis, quae quo reiciendis sequi sunt ullam veniam, veritatis! Debitis, praesentium.</div>
-                        <button className={`${style.seeMore}`}>See more &#8599;</button>
-                    </div>
-                    <div className={`${style.detail}`}>
-                        <div className={`${style.title}`}>Aerphone LD</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-                        <div className={`${style.specifications}`}>
-                            <div>
-                                <p>Used time</p>
-                                <p>6 Hours</p>
-                            </div>
-                            <div>
-                                <p>Charging port</p>
-                                <p>Type - C</p>
-                            </div>
-                            <div>
-                                <p>Compatible</p>
-                                <p>Android</p>
-                            </div>
-                            <div>
-                                <p>Bluetooth</p>
-                                <p>5.3</p>
-                            </div>
-                            <div>
-                                <p>Controlled</p>
-                                <p>Touch</p>
-                            </div>
-                            <div className={`${style.checkout}`}>
-                                <button className={`${style.addBtn}`}>ADD TO CART</button>
-                                <button className={`${style.addBtn}`}>CHECKOUT</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/*item 3*/}
-                <div className={`${style.item}`}>
-                    <Image className={`${style.img}`} width={10000} height={10000} src={third} alt="one"/>
-                    <div className={`${style.intro}`}>
-                        <div className={`${style.title}`}>DESIGN SLIDER</div>
-                        <div className={`${style.topic}`}>Aerphone</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque culpa deserunt dolores et excepturi facilis in ipsum maxime minima necessitatibus obcaecati, praesentium provident quibusdam reprehenderit sed sunt ut vero.</div>
-                        <button className={`${style.seeMore}`}>See more &#8599;</button>
-                    </div>
-                    <div className={`${style.detail}`}>
-                        <div className={`${style.title}`}>Aerphone LD</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-                        <div className={`${style.specifications}`}>
-                            <div>
-                                <p>Used time</p>
-                                <p>6 Hours</p>
-                            </div>
-                            <div>
-                                <p>Charging port</p>
-                                <p>Type - C</p>
-                            </div>
-                            <div>
-                                <p>Compatible</p>
-                                <p>Android</p>
-                            </div>
-                            <div>
-                                <p>Bluetooth</p>
-                                <p>5.3</p>
-                            </div>
-                            <div>
-                                <p>Controlled</p>
-                                <p>Touch</p>
-                            </div>
-                            <div className={`${style.checkout}`}>
-                                <button className={`${style.addBtn}`}>ADD TO CART</button>
-                                <button className={`${style.addBtn}`}>CHECKOUT</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/*item 4*/}
-                <div className={`${style.item}`}>
-                    <Image className={`${style.img}`} width={10000} height={10000} src={fourth} alt="one"/>
-                    <div className={`${style.intro}`}>
-                        <div className={`${style.title}`}>DESIGN SLIDER</div>
-                        <div className={`${style.topic}`}>Aerphone</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet atque consectetur culpa dolorum eos in laudantium nemo optio quas quasi, quibusdam quisquam quod repellat sapiente sint tempore velit voluptatibus?</div>
-                        <button className={`${style.seeMore}`}>See more &#8599;</button>
-                    </div>
-                    <div className={`${style.detail}`}>
-                        <div className={`${style.title}`}>Aerphone LD</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-                        <div className={`${style.specifications}`}>
-                            <div>
-                                <p>Used time</p>
-                                <p>6 Hours</p>
-                            </div>
-                            <div>
-                                <p>Charging port</p>
-                                <p>Type - C</p>
-                            </div>
-                            <div>
-                                <p>Compatible</p>
-                                <p>Android</p>
-                            </div>
-                            <div>
-                                <p>Bluetooth</p>
-                                <p>5.3</p>
-                            </div>
-                            <div>
-                                <p>Controlled</p>
-                                <p>Touch</p>
-                            </div>
-                            <div className={`${style.checkout}`}>
-                                <button className={`${style.addBtn}`}>ADD TO CART</button>
-                                <button className={`${style.addBtn}`}>CHECKOUT</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/*item 5*/}
-                <div className={`${style.item}`}>
-                    <Image className={`${style.img}`} width={10000} height={10000} src={fifth} alt="one"/>
-                    <div className={`${style.intro}`}>
-                        <div className={`${style.title}`}>DESIGN SLIDER</div>
-                        <div className={`${style.topic}`}>Aerphone</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad culpa, deserunt, dicta doloribus ea error excepturi exercitationem facere labore libero modi natus odio perferendis possimus repudiandae soluta vel voluptatum.</div>
-                        <button className={`${style.seeMore}`}>See more &#8599;</button>
-                    </div>
-                    <div className={`${style.detail}`}>
-                        <div className={`${style.title}`}>Aerphone LD</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-                        <div className={`${style.specifications}`}>
-                            <div>
-                                <p>Used time</p>
-                                <p>6 Hours</p>
-                            </div>
-                            <div>
-                                <p>Charging port</p>
-                                <p>Type - C</p>
-                            </div>
-                            <div>
-                                <p>Compatible</p>
-                                <p>Android</p>
-                            </div>
-                            <div>
-                                <p>Bluetooth</p>
-                                <p>5.3</p>
-                            </div>
-                            <div>
-                                <p>Controlled</p>
-                                <p>Touch</p>
-                            </div>
-                            <div className={`${style.checkout}`}>
-                                <button className={`${style.addBtn}`}>ADD TO CART</button>
-                                <button className={`${style.addBtn}`}>CHECKOUT</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/*item 6*/}
-                <div className={`${style.item}`}>
-                    <Image className={`${style.img}`} width={10000} height={10000} src={sixth} alt="one"/>
-                    <div className={`${style.intro}`}>
-                        <div className={`${style.title}`}>DESIGN SLIDER</div>
-                        <div className={`${style.topic}`}>Aerphone</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, earum, esse? At beatae dolor eligendi exercitationem iste quas, tempore ullam ut veritatis voluptates. Aperiam eligendi eos nisi! Debitis, possimus, quis?</div>
-                        <button className={`${style.seeMore}`}>See more &#8599;</button>
-                    </div>
-                    <div className={`${style.detail}`}>
-                        <div className={`${style.title}`}>Aerphone LD</div>
-                        <div className={`${style.des}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-                        <div className={`${style.specifications}`}>
-                            <div>
-                                <p>Used time</p>
-                                <p>6 Hours</p>
-                            </div>
-                            <div>
-                                <p>Charging port</p>
-                                <p>Type - C</p>
-                            </div>
-                            <div>
-                                <p>Compatible</p>
-                                <p>Android</p>
-                            </div>
-                            <div>
-                                <p>Bluetooth</p>
-                                <p>5.3</p>
-                            </div>
-                            <div>
-                                <p>Controlled</p>
-                                <p>Touch</p>
-                            </div>
-                            <div className={`${style.checkout}`}>
-                                <button className={`${style.addBtn}`}>ADD TO CART</button>
-                                <button className={`${style.addBtn}`}>CHECKOUT</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                ))}
             </div>
             <div className={`${style.arrows}`}>
-                <button onClick={() => showSlider('prev')} disabled={!isClickable} className={`${style.prevBtn}`} id="prevBtn">&#8249;</button>
-                <button className={`${style.backBtn}`} id="backBtn">Go Back &#8599;</button>
-                <button onClick={() => showSlider('next')} disabled={!isClickable} className={`${style.nextBtn}`} id="nextBtn">&#8250;</button>
+                <button className={`${style.prevBtn}`} onClick={() => showSlider('prev')} disabled={!isClickable}>&#8249;</button>
+                <button className={`${style.backBtn}`} onClick={() => setShowDetail(false)}>Go Back &#8599;</button>
+                <button className={`${style.nextBtn}`} onClick={() => showSlider('next')} disabled={!isClickable}>&#8250;</button>
             </div>
         </div>
     );
