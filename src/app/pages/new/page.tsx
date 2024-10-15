@@ -2,100 +2,11 @@
 import React, {useRef, useState} from 'react';
 import style from './new.module.css'
 import Image, {StaticImageData} from "next/image";
-import first from '../../images/img1.jpg';
-import second from '../../images/img2.jpg';
-import third from '../../images/img3.jpg';
-import fourth from '../../images/img4.jpg';
-import fifth from '../../images/img5.jpg';
-import sixth from '../../images/img6.jpg';
-
-
-const slidesData = [
-    {
-        id: 1,
-        image: first,
-        title: 'DESIGN SLIDER 1',
-        topic: 'Aerphone',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos error fuga impedit magnam mollitia nulla sint.',
-        detailTitle: 'Aerphone LD',
-        detailDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        specifications: [
-            { key: 'Used time', value: '6 Hours' },
-            { key: 'Charging port', value: 'Type - C' },
-            { key: 'Compatible', value: 'Android' },
-            { key: 'Bluetooth', value: '5.3' },
-            { key: 'Controlled', value: 'Touch' },
-        ],
-    },
-    {
-        id: 2,
-        image: second,
-        title: 'DESIGN SLIDER 2',
-        topic: 'Headphones',
-        description: 'A new experience in sound.',
-        detailTitle: 'Headphone X2',
-        detailDescription: 'Experience the latest in headphone technology.',
-        specifications: [
-            { key: 'Used time', value: '8 Hours' },
-            { key: 'Charging port', value: 'Micro USB' },
-            { key: 'Compatible', value: 'iOS, Android' },
-            { key: 'Bluetooth', value: '5.1' },
-            { key: 'Controlled', value: 'Button' },
-        ],
-    },
-    {
-        id: 3,
-        image: third,
-        title: 'DESIGN SLIDER 3',
-        topic: 'Aerphone',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos error fuga impedit magnam mollitia nulla sint.',
-        detailTitle: 'Aerphone LD',
-        detailDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        specifications: [
-            { key: 'Used time', value: '6 Hours' },
-            { key: 'Charging port', value: 'Type - C' },
-            { key: 'Compatible', value: 'Android' },
-            { key: 'Bluetooth', value: '5.3' },
-            { key: 'Controlled', value: 'Touch' },
-        ],
-    },
-    {
-        id: 4,
-        image: fourth,
-        title: 'DESIGN SLIDER 4',
-        topic: 'Aerphone',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos error fuga impedit magnam mollitia nulla sint.',
-        detailTitle: 'Aerphone LD',
-        detailDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        specifications: [
-            { key: 'Used time', value: '6 Hours' },
-            { key: 'Charging port', value: 'Type - C' },
-            { key: 'Compatible', value: 'Android' },
-            { key: 'Bluetooth', value: '5.3' },
-            { key: 'Controlled', value: 'Touch' },
-        ],
-    },
-    {
-        id: 5,
-        image: fifth,
-        title: 'DESIGN SLIDER 5',
-        topic: 'Aerphone',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos error fuga impedit magnam mollitia nulla sint.',
-        detailTitle: 'Aerphone LD',
-        detailDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        specifications: [
-            { key: 'Used time', value: '6 Hours' },
-            { key: 'Charging port', value: 'Type - C' },
-            { key: 'Compatible', value: 'Android' },
-            { key: 'Bluetooth', value: '5.3' },
-            { key: 'Controlled', value: 'Touch' },
-        ],
-    },
-];
+import {slidesData} from "@/utils/slidersData";
 
 interface Slide {
     id: number;
-    image: StaticImageData; // Укажите тип, если это локальные изображения, или `string` для URL
+    image: StaticImageData; // Укажите тип, для локального изображения, или `string` для URL
     title: string;
     topic: string;
     description: string;
@@ -114,6 +25,9 @@ const Page: React.FC<CarouselProps> = ({ slides })=> {
     const listRef = useRef<HTMLDivElement | null>(null);
     const [isClickable, setClickable] = useState(true);
     const [showDetail, setShowDetail] = useState(false);
+
+    const [startX, setStartX] = useState<number | null>(null);
+    const [isDragging, setIsDragging] = useState(false);
 
     const showSlider = (type: 'next' | 'prev') => {
         if (!listRef.current || !isClickable) return;
@@ -140,13 +54,52 @@ const Page: React.FC<CarouselProps> = ({ slides })=> {
         console.log('showDetail')
     };
 
+    const handleGoBack = () => {
+        setShowDetail(false);
+        console.log('Go Back')
+    };
+
+    const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+        const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+        setStartX(clientX);
+        setIsDragging(true);
+    };
+
+    const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+        if (!isDragging || startX === null) return;
+
+        const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+        const deltaX = clientX - startX;
+
+        if (deltaX > 50) {
+            showSlider('prev');
+            setIsDragging(false); // Остановить перетаскивание после перелистывания
+        } else if (deltaX < -50) {
+            showSlider('next');
+            setIsDragging(false); // Остановить перетаскивание после перелистывания
+        }
+    };
+
+    const handleDragEnd = () => {
+        setIsDragging(false);
+        setStartX(null);
+    };
+
     return (
-        <div className={`${style.carousel}`} ref={carouselRef}>
+        <div className={`${style.carousel} ${showDetail ? style.showDetail : ''}`}
+             ref={carouselRef}
+             onMouseDown={handleDragStart}
+             onMouseMove={handleDragMove}
+             onMouseUp={handleDragEnd}
+             onMouseLeave={handleDragEnd}
+             onTouchStart={handleDragStart}
+             onTouchMove={handleDragMove}
+             onTouchEnd={handleDragEnd}>
             <div className={`${style.list}`} ref={listRef}>
                 {slidesData.map((slide) => (
                     <div key={slide.id} className={`${style.item}`}>
                         <Image className={`${style.img}`} width={10000} height={10000} src={slide.image} alt="slide" />
-                        <div className={`${style.intro}`}>
+                        <div className={`${style.introduce}`}>
                             <div className={`${style.title}`}>{slide.title}</div>
                             <div className={`${style.topic}`}>{slide.topic}</div>
                             <div className={`${style.des}`}>{slide.description}</div>
@@ -158,14 +111,14 @@ const Page: React.FC<CarouselProps> = ({ slides })=> {
                                 <div className={`${style.des}`}>{slide.detailDescription}</div>
                                 <div className={`${style.specifications}`}>
                                     {slide.specifications.map((spec, index) => (
-                                        <div key={index}>
-                                            <p>{spec.key}</p>
-                                            <p>{spec.value}</p>
+                                        <div className={`${style.div}`} key={index}>
+                                            <p className={`${style.p}`}>{spec.key}</p>
+                                            <p className={`${style.p}`} >{spec.value}</p>
                                         </div>
                                     ))}
                                     <div className={`${style.checkout}`}>
-                                        <button className={`${style.addBtn}`}>ADD TO CART</button>
-                                        <button className={`${style.addBtn}`}>CHECKOUT</button>
+                                        <button className={`${style.button}`}>ADD TO CART</button>
+                                        <button className={`${style.button}`}>CHECKOUT</button>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +128,7 @@ const Page: React.FC<CarouselProps> = ({ slides })=> {
             </div>
             <div className={`${style.arrows}`}>
                 <button className={`${style.prevBtn}`} onClick={() => showSlider('prev')} disabled={!isClickable}>&#8249;</button>
-                <button className={`${style.backBtn}`} onClick={() => setShowDetail(false)}>Go Back &#8599;</button>
+                {showDetail && <button className={`${style.backBtn}`} onClick={handleGoBack}>Go Back &#8599;</button>}
                 <button className={`${style.nextBtn}`} onClick={() => showSlider('next')} disabled={!isClickable}>&#8250;</button>
             </div>
         </div>
