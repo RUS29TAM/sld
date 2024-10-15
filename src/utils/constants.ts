@@ -15,7 +15,6 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
             'Мы предлагаем включить в ваш арсенал даже те вопросы, над которыми редко задумываются перед приобретением франшизы, но которые могут избежать неприятных ситуаций в будущем.',
         buttonLink: '/pages/franchise-hero'
     },
-
     {   src: 'https://images.unsplash.com/photo-1682686581312-506a8b53190e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         author: 'RUS29TAM',
         title: 'WEB DESIGN & DEV',
