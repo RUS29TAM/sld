@@ -1,34 +1,34 @@
 export const contentData = [
     {
-        title: "Card 1",
-        content: "This is the content for Card 1. Here you can describe more details."
+        title: "карточка 1",
+        content: "Здесь будет контент для карточки 1. Здесь будет подробное описание."
     },
     {
-        title: "Card 2",
-        content: "This is the content for Card 2. Here you can describe more details."
+        title: "карточка 2",
+        content: "Здесь будет контент для карточки 2. Здесь будет подробное описание."
     },
     {
-        title: "Card 3",
-        content: "This is the content for Card 3. Here you can describe more details."
+        title: "карточка 3",
+        content: "Здесь будет контент для карточки 3. Здесь будет подробное описание."
     },
     {
-        title: "Card 4",
-        content: "This is the content for Card 4. Here you can describe more details."
+        title: "карточка 4",
+        content: "Здесь будет контент для карточки 4. Здесь будет подробное описание."
     },
     {
-        title: "Card 5",
-        content: "This is the content for Card 5. Here you can describe more details."
+        title: "карточка 5",
+        content: "Здесь будет контент для карточки 5. Здесь будет подробное описание."
     },
     {
-        title: "Card 6",
-        content: "This is the content for Card 6. Here you can describe more details."
+        title: "карточка 6",
+        content: "Здесь будет контент для карточки 6. Здесь будет подробное описание."
     },
     {
-        title: "Card 7",
-        content: "This is the content for Card 7. Here you can describe more details."
+        title: "карточка 7",
+        content: "Здесь будет контент для карточки 7. Здесь будет подробное описание."
     },
     {
-        title: "Card 8",
-        content: "This is the content for Card 8. Here you can describe more details."
+        title: "карточка 8",
+        content: "Здесь будет контент для карточки 8. Здесь будет подробное описание."
     }
 ];

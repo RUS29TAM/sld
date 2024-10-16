@@ -24,7 +24,7 @@
     margin: 0;
     padding: 0;
     letter-spacing: .4em;
-    font-size: 12px;
+    font-size: 10px;
     animation: animate 4s linear infinite forwards;
 }
 
@@ -117,11 +117,11 @@
     }
     100% {
         color: #fff;
-        text-shadow: 0 0 10px #00d7ff,
-        0 0 20px #00d7ff,
-        0 0 40px #00d7ff,
-        0 0 80px #00d7ff,
-        0 0 120px #00d7ff,
-        0 0 160px #00d7ff;
+        text-shadow: 0 0 10px #ffaa00,
+        0 0 20px #ffaa00,
+        0 0 40px #ffaa00,
+        0 0 80px #ffaa00,
+        0 0 120px #ffaa00,
+        0 0 160px #ffaa00;
     }
 }

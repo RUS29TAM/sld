@@ -2,10 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './table.module.css';
 
-// import img1 from '@/app/images/img1.jpg';
-// import img2 from '@/app/images/img2.jpg';
-// import img3 from '@/app/images/img3.jpg';
-
 const images = [
     { url: 'https://images.unsplash.com/photo-1727086564608-7abb296a677d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', title: 'Ваш бизнес по франшизе', description1: 'При принятии решения о покупке франшизы необходимо заранее грамотно подготовиться. В этом случае применяются те же самые принципы, что и при выборе партнера или поставщика, и важно придерживаться принципа должной осмотрительности. Компетентный и опытный франчайзер готов ответить на любые ваши вопросы, и предоставит исчерпывающие разъяснения по каждому из них. В то время как компания, заинтересованная только в получении финансового взноса от франчайзи в качестве паушального платежа, может проявить недовольство таким интересом и жаждой информации. Не стесняйтесь создать список вопросов и подвергнуть своих потенциальных франчайзеров тщательному анализу. Мы предлагаем включить в ваш арсенал даже те вопросы, над которыми редко задумываются перед приобретением франшизы, но которые могут избежать неприятных ситуаций в будущем', description2: <a href={'/pages/franchise-hero'}>ФРАНЧАЙЗИНГ</a>},
     { url: 'https://images.unsplash.com/photo-1727707185480-a50e6090b58c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', title: 'SLIDER IMAGE MAGIC 2', description1: '2 Nulla magna irure incididunt Ex irure minim eiusmod......', description2: <a href={'/pages/solution-selection'}>решения</a> },

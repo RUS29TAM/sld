@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from './cards-grid.module.css';
-import { contentData } from '@/utils/contentData'; // Импортируем массив данных из другого файла
+import { contentData } from '@/utils/contentData';
 
 const CardsGrid: React.FC = () => {
     // Состояние для отслеживания активной карточки и видимости контента

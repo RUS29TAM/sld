@@ -1,5 +1,4 @@
 import React from "react";
-import Accordion from "@/app/components/accordion/accordion";
 import Lensky from '../app/components/cardsGrid/CardsGrid'
 interface DataItem {
     id: number;
@@ -7,27 +6,27 @@ interface DataItem {
 }
 const data: DataItem[] = [
     // { id: 0, content: React.createElement<typeof Accordion>(Accordion)},
-    { id: 0, content: 'Content for Вилегодский округ'},
+    { id: 0, content: 'контент для Вилегодский округ'},
 
     { id: 1, content: React.createElement<typeof Lensky>(Lensky)},
-    // { id: 1, content: 'Content for Ленский район'},
-    { id: 2, content: 'Content for Котласский округ' },
-    { id: 3, content: 'Content for Красноборский округ' },
-    { id: 4, content: 'Content for Устьянский округ' },
-    { id: 5, content: 'Content for Вельский район' },
-    { id: 6, content: 'Content for Коношский район' },
-    { id: 7, content: 'Content for Каргопольский округ' },
-    { id: 8, content: 'Content for Няндомский округ' },
-    { id: 9, content: 'Content for Шенкурский округ' },
-    { id: 10, content: 'Content for Верхнетоемский округ' },
-    { id: 11, content: 'Content for Плесецкий округ' },
-    { id: 12, content: 'Content for Виноградовский округ' },
-    { id: 13, content: 'Content for Пинежский округ' },
-    { id: 14, content: 'Content for Холмогорский округ' },
-    { id: 15, content: 'Content for Онежский район' },
-    { id: 16, content: 'Content for Лешуконский округ' },
-    { id: 17, content: 'Content for Мезенский округ' },
-    { id: 18, content: 'Content for Приморский округ' },
+    // { id: 1, content: 'контент для Ленский район'},
+    { id: 2, content: 'контент для Котласский округ' },
+    { id: 3, content: 'контент для Красноборский округ' },
+    { id: 4, content: 'контент для Устьянский округ' },
+    { id: 5, content: 'контент для Вельский район' },
+    { id: 6, content: 'контент для Коношский район' },
+    { id: 7, content: 'контент для Каргопольский округ' },
+    { id: 8, content: 'контент для Няндомский округ' },
+    { id: 9, content: 'контент для Шенкурский округ' },
+    { id: 10, content: 'контент для Верхнетоемский округ' },
+    { id: 11, content: 'контент для Плесецкий округ' },
+    { id: 12, content: 'контент для Виноградовский округ' },
+    { id: 13, content: 'контент для Пинежский округ' },
+    { id: 14, content: 'контент для Холмогорский округ' },
+    { id: 15, content: 'контент для Онежский район' },
+    { id: 16, content: 'контент для Лешуконский округ' },
+    { id: 17, content: 'контент для Мезенский округ' },
+    { id: 18, content: 'контент для Приморский округ' },
 ];
 
 export default data;
