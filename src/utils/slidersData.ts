@@ -1,8 +1,8 @@
-import first from "@/app/images/img1.jpg";
-import second from "@/app/images/img2.jpg";
-import third from "@/app/images/img3.jpg";
-import fourth from "@/app/images/img4.jpg";
-import fifth from "@/app/images/img5.jpg";
+import first from "@/app/images/img1-1.jpg";
+import second from "@/app/images/img1-2.jpg";
+import third from "@/app/images/img1-3.jpg";
+import fourth from "@/app/images/img1-4.jpg";
+import fifth from "@/app/images/img1-5.jpg";
 
 export const slidesData = [
     {
