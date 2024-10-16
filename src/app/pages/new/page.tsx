@@ -1,7 +1,7 @@
 'use client';
 import React, {useRef, useState} from 'react';
 import style from './new.module.css'
-import Image, {StaticImageData} from "next/image";
+import Image from "next/image";
 import {slidesData} from "@/utils/slidersData";
 
 interface Slide {
