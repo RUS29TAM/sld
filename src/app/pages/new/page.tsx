@@ -20,7 +20,7 @@ interface CarouselProps {
 }
 
 
-const Page: React.FC<CarouselProps> = ({ slides })=> {
+const Page: React.FC<CarouselProps> = ()=> {
     const carouselRef = useRef<HTMLDivElement | null>(null);
     const listRef = useRef<HTMLDivElement | null>(null);
     const [isClickable, setClickable] = useState(true);
