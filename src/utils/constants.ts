@@ -3,8 +3,8 @@ import { StaticImageData } from 'next/image';
 
 export const sliderItems: { src: string | StaticImageData, author: string, title: string, topic: string, description: string, buttonLink: string}[] = [
     {   src: 'https://images.unsplash.com/photo-1682695794816-7b9da18ed470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        author: 'RUS29TAM',
-        title: 'WEB DESIGN & DEV',
+        author: 'Отдел по работе с МО',
+        title: 'направление',
         topic: 'ФРАНЧАЙЗИНГ',
         description: 'При принятии решения о покупке ' +
             'франшизы необходимо заранее грамотно подготовиться. В этом случае применяются те же самые принципы, ' +
@@ -16,9 +16,9 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
         buttonLink: '/pages/franchise-hero'
     },
     {   src: 'https://images.unsplash.com/photo-1682686581312-506a8b53190e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        author: 'RUS29TAM',
-        title: 'WEB DESIGN & DEV',
-        topic: 'СОЦКОНТРАКТ',
+        author: 'Отдел по работе с МО',
+        title: 'направление ',
+        topic: 'СОЦКОНТРАКТЫ',
         description: 'Добро пожаловать в мир социальных контрактов! ' +
             'Социальный контракт — это не просто бумага, это забота о каждом гражданине. ' +
             'Это соглашение между местным органом социальной защиты и тем, кто временно оказался в трудной жизненной ситуации. ' +
@@ -30,9 +30,9 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
         buttonLink: '/pages/social-contract'
     },
     {   src: 'https://images.unsplash.com/photo-1682687220989-cbbd30be37e9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        author: 'RUS29TAM',
-        title: 'WEB DESIGN & DEV',
-        topic: 'РЕШЕНИЯ',
+        author: 'Отдел по работе с МО',
+        title: 'направление ',
+        topic: 'КОРОБОЧНЫХ РЕШЕНИЙ',
         description: 'Коробочное решение (или "готовое решение") в контексте начала предпринимательской деятельности\n' +
             'Это заранее разработанный набор инструкций, процессов, или ресурсов, позволяющий упростить запуск или управление существующим бизнесом. ' +
             'Это может включать в себя шаблоны для дизайна интерьера, меню, поставщиков, маркетинговые стратегии, ' +
@@ -44,9 +44,9 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
         buttonLink: '/pages/solution-selection'
     },
     {   src: 'https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        author: 'RUS29TAM',
-        title: 'WEB DESIGN & DEV',
-        topic: 'БИЗНЕС ПЛАН',
+        author: 'Отдел по работе с МО',
+        title: 'направление ',
+        topic: 'БИЗНЕС ДЕСАНТ',
         description: 'Добро пожаловать в мир успешного предпринимательства!\n' +
             'Бизнес-план — это не просто документ, это ваш надежный навигатор в мире бизнеса. Это подробный план вашего предприятия, который поможет вам добиться успеха.\n' +
             'Что включает в себя бизнес-план? Все! От описания вашей бизнес-идеи до стратегии маркетинга, от финансового плана до анализа конкурентов. ' +
@@ -54,11 +54,11 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
             'Зачем он нужен? Бизнес-план — это необходимый инструмент для привлечения инвестиций, партнерств и покупателей. ' +
             'Он помогает вам понять ваш рынок, цели, и как вы собираетесь их достичь.\n' +
             'Так что не откладывайте, начните с составления своего бизнес-плана сегодня! Это ваш первый шаг к процветающему бизнесу.',
-        buttonLink: '/pages/business-plan'
+        buttonLink: '/pages/new'
     },
     {   src: 'https://images.unsplash.com/photo-1588152850700-c82ecb8ba9b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        author: 'RUS29TAM',
-        title: 'ОТДЕЛ ПО РАБОТЕ С МО',
+        author: 'Отдел по работе с МО',
+        title: 'направление ',
         topic: 'РАЙОНЫ',
         description: 'Добро пожаловать в мир успешного предпринимательства!\n' +
             'Бизнес-план — это не просто документ, это ваш надежный навигатор в мире бизнеса. Это подробный план вашего предприятия, который поможет вам добиться успеха.\n' +
@@ -74,19 +74,19 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
 export const thumbnailItems: { src: string | StaticImageData, title: string, description: string }[] = [
     {   src: 'https://images.unsplash.com/photo-1682695794816-7b9da18ed470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         title: 'ФРАНЧАЙЗИНГ',
-        description: 'Description', },
+        description: 'Подробнее', },
     {   src: 'https://images.unsplash.com/photo-1682686581312-506a8b53190e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         title: 'СОЦКОНТРАКТ',
-        description: 'Description', },
+        description: 'Подробнее', },
     {   src: 'https://images.unsplash.com/photo-1682687220989-cbbd30be37e9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         title: 'РЕШЕНИЯ',
-        description: 'Description', },
+        description: 'Подробнее', },
     {   src: 'https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        title: 'БИЗНЕС ПЛАН',
-        description: 'Description', },
+        title: 'БИЗНЕС ДЕСАНТ',
+        description: 'Подробнее', },
     {   src: 'https://images.unsplash.com/photo-1588152850700-c82ecb8ba9b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         title: 'РАЙОНЫ',
-        description: 'Description', },
+        description: 'Подробнее', },
 ];
 
 
