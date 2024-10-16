@@ -5,6 +5,7 @@ import {sliderItems, thumbnailItems} from "@/utils/constants";
 import Link from "next/link";
 import {useTheme} from "@/app/ThemeContext";
 import LoadingLane from "@/app/components/loading-lane/loading-lane";
+import Image from "next/image";
 
 const Main = () => {
     const { isDarkTheme } = useTheme();
@@ -167,7 +168,7 @@ const Main = () => {
                         <div
                             className={`${styles.item} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''} ${animationInProgress ? styles.animationInProgress : ''}`}
                             key={index}>
-                            <img className={`${styles.img} `} src={typeof item.src === 'string' ? item.src : String(item.src)}
+                            <Image width={5000} height={5000} className={`${styles.img} `} src={item.src}
                                  alt={`Slide ${index + 1}`}/>
                             <div className={`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}> {/*`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`*/}
                                 <div className={styles.author}>{item.author}</div>
@@ -176,7 +177,7 @@ const Main = () => {
                                 <div className={styles.des}>{item.description}</div>
                                 <div className={styles.buttonsWrapper}>
                                     <Link className={styles.button} href={item.buttonLink}>СМОТРЕТЬ</Link>
-                                    <Link className={styles.button} href={'/pages/new'}>ПОДПИСКА</Link>
+                                    <Link className={styles.button} target={"_blank"} href={'https://vk.com/arr29'}>ПОДПИСКА</Link>
                                 </div>
                             </div>
                         </div>
@@ -188,8 +189,8 @@ const Main = () => {
                     <div className={styles.miniature} ref={thumbnailBorderRef}>
                         {thumbnailItems.map((item, index) => (
                             <div className={styles.item} onClick={() => showSlider('thumbnail', index)} key={index}>
-                                <img className={styles.img}
-                                     src={typeof item.src === 'string' ? item.src : String(item.src)}
+                                <Image width={5000} height={5000} className={styles.img}
+                                     src={item.src}
                                      alt={`Thumbnail ${index + 1}`}/>
                                 <div className={styles.content}>
                                     <div className={styles.title}>{item.title}</div>
