@@ -19,8 +19,8 @@ const Header = () => {
         <header className={`${styles.header} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
             <nav>
                     <Link className={`${styles.a} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} href={'/pages/main'}>ГЛАВНАЯ</Link>
-                    <Link className={`${styles.a} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} href={'/pages/table'}>КОНТАКТЫ</Link>
-                    <Link className={`${styles.a} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} href={'/pages/two'}>ИНФО</Link>
+                    <Link className={`${styles.a} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} href={'/pages/contacts'}>КОНТАКТЫ</Link>
+                    <Link className={`${styles.a} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} href={'/pages/table'}>ИНФО</Link>
                 </nav>
                 <input onChange={handleButtonClick} className={styles.input} type="checkbox" id="switch"/>
                 <label className={styles.label} htmlFor="switch">
