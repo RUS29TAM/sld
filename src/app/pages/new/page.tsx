@@ -1,12 +1,12 @@
 'use client';
 import React, {useRef, useState} from 'react';
 import style from './new.module.css'
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import {slidesData} from "@/utils/slidersData";
 
 interface Slide {
     id: number;
-    image: string; // Укажите тип, для локального изображения, или `string` для URL
+    image: StaticImageData; // Укажите тип, для локального изображения, или `string` для URL
     title: string;
     topic: string;
     description: string;
