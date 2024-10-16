@@ -103,7 +103,7 @@ const Page: React.FC<CarouselProps> = ({ slides })=> {
                             <div className={`${style.title}`}>{slide.title}</div>
                             <div className={`${style.topic}`}>{slide.topic}</div>
                             <div className={`${style.des}`}>{slide.description}</div>
-                            <button className={`${style.seeMore}`} onClick={handleSeeMore}>See more &#8599;</button>
+                            <button className={`${style.seeMore}`} onClick={handleSeeMore}>ПОДРОБНЕЕ &#8599;</button>
                         </div>
                         {showDetail && (
                             <div className={`${style.detail}`}>
@@ -113,12 +113,12 @@ const Page: React.FC<CarouselProps> = ({ slides })=> {
                                     {slide.specifications.map((spec, index) => (
                                         <div className={`${style.div}`} key={index}>
                                             <p className={`${style.p}`}>{spec.key}</p>
-                                            <p className={`${style.p}`} >{spec.value}</p>
+                                            <p className={`${style.p}`}>{spec.value}</p>
                                         </div>
                                     ))}
                                     <div className={`${style.checkout}`}>
                                         <button className={`${style.button}`}>ADD TO CART</button>
-                                        <button className={`${style.button}`}>CHECKOUT</button>
+                                        <button className={`${style.button}`}>Назад &#8599;</button>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@ const Page: React.FC<CarouselProps> = ({ slides })=> {
             </div>
             <div className={`${style.arrows}`}>
                 <button className={`${style.prevBtn}`} onClick={() => showSlider('prev')} disabled={!isClickable}>&#8249;</button>
-                {showDetail && <button className={`${style.backBtn}`} onClick={handleGoBack}>Go Back &#8599;</button>}
+                {showDetail && <button className={`${style.backBtn}`} onClick={handleGoBack}>Назад &#8599;</button>}
                 <button className={`${style.nextBtn}`} onClick={() => showSlider('next')} disabled={!isClickable}>&#8250;</button>
             </div>
         </div>
