@@ -1,26 +1,26 @@
 'use client';
 import React, {useRef, useState} from 'react';
 import style from './new.module.css'
-import Image, {StaticImageData} from "next/image";
+import Image from "next/image";
 import {slidesData} from "@/utils/slidersData";
+//
+// interface Slide {
+//     id: number;
+//     image: StaticImageData; // Укажите тип, для локального изображения, или `string` для URL
+//     title: string;
+//     topic: string;
+//     description: string;
+//     detailTitle: string;
+//     detailDescription: string;
+//     specifications: { key: string; value: string }[];
+// }
+//
+// interface CarouselProps {
+//     slides: Slide[];
+// }
 
-interface Slide {
-    id: number;
-    image: StaticImageData; // Укажите тип, для локального изображения, или `string` для URL
-    title: string;
-    topic: string;
-    description: string;
-    detailTitle: string;
-    detailDescription: string;
-    specifications: { key: string; value: string }[];
-}
 
-interface CarouselProps {
-    slides: Slide[];
-}
-
-
-const Page: React.FC<CarouselProps> = ()=> {
+const Page: React.FC = ()=> {
     const carouselRef = useRef<HTMLDivElement | null>(null);
     const listRef = useRef<HTMLDivElement | null>(null);
     const [isClickable, setClickable] = useState(true);

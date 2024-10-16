@@ -3,8 +3,9 @@ import second from "@/app/images/img1-2.jpg";
 import third from "@/app/images/img1-3.jpg";
 import fourth from "@/app/images/img1-4.jpg";
 import fifth from "@/app/images/img1-5.jpg";
+import {StaticImageData} from "next/image";
 
-export const slidesData = [
+export const slidesData:{ id: number, image: string | StaticImageData, title: string, topic: string, description: string, detailTitle: string, detailDescription: string, specifications: { key: string; value: string }[]}[] = [
     {
         id: 1,
         image: first,
