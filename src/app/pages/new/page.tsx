@@ -6,7 +6,7 @@ import {slidesData} from "@/utils/slidersData";
 
 interface Slide {
     id: number;
-    image: StaticImageData; // Укажите тип, для локального изображения, или `string` для URL
+    image: string; // Укажите тип, для локального изображения, или `string` для URL
     title: string;
     topic: string;
     description: string;
