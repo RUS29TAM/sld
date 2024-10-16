@@ -1,8 +1,13 @@
 import React from "react";
 import { StaticImageData } from 'next/image';
+import franchise from "@/app/images/img1-1.jpg";
+import solutions from "@/app/images/img1-2.jpg";
+import district from "@/app/images/img1-3.jpg";
+import contract from "@/app/images/img1-4.jpg";
+import paratroopers from "@/app/images/img1-5.jpg";
 
 export const sliderItems: { src: string | StaticImageData, author: string, title: string, topic: string, description: string, buttonLink: string}[] = [
-    {   src: 'https://images.unsplash.com/photo-1682695794816-7b9da18ed470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    {   src: franchise,
         author: 'Отдел по работе с МО',
         title: 'направление',
         topic: 'ФРАНЧАЙЗИНГ',
@@ -15,7 +20,7 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
             'Мы предлагаем включить в ваш арсенал даже те вопросы, над которыми редко задумываются перед приобретением франшизы, но которые могут избежать неприятных ситуаций в будущем.',
         buttonLink: '/pages/franchise-hero'
     },
-    {   src: 'https://images.unsplash.com/photo-1682686581312-506a8b53190e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    {   src: contract,
         author: 'Отдел по работе с МО',
         title: 'направление ',
         topic: 'СОЦКОНТРАКТЫ',
@@ -29,7 +34,7 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
             'Мы уверены, что вместе мы сможем преодолеть любые трудности и достичь успеха! И помните: мы здесь, чтобы поддержать вас на каждом этапе вашего пути к лучшей жизни.',
         buttonLink: '/pages/social-contract'
     },
-    {   src: 'https://images.unsplash.com/photo-1682687220989-cbbd30be37e9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    {   src: solutions,
         author: 'Отдел по работе с МО',
         title: 'направление ',
         topic: 'КОРОБОЧНЫХ РЕШЕНИЙ',
@@ -43,7 +48,7 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
             'Для проработки качественной финансовой модели требуется должная подготовка и проявление вашего энтузиазма.',
         buttonLink: '/pages/solution-selection'
     },
-    {   src: 'https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    {   src: paratroopers,
         author: 'Отдел по работе с МО',
         title: 'направление ',
         topic: 'БИЗНЕС ДЕСАНТ',
@@ -56,7 +61,7 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
             'Так что не откладывайте, начните с составления своего бизнес-плана сегодня! Это ваш первый шаг к процветающему бизнесу.',
         buttonLink: '/pages/new'
     },
-    {   src: 'https://images.unsplash.com/photo-1588152850700-c82ecb8ba9b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    {   src: district,
         author: 'Отдел по работе с МО',
         title: 'направление ',
         topic: 'РАЙОНЫ',
@@ -72,19 +77,19 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
 ];
 
 export const thumbnailItems: { src: string | StaticImageData, title: string, description: string }[] = [
-    {   src: 'https://images.unsplash.com/photo-1682695794816-7b9da18ed470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    {   src: franchise,
         title: 'ФРАНЧАЙЗИНГ',
         description: 'Подробнее', },
-    {   src: 'https://images.unsplash.com/photo-1682686581312-506a8b53190e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    {   src: contract,
         title: 'СОЦКОНТРАКТ',
         description: 'Подробнее', },
-    {   src: 'https://images.unsplash.com/photo-1682687220989-cbbd30be37e9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    {   src: solutions,
         title: 'РЕШЕНИЯ',
         description: 'Подробнее', },
-    {   src: 'https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    {   src: paratroopers,
         title: 'БИЗНЕС ДЕСАНТ',
         description: 'Подробнее', },
-    {   src: 'https://images.unsplash.com/photo-1588152850700-c82ecb8ba9b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    {   src: district,
         title: 'РАЙОНЫ',
         description: 'Подробнее', },
 ];
