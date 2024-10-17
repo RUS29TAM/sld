@@ -1,0 +1,96 @@
+.wrapper {
+    position: relative;
+}
+
+.scroll {
+    position: relative;
+    display: flex;
+    width: 1140px;
+    max-width: 90%;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+}
+
+@property --t {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 20s;
+}
+
+.scroll div {
+    white-space: nowrap;
+    animation: animate var(--t, 20s) linear infinite;
+    animation-delay: calc(var(--t) * -1)
+}
+
+.scroll div:nth-child(2) {
+    animation: alternate2 var(--t, 20s) linear infinite;
+    animation-delay: calc(var(--t) / 2)
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(100%);
+    }
+    20% {
+        transform: translateX(50%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    80% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translateX(100%);
+    }
+    20% {
+        transform: translateX(50%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    80% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.scroll div span {
+    display: inline-flex;
+    margin: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.scroll div span:hover {
+    background: #4caf50;
+    cursor: pointer;
+}
+
+.scroll__imgBox img {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    scale: 0.8;
+    filter: grayscale(1);
+}
+
+.scroll__imgBox img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+}
