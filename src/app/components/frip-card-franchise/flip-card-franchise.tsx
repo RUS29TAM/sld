@@ -1,6 +1,8 @@
 'use client';
 import React, {useEffect, useState} from 'react';
 import styles from './flip-card-franchise.module.css';
+import {useTheme} from "@/app/ThemeContext";
+import ScrollingAnimation from "@/app/components/scrolling-baner/scrolling-baner";
 
 interface CardProps {
     frontText: string;
@@ -12,9 +14,11 @@ interface CardProps {
 
 const FlipCardFranchise: React.FC = () => {
     const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
-    const [textContentHeader, setTextContentHeader] = useState<string>('Выберите карточку, чтобы увидеть информацию.');
+    const [textContentHeader, setTextContentHeader] = useState<string>('Кликните карточку, чтобы увидеть больше информации.');
     const [textContent, setTextContent] = useState<string>('');
     const [flipSequence, setFlipSequence] = useState<number[]>([]);
+    const { isDarkTheme } = useTheme();
+
 
     useEffect(() => {
         const sequence = async () => {
@@ -33,7 +37,7 @@ const FlipCardFranchise: React.FC = () => {
     const handleCardClick = (index: number) => {
         if (activeCardIndex === index) {
             setActiveCardIndex(null); // закрываем карточку, если она уже активна
-            setTextContentHeader('Выберите карточку, чтобы увидеть информацию.');
+            setTextContentHeader('Кликните карточку, чтобы увидеть больше информации.');
             setTextContent('');
         } else {
             setActiveCardIndex(index); // активируем выбранную карточку
@@ -71,40 +75,38 @@ const FlipCardFranchise: React.FC = () => {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 {/* Верхний блок */}
-                <div className={styles.textBlock}>
+                <div className={`${styles.textBlock} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
                     <h3>Добро пожаловать в раздел, посвященный развитию франчайзинга! Здесь вы найдете информацию
                         необходимую для старта и успешного ведения бизнеса по франшизной модели.</h3>
+                    <div className={styles.cardsContainer}>
+                        {cards.map((card, index) => (
+                            <div
+                                key={index}
+                                className={`${styles.card} ${
+                                    flipSequence.includes(index) || activeCardIndex === index ? styles.isFlipped : ''
+                                }`}
+                                onClick={() => handleCardClick(index)}
+                            >
+                                <div className={styles.cardInner}>
+                                    {/* Лицевая часть карточки */}
+                                    <div className={`${styles.cardFront} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
+                                        <p>{card.frontText}</p>
+                                    </div>
+                                    {/* Оборотная сторона карточки */}
+                                    <div className={`${styles.cardBack} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
+                                        <p>{card.backText}</p>
+                                        <a href={card.link} rel="noopener noreferrer">
+                                            Перейти
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                     <p>{textContentHeader}</p>
                     <p>{textContent}</p>
                 </div>
-
-                {/* Нижний блок с карточками */}
-                <div className={styles.cardsContainer}>
-                    {cards.map((card, index) => (
-                        <div
-                            key={index}
-                            className={`${styles.card} ${
-                                flipSequence.includes(index) || activeCardIndex === index ? styles.isFlipped : ''
-                            }`}
-                            // className={`${styles.card} ${activeCardIndex === index ? styles.isFlipped : ''}`}
-                            onClick={() => handleCardClick(index)}
-                        >
-                            <div className={styles.cardInner}>
-                                {/* Лицевая часть карточки */}
-                                <div className={styles.cardFront}>
-                                    <p>{card.frontText}</p>
-                                </div>
-                                {/* Оборотная сторона карточки */}
-                                <div className={styles.cardBack}>
-                                    <p>{card.backText}</p>
-                                    <a href={card.link} rel="noopener noreferrer">
-                                        Перейти
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <ScrollingAnimation />
             </div>
         </div>
 
