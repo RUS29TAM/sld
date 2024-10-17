@@ -50,6 +50,7 @@
 @keyframes lt {
     to {
         color: #FFF;
+        text-shadow: 10px 5px 10px #000;
     }
 }
 
@@ -60,7 +61,7 @@
 @keyframes dt {
     to {
         color: #ffffff;
-        text-shadow: 0 0  5px #FFF;
+        text-shadow: 10px 5px 10px #000;
     }
 }
 /*end theme mode*/
@@ -92,9 +93,19 @@
     text-shadow: 10px 5px 10px #000;
 }
 
-.carousel .list .item .des {
+.carousel .list .item .des.lightTheme {
     font-size: 1rem;
     text-align: justify;
+    color: #fff;
+    text-shadow: 10px 5px 10px #000;
+}
+
+.carousel .list .item .des.darkTheme {
+    font-size: 1rem;
+    text-align: justify;
+    color: #ffffff;
+    text-shadow: 10px 5px 10px #000;
+
 }
 
 .carousel .list .item .buttonsWrapper {
@@ -171,6 +182,14 @@
     border: inset 2px #ffaa00;
 }
 
+.miniature .item .img.darkTheme {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: inset 2px #00d9ff;
+}
+
 .miniature .item .content {
     position: absolute;
     border-bottom-left-radius: 20px;
@@ -182,6 +201,19 @@
     background-color: white;
     color: rgba(116, 116, 116, 0.44);
     border: inset 2px #ffaa00;
+    border-top: none;
+}
+.miniature .item .content.darkTheme {
+    position: absolute;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    color: rgba(116, 116, 116, 0.44);
+    border: inset 2px #00d9ff;
     border-top: none;
 }
 
