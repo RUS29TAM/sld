@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import styles from './flip-card-franchise.module.css';
 import {useTheme} from "@/app/ThemeContext";
-import ScrollingAnimation from "@/app/components/scrolling-baner/scrolling-baner";
+import ScrollingAnimation from "@/app/components/scrolling-baner/scrolling-banner";
 
 interface CardProps {
     frontText: string;
