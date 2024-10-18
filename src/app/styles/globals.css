@@ -122,20 +122,11 @@ body.darkTheme {
     }
 }
 
-/*body {*/
-/*    color: #fff;*/
-/*    font-size: 12px;*/
-/*    !*overflow: hidden;*!*/
-/*}
-23.05 add page start-up
-*/
-
 a {
     color: rgb(0, 204, 250);
     text-decoration: none;
     text-shadow: 10px 5px 10px #000;
 }
-
 
 #fwxWindow::before {
     position: absolute;
