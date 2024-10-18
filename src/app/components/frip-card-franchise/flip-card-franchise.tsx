@@ -78,7 +78,7 @@ const FlipCardFranchise: React.FC = () => {
                 <div className={`${styles.textBlock} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
                     <h3>Добро пожаловать в раздел, посвященный развитию франчайзинга! Здесь вы найдете информацию
                         необходимую для старта и успешного ведения бизнеса по франшизной модели.</h3>
-                    <div className={styles.cardsContainer}>
+                    <div className={`${styles.cardsContainer} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
                         {cards.map((card, index) => (
                             <div
                                 key={index}
@@ -103,8 +103,11 @@ const FlipCardFranchise: React.FC = () => {
                             </div>
                         ))}
                     </div>
-                    <p>{textContentHeader}</p>
-                    <p>{textContent}</p>
+
+                    <div className={`${styles.textContentBox} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
+                        <p>{textContentHeader}</p>
+                        <p>{textContent}</p>
+                    </div>
                 </div>
                 <ScrollingAnimation />
             </div>
