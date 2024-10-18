@@ -2,7 +2,7 @@
 import React from 'react';
 import LoadingLane from "@/app/components/loading-lane/loading-lane";
 import styles from './contacts.module.css'
-import style2 from '@/app/components/footer/footet.module.css'
+import style2 from '@/app/components/footer/footer.module.css'
 import {useTheme} from "@/app/ThemeContext";
 import Link from "next/link";
 
