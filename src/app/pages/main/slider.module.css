@@ -21,11 +21,19 @@
     inset: 0 0 0 0;
 }
 
-.carousel .list .item .img {
+.carousel .list .item .img.lightTheme {
     width: 100%;
     height: 100%;
     object-fit: cover;
     background-position: center;
+}
+
+.carousel .list .item .img.darkTheme {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    filter: hue-rotate(150deg);
 }
 
 
@@ -40,6 +48,7 @@
     box-sizing: border-box;
     color: #fff;
     text-shadow: 10px 5px 10px #000;
+    opacity: 0;
 }
 
 /*theme mode*/
@@ -51,11 +60,13 @@
     to {
         color: #FFF;
         text-shadow: 10px 5px 10px #000;
+        opacity: 1;
     }
 }
 
 .carousel .list .item .content.darkTheme {
     animation: dt linear .5s 1 forwards;
+    opacity: 1;
 }
 
 @keyframes dt {
@@ -167,11 +178,22 @@
     gap: 20px;
 }
 
-.miniature .item {
+.miniature .item.lightTheme {
     width: 150px;
     height: 220px;
     flex-shrink: 0;
     position: relative;
+    border-radius: 20px;
+    border: inset 2px #ffaa00;
+}
+
+.miniature .item.darkTheme {
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 20px;
+    border: inset 2px #00d9ff;
 }
 
 .miniature .item .img {
@@ -179,7 +201,15 @@
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
-    border: inset 2px #ffaa00;
+    /*border: inset 2px #ffaa00;*/
+}
+
+.miniature .item .img.lightTheme {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    /*border: inset 2px #ffaa00;*/
 }
 
 .miniature .item .img.darkTheme {
@@ -187,7 +217,8 @@
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
-    border: inset 2px #00d9ff;
+    /*border: inset 2px #00d9ff;*/
+    filter: hue-rotate(150deg);
 }
 
 .miniature .item .content {
@@ -200,7 +231,7 @@
     right: 0;
     background-color: white;
     color: rgba(116, 116, 116, 0.44);
-    border: inset 2px #ffaa00;
+    /*border: inset 2px #ffaa00;*/
     border-top: none;
 }
 .miniature .item .content.darkTheme {
@@ -213,7 +244,7 @@
     right: 0;
     background-color: white;
     color: rgba(116, 116, 116, 0.44);
-    border: inset 2px #00d9ff;
+    /*border: inset 2px #00d9ff;*/
     border-top: none;
 }
 
