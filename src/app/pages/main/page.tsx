@@ -1,7 +1,7 @@
 'use client'
 import React, {useEffect, useRef, useState} from 'react';
 import styles from './slider.module.css'
-import {sliderItems, sliderItemsDark, thumbnailItems, thumbnailItemsDark} from "@/utils/constants";
+import {sliderItems, thumbnailItems} from "@/utils/constants";
 import Link from "next/link";
 import {useTheme} from "@/app/ThemeContext";
 import LoadingLane from "@/app/components/loading-lane/loading-lane";
@@ -9,8 +9,6 @@ import Image from "next/image";
 
 const Main = () => {
     const { isDarkTheme } = useTheme();
-    const sliderItemsLight = isDarkTheme ? sliderItemsDark : sliderItems;
-    const thumbnailItemsLight = isDarkTheme ? thumbnailItemsDark : thumbnailItems;
     const [loaded, setLoaded] = useState(false);
     const [animationInProgress, setAnimationInProgress] = useState(false);
     const [direction, setDirection] = useState<'next' | 'prev' | 'carousel'>('carousel');
@@ -165,11 +163,11 @@ const Main = () => {
             >
                 {/* header and navigation */}
                 <div className={`${styles.list}`} ref={sliderRef}>
-                    {sliderItemsLight.map((item, index) => (
+                    {sliderItems.map((item, index) => (
                         <div
                             className={`${styles.item} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''} ${animationInProgress ? styles.animationInProgress : ''}`}
                             key={index}>
-                            <Image width={5000} height={5000} className={`${styles.img} `} src={item.src}
+                            <Image width={5000} height={5000} className={`${styles.img} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} src={item.src}
                                  alt={`Slide ${index + 1}`}/>
                             <div className={`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}> {/*`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`*/}
                                 <div className={styles.author}>{item.author}</div>
@@ -188,8 +186,8 @@ const Main = () => {
                 {/* Miniature */}
                 <div className={styles.miniatureWrapper}>
                     <div className={styles.miniature} ref={thumbnailBorderRef}>
-                        {thumbnailItemsLight.map((item, index) => (
-                            <div className={styles.item} onClick={() => showSlider('thumbnail', index)} key={index}>
+                        {thumbnailItems.map((item, index) => (
+                            <div className={`${styles.item} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} onClick={() => showSlider('thumbnail', index)} key={index}>
                                 <Image width={5000} height={5000} className={`${styles.img} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}
                                      src={item.src}
                                      alt={`Thumbnail ${index + 1}`}/>
