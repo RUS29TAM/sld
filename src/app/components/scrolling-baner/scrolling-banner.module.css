@@ -1,5 +1,7 @@
 .wrapper {
     position: relative;
+    border-radius: 8px;
+
 }
 
 .scroll {
@@ -20,7 +22,11 @@
 .scroll div {
     white-space: nowrap;
     animation: animate var(--t, 20s) linear infinite;
-    animation-delay: calc(var(--t) * -1)
+    animation-delay: calc(var(--t) * -1);
+}
+
+.scroll div:hover {
+    animation-play-state: paused!important;
 }
 
 .scroll div:nth-child(2) {
@@ -66,10 +72,10 @@
 
 .scroll div span {
     display: inline-flex;
-    margin: 10px;
+    margin: 5px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    background: #333;
+    background: #596164;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
