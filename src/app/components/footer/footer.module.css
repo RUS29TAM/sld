@@ -9,7 +9,7 @@
     z-index: 1;
 }
 
-.footer a {
+.footer .link {
     text-transform: uppercase;
     font-family: monospace;
     position: relative;
