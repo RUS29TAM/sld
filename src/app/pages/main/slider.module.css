@@ -66,13 +66,14 @@
 
 .carousel .list .item .content.darkTheme {
     animation: dt linear .5s 1 forwards;
-    opacity: 1;
 }
 
 @keyframes dt {
     to {
         color: #ffffff;
         text-shadow: 10px 5px 10px #000;
+        opacity: 1;
+
     }
 }
 /*end theme mode*/
