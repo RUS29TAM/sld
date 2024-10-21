@@ -32,7 +32,6 @@ const Page = () => {
                         {isHovered ? <span className={`${styles.emoji}`}>&#128512;</span> :
                             <span className={`${styles.emoji}`}>&#128521;</span>
                         }
-
                     </p>
                 </div>
                 <div className={`${styles.centerLine}`}>
