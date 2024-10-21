@@ -12,6 +12,7 @@
     margin-top: -70px;
     position: relative;
     opacity: 1;
+    min-height: 568px;
 }
 
 .carousel .list .item {
