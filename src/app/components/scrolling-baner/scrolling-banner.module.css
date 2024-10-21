@@ -80,6 +80,8 @@
     padding: 5px 10px;
     border-radius: 5px;
     transition: 0.5s;
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (24 - 16) + 8px);
+
 }
 
 .scroll div span:hover {
@@ -89,8 +91,8 @@
 
 .scroll__imgBox img {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
     background-size: cover;
     scale: 0.8;
     filter: grayscale(1);
