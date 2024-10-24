@@ -1,5 +1,6 @@
 .wrapper {
-    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    /*background-image: linear-gradient(to top, #09203f 0%, #537895 100%);*/
+    background: transparent;
 }
 
 .container {
@@ -12,7 +13,8 @@
     justify-content: center;
     box-sizing: border-box;
     overflow: hidden;
-    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    /*background-image: linear-gradient(to top, #09203f 0%, #537895 100%);*/
+    background: transparent;
     gap: 10px;
     font-size: 15px;
     font-family: monospace;
@@ -208,7 +210,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    /*gap: 20px;*/
     margin-bottom: 20px;
 
 }
