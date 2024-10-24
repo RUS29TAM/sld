@@ -51,14 +51,14 @@ const FlipCardFranchise: React.FC = () => {
         {
             frontText: 'Региональные франшизы',
             backText: 'Франшизы от предпринимателей зарегистрированных в Архангельской области',
-            link: 'https://example.com/1',
+            link: '/pages/table',
             uniqueTextHeader: 'Региональные франшизы',
             uniqueText: 'Мы собрали для вас самые актуальные и перспективные франшизы, созданные местными предпринимателями. Это возможность не только начать дело, но и поддержать региональную экономику, развивая успешные бизнес-проекты, проверенные на практике.'
         },
         {
             frontText: 'Федеральные франшизы в регионе',
-            backText: 'Предприниматели из Архангельской области, которые приобрели франшизу',
-            link: 'https://example.com/2',
+            backText: 'Предприниматели из Архангельской области, которые приобрели франшизу в другом регионе',
+            link: '/pages/plug',
             uniqueTextHeader: 'Франшизы из других регионов',
             uniqueText: 'Вы также можете ознакомиться с франшизами, представленными в нашем регионе предпринимателями из других уголков страны. Это шанс перенять передовые бизнес-модели и привнести в регион новые, востребованные товары и услуги. Мы предлагаем проверенные решения, которые уже показали свою эффективность и стабильность.    '
         },
@@ -107,7 +107,7 @@ const FlipCardFranchise: React.FC = () => {
                     ))}
                 </div>
                 <div className={`${styles.thirdBlock} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
-                    <p>{textContentHeader}</p>
+                    <p style={{fontStyle: "italic"}}>{textContentHeader}:</p>
                     <p>{textContent}</p>
                 </div>
                 <div className={`${styles.fourthBlock} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
