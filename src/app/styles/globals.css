@@ -44,6 +44,20 @@
     --item6-filter: blur(40px);
     --item6-zIndex: 7;
     --item6-opacity: 0;
+
+    /*for plug page*/
+
+    --c0: #ffaa00; /* очень светлый черный */
+    --c1: #222222; /* светлый черный */
+    --c2: #1c1c1c; /* глубокий черный */
+    --c3: #151515; /* темный черный */
+    --c4: #0f0f0f; /* угольный черный */
+    --c5: #0a0a0a; /* почти черный */
+    --c6: #050505; /* самый темный черный */
+
+
+    --clr: 1; /* change color from 1 to 12 */
+    --hue: calc(30deg - (30deg * var(--clr)));
 }
 
 body::-webkit-scrollbar {
@@ -122,20 +136,11 @@ body.darkTheme {
     }
 }
 
-/*body {*/
-/*    color: #fff;*/
-/*    font-size: 12px;*/
-/*    !*overflow: hidden;*!*/
-/*}
-23.05 add page start-up
-*/
-
 a {
     color: rgb(0, 204, 250);
     text-decoration: none;
     text-shadow: 10px 5px 10px #000;
 }
-
 
 #fwxWindow::before {
     position: absolute;

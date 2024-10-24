@@ -1,0 +1,95 @@
+.wrapper {
+    position: relative;
+    border-radius: 8px;
+
+}
+
+.scroll {
+    position: relative;
+    display: flex;
+    width: 1140px;
+    max-width: 90%;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+    justify-content: center; /* Центрируем элементы */
+}
+
+@property --t {
+    syntax: '<time>';
+    inherits: false;
+    initial-value: 100s;
+}
+
+.scroll div {
+    white-space: nowrap;
+    display: inline-flex;
+    animation: animate var(--t, 20s) linear infinite;
+    animation-delay: calc(var(--t) * -1);
+    animation-timing-function: linear; /* Плавность анимации */
+}
+
+.scroll div:hover {
+    animation-play-state: paused!important;
+}
+
+.scroll div:nth-child(2) {
+    animation: alternate2 var(--t, 20s) linear infinite;
+    animation-delay: calc(var(--t) / 2)
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(30%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-30%);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translateX(30%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.scroll div span {
+    display: inline-flex;
+    margin: 5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: #596164;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.5s;
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (24 - 16) + 8px);
+
+}
+
+.scroll div span:hover {
+    background: #4caf50;
+    /*cursor: pointer;*/
+}
+
+.scroll__imgBox img {
+    position: relative;
+    width: 10vw;
+    height: 10vw;
+    background-size: cover;
+    scale: 0.8;
+    filter: grayscale(1);
+}
+
+.scroll__imgBox img:hover {
+    filter: grayscale(0);
+    /*cursor: pointer;*/
+}

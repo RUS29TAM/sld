@@ -9,7 +9,6 @@ import Image from "next/image";
 
 const Main = () => {
     const { isDarkTheme } = useTheme();
-
     const [loaded, setLoaded] = useState(false);
     const [animationInProgress, setAnimationInProgress] = useState(false);
     const [direction, setDirection] = useState<'next' | 'prev' | 'carousel'>('carousel');
@@ -168,13 +167,13 @@ const Main = () => {
                         <div
                             className={`${styles.item} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''} ${animationInProgress ? styles.animationInProgress : ''}`}
                             key={index}>
-                            <Image width={5000} height={5000} className={`${styles.img} `} src={item.src}
+                            <Image width={5000} height={5000} className={`${styles.img} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} src={item.src}
                                  alt={`Slide ${index + 1}`}/>
                             <div className={`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}> {/*`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`*/}
                                 <div className={styles.author}>{item.author}</div>
                                 <div className={styles.title}>{item.title}</div>
                                 <div className={`${styles.topic} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>{item.topic}</div>
-                                <div className={styles.des}>{item.description}</div>
+                                <div className={`${styles.des} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>{item.description}</div>
                                 <div className={styles.buttonsWrapper}>
                                     <Link className={styles.button} href={item.buttonLink}>СМОТРЕТЬ</Link>
                                     <Link className={styles.button} target={"_blank"} href={'https://vk.com/arr29'}>ПОДПИСКА</Link>
@@ -188,11 +187,11 @@ const Main = () => {
                 <div className={styles.miniatureWrapper}>
                     <div className={styles.miniature} ref={thumbnailBorderRef}>
                         {thumbnailItems.map((item, index) => (
-                            <div className={styles.item} onClick={() => showSlider('thumbnail', index)} key={index}>
-                                <Image width={5000} height={5000} className={styles.img}
+                            <div className={`${styles.item} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} onClick={() => showSlider('thumbnail', index)} key={index}>
+                                <Image width={5000} height={5000} className={`${styles.img} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}
                                      src={item.src}
                                      alt={`Thumbnail ${index + 1}`}/>
-                                <div className={styles.content}>
+                                <div className={`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
                                     <div className={styles.title}>{item.title}</div>
                                     <div className={styles.description}>{item.description}</div>
                                 </div>

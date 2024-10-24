@@ -21,11 +21,19 @@
     inset: 0 0 0 0;
 }
 
-.carousel .list .item .img {
+.carousel .list .item .img.lightTheme {
     width: 100%;
     height: 100%;
     object-fit: cover;
     background-position: center;
+}
+
+.carousel .list .item .img.darkTheme {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    filter: hue-rotate(150deg);
 }
 
 
@@ -40,6 +48,7 @@
     box-sizing: border-box;
     color: #fff;
     text-shadow: 10px 5px 10px #000;
+    opacity: 0;
 }
 
 /*theme mode*/
@@ -50,6 +59,8 @@
 @keyframes lt {
     to {
         color: #FFF;
+        text-shadow: 10px 5px 10px #000;
+        opacity: 1;
     }
 }
 
@@ -60,7 +71,9 @@
 @keyframes dt {
     to {
         color: #ffffff;
-        text-shadow: 0 0  5px #FFF;
+        text-shadow: 10px 5px 10px #000;
+        opacity: 1;
+
     }
 }
 /*end theme mode*/
@@ -92,9 +105,19 @@
     text-shadow: 10px 5px 10px #000;
 }
 
-.carousel .list .item .des {
+.carousel .list .item .des.lightTheme {
     font-size: 1rem;
     text-align: justify;
+    color: #fff;
+    text-shadow: 10px 5px 10px #000;
+}
+
+.carousel .list .item .des.darkTheme {
+    font-size: 1rem;
+    text-align: justify;
+    color: #ffffff;
+    text-shadow: 10px 5px 10px #000;
+
 }
 
 .carousel .list .item .buttonsWrapper {
@@ -156,11 +179,22 @@
     gap: 20px;
 }
 
-.miniature .item {
+.miniature .item.lightTheme {
     width: 150px;
     height: 220px;
     flex-shrink: 0;
     position: relative;
+    border-radius: 20px;
+    border: inset 2px #ffaa00;
+}
+
+.miniature .item.darkTheme {
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 20px;
+    border: inset 2px #00d9ff;
 }
 
 .miniature .item .img {
@@ -168,7 +202,24 @@
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
-    border: inset 2px #ffaa00;
+    /*border: inset 2px #ffaa00;*/
+}
+
+.miniature .item .img.lightTheme {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    /*border: inset 2px #ffaa00;*/
+}
+
+.miniature .item .img.darkTheme {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    /*border: inset 2px #00d9ff;*/
+    filter: hue-rotate(150deg);
 }
 
 .miniature .item .content {
@@ -181,7 +232,20 @@
     right: 0;
     background-color: white;
     color: rgba(116, 116, 116, 0.44);
-    border: inset 2px #ffaa00;
+    /*border: inset 2px #ffaa00;*/
+    border-top: none;
+}
+.miniature .item .content.darkTheme {
+    position: absolute;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    color: rgba(116, 116, 116, 0.44);
+    /*border: inset 2px #00d9ff;*/
     border-top: none;
 }
 
@@ -551,7 +615,10 @@
         padding-right: 10%;
         top: 10%;
         width: 100%;
-        height: 100%;
+        /*height: 100%;*/
+        height: 932px;
+        min-height: 100%;
+
     }
 
     .carousel .list .item .content .author {
@@ -568,7 +635,7 @@
     }
 
     .carousel .list .item .content .des {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .carousel .list .item .content .buttonsWrapper {
@@ -586,7 +653,7 @@
     }
 
     .carousel .miniature {
-        left: 50%;
+        left: 0;
         gap: 5px;
     }
 
@@ -639,7 +706,7 @@
             height: 130px;
             border-radius: 20px;
             left: 50%;
-            bottom: 10px;
+            bottom: 60px;
         }
     }
 
@@ -691,7 +758,7 @@
     }
 
     .carousel .miniature {
-        left: 50%;
+        left: 0;
         gap: 5px;
     }
 
@@ -744,7 +811,7 @@
             height: 150px;
             border-radius: 20px;
             left: 50%;
-            bottom: 20px;
+            bottom: 70px;
         }
     }
 
