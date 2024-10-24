@@ -1,13 +1,21 @@
 import React from "react";
-import { StaticImageData } from 'next/image';
+import {StaticImageData} from 'next/image';
 import franchise from "@/app/images/img1-1.jpg";
 import solutions from "@/app/images/img1-2.jpg";
 import district from "@/app/images/img1-3.jpg";
 import contract from "@/app/images/img1-4.jpg";
 import paratroopers from "@/app/images/img1-5.jpg";
 
-export const sliderItems: { src: string | StaticImageData, author: string, title: string, topic: string, description: string, buttonLink: string}[] = [
-    {   src: franchise,
+export const sliderItems: {
+    src: string | StaticImageData,
+    author: string,
+    title: string,
+    topic: string,
+    description: string,
+    buttonLink: string
+}[] = [
+    {
+        src: franchise,
         author: 'Отдел по работе с МО',
         title: 'направление',
         topic: 'ФРАНЧАЙЗИНГ',
@@ -20,7 +28,8 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
             'Мы предлагаем включить в ваш арсенал даже те вопросы, над которыми редко задумываются перед приобретением франшизы, но которые могут избежать неприятных ситуаций в будущем.',
         buttonLink: '/pages/franchise-hero'
     },
-    {   src: contract,
+    {
+        src: contract,
         author: 'Отдел по работе с МО',
         title: 'направление ',
         topic: 'СОЦКОНТРАКТЫ',
@@ -34,7 +43,8 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
             'Мы уверены, что вместе мы сможем преодолеть любые трудности и достичь успеха! И помните: мы здесь, чтобы поддержать вас на каждом этапе вашего пути к лучшей жизни.',
         buttonLink: '/pages/social-contract'
     },
-    {   src: solutions,
+    {
+        src: solutions,
         author: 'Отдел по работе с МО',
         title: 'направление ',
         topic: 'КОРОБОЧНЫХ РЕШЕНИЙ',
@@ -48,20 +58,16 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
             'Для проработки качественной финансовой модели требуется должная подготовка и проявление вашего энтузиазма.',
         buttonLink: '/pages/solution-selection'
     },
-    {   src: paratroopers,
+    {
+        src: paratroopers,
         author: 'Отдел по работе с МО',
         title: 'направление ',
         topic: 'БИЗНЕС ДЕСАНТ',
-        description: 'Добро пожаловать в мир успешного предпринимательства!\n' +
-            'Бизнес-план — это не просто документ, это ваш надежный навигатор в мире бизнеса. Это подробный план вашего предприятия, который поможет вам добиться успеха.\n' +
-            'Что включает в себя бизнес-план? Все! От описания вашей бизнес-идеи до стратегии маркетинга, от финансового плана до анализа конкурентов. ' +
-            'Он выступает в роли вашего личного гида, указывая на ключевые моменты и помогая избежать преград на пути к успеху.\n' +
-            'Зачем он нужен? Бизнес-план — это необходимый инструмент для привлечения инвестиций, партнерств и покупателей. ' +
-            'Он помогает вам понять ваш рынок, цели, и как вы собираетесь их достичь.\n' +
-            'Так что не откладывайте, начните с составления своего бизнес-плана сегодня! Это ваш первый шаг к процветающему бизнесу.',
+        description: 'В 2023 году по инициативе Губернатора Архангельской области, сотрудниками АНО АО «Агентство регионального развития» реализуется проект под названием «Бизнес – десант». Главной целью этого проекта является оказание содействия и помощи действующим субъектам малого и среднего предпринимательства, а также «самозанятым» гражданам и всем тем, кто задумывается о начале своего бизнеса, но сталкивается с недостатком опыта и знаний, что мешает им сделать первые шаги. Проект охватывает все муниципальные районы области, включая труднодоступные территории. В состав «Бизнес-десанта» входят представители отраслевых исполнительных органов государственной власти, организаций, занимающихся поддержкой субъектов малого и среднего предпринимательства, главы муниципальных образований, а также региональный омбудсмен. В рамках проекта предприниматели информируются о мерах государственной поддержки, возможностях развития своего бизнеса и находят решения текущих проблем. ',
         buttonLink: '/pages/new'
     },
-    {   src: district,
+    {
+        src: district,
         author: 'Отдел по работе с МО',
         title: 'направление ',
         topic: 'РАЙОНЫ',
@@ -77,21 +83,31 @@ export const sliderItems: { src: string | StaticImageData, author: string, title
 ];
 
 export const thumbnailItems: { src: string | StaticImageData, title: string, description: string }[] = [
-    {   src: franchise,
+    {
+        src: franchise,
         title: 'ФРАНЧАЙЗИНГ',
-        description: 'Подробнее', },
-    {   src: contract,
+        description: 'Подробнее',
+    },
+    {
+        src: contract,
         title: 'СОЦКОНТРАКТ',
-        description: 'Подробнее', },
-    {   src: solutions,
+        description: 'Подробнее',
+    },
+    {
+        src: solutions,
         title: 'РЕШЕНИЯ',
-        description: 'Подробнее', },
-    {   src: paratroopers,
+        description: 'Подробнее',
+    },
+    {
+        src: paratroopers,
         title: 'БИЗНЕС ДЕСАНТ',
-        description: 'Подробнее', },
-    {   src: district,
+        description: 'Подробнее',
+    },
+    {
+        src: district,
         title: 'РАЙОНЫ',
-        description: 'Подробнее', },
+        description: 'Подробнее',
+    },
 ];
 
 export const style1 = {'--i': '1'} as React.CSSProperties;
