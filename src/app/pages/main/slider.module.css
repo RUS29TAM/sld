@@ -26,6 +26,7 @@
     height: 100%;
     object-fit: cover;
     background-position: center;
+    filter: brightness(80%) contrast(110%) drop-shadow(0 0 250px #ffaa00);
 }
 
 .carousel .list .item .img.darkTheme {
@@ -33,7 +34,8 @@
     height: 100%;
     object-fit: cover;
     background-position: center;
-    filter: hue-rotate(150deg);
+    filter: hue-rotate(150deg) contrast(110%) drop-shadow(0 0 250px #00b3ff);
+
 }
 
 
