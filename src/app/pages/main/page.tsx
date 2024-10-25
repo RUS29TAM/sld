@@ -168,7 +168,7 @@ const Main = () => {
                             className={`${styles.item} ${direction === 'next' ? styles.next : ''} ${direction === 'prev' ? styles.prev : ''} ${animationInProgress ? styles.animationInProgress : ''}`}
                             key={index}>
                             <Image width={5000} height={5000} className={`${styles.img} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} src={item.src}
-                                 alt={`Slide ${index + 1}`}/>
+                                 alt={`Slide ${index + 1}`} priority/>
                             <div className={`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}> {/*`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`*/}
                                 <div className={styles.author}>{item.author}</div>
                                 <div className={styles.title}>{item.title}</div>
@@ -190,7 +190,7 @@ const Main = () => {
                             <div className={`${styles.item} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} onClick={() => showSlider('thumbnail', index)} key={index}>
                                 <Image width={5000} height={5000} className={`${styles.img} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}
                                      src={item.src}
-                                     alt={`Thumbnail ${index + 1}`}/>
+                                     alt={`Thumbnail ${index + 1}`} priority/>
                                 <div className={`${styles.content} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
                                     <div className={styles.title}>{item.title}</div>
                                     <div className={styles.description}>{item.description}</div>

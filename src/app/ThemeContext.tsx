@@ -1,5 +1,6 @@
-'use client'
-import React, {createContext, useContext, useState, ReactNode, useEffect} from 'react';
+'use client';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+
 interface ThemeProviderProps {
     children: ReactNode;
 }
@@ -14,41 +15,28 @@ interface ThemeContextProps {
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-    const [selectedTopic, setSelectedTopic] = useState<string>('economy'); // по умолчанию "economy"
-
-    const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() => {
-        // Проверяем, сохранена ли тема в localStorage
-
-        if (typeof window !== 'undefined' && window.localStorage) {
-            // Проверяем, доступен ли localStorage в браузере
-            const savedTheme = localStorage.getItem('theme');
-            return savedTheme === 'dark';
-        } else {
-            return false; //Возвращаем значение по умолчанию, если localStorage не доступен
-        }
-    });
+    const [selectedTopic, setSelectedTopic] = useState<string>('economy');
+    const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false); // Стартовое значение
 
     useEffect(() => {
-        // console.clear()
-
-        if (typeof window !== 'undefined' && window.localStorage) {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.body.classList.toggle('darkTheme', savedTheme === 'dark');
-            }
+        // Проверяем тему в localStorage после монтирования
+        if (typeof window !== 'undefined') {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setIsDarkTheme(savedTheme === 'dark');
+            document.body.classList.toggle('darkTheme', savedTheme === 'dark');
         }
-    }, []); // Вызываем эффект только при монтировании компонента
+    }, []);
 
     const toggleTheme = () => {
-        setIsDarkTheme((prevTheme) => !prevTheme);
         const newTheme = isDarkTheme ? 'light' : 'dark';
+        setIsDarkTheme(!isDarkTheme);
         localStorage.setItem('theme', newTheme);
         document.body.classList.toggle('darkTheme');
     };
 
     const contextValue: ThemeContextProps = {
         isDarkTheme, toggleTheme,
-        selectedTopic, setSelectedTopic
+        selectedTopic, setSelectedTopic,
     };
 
     return (
@@ -60,11 +48,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
 export const useTheme = (): ThemeContextProps => {
     const context = useContext(ThemeContext);
-
     if (!context) {
         throw new Error('useTheme must be used within a ThemeProvider');
     }
-
     return context;
 };
-
