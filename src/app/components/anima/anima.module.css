@@ -15,6 +15,7 @@
     position: absolute;
     top: 5vmin;
     transition: all 1s ease 0s;
+    font-size: 12em;
 }
 
 .cube, .cube:before, .cube:after {
@@ -24,6 +25,9 @@
 .cube:before, .cube:after {
     position: absolute;
     content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: var(--color);
     width: calc(100% - 2vmin);
     height: calc(100% - 2vmin);
@@ -58,6 +62,7 @@
         width: 10vmin;
         height: 10vmin;
         background: #fff;
+        font-size: 0px;
 
     }
     50%, 100% {
@@ -68,6 +73,10 @@
         width: 20vmin;
         height: 20vmin;
         background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #693EFF;
 
     }
 }
