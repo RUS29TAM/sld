@@ -1,5 +1,5 @@
 import React from "react";
-import Lensky from '../app/components/cardsGrid/CardsGrid'
+import Lensky from '@/app/components/cards-grid/cards-grid'
 interface DataItem {
     id: number;
     content: React.ReactNode;
