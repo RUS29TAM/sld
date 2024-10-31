@@ -6,7 +6,6 @@ import LoadingLane from "@/app/components/loading-lane/loading-lane";
 import FlipCard from "@/app/components/flip-card/flip-card";
 import {flipCardData} from "@/utils/flipCardData";
 
-
 const SocialContract = () => {
     const {isDarkTheme} = useTheme();
     const [cardStates, setCardStates] = useState([false, false, false, false, false]);
