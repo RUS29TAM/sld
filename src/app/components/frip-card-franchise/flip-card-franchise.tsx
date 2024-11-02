@@ -3,14 +3,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './flip-card-franchise.module.css';
 import {useTheme} from "@/app/ThemeContext";
 import ScrollingAnimation from "@/app/components/scrolling-baner/scrolling-banner";
-
-interface CardProps {
-    frontText: string;
-    backText: string;
-    link: string;
-    uniqueTextHeader: string;
-    uniqueText: string;
-}
+import {cards} from "@/utils/flip-cards-franchise";
 
 const FlipCardFranchise: React.FC = () => {
     const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
@@ -33,7 +26,6 @@ const FlipCardFranchise: React.FC = () => {
         sequence();
     }, []);
 
-
     const handleCardClick = (index: number) => {
         if (activeCardIndex === index) {
             setActiveCardIndex(null); // закрываем карточку, если она уже активна
@@ -46,30 +38,6 @@ const FlipCardFranchise: React.FC = () => {
 
         }
     };
-
-    const cards: CardProps[] = [
-        {
-            frontText: 'Региональные франшизы',
-            backText: 'Франшизы от предпринимателей зарегистрированных в Архангельской области',
-            link: '/pages/table',
-            uniqueTextHeader: 'Региональные франшизы',
-            uniqueText: 'Мы собрали для вас самые актуальные и перспективные франшизы, созданные местными предпринимателями. Это возможность не только начать дело, но и поддержать региональную экономику, развивая успешные бизнес-проекты, проверенные на практике.'
-        },
-        {
-            frontText: 'Федеральные франшизы в регионе',
-            backText: 'Предприниматели из Архангельской области, которые приобрели франшизу в другом регионе',
-            link: '/pages/plug',
-            uniqueTextHeader: 'Франшизы из других регионов',
-            uniqueText: 'Вы также можете ознакомиться с франшизами, представленными в нашем регионе предпринимателями из других уголков страны. Это шанс перенять передовые бизнес-модели и привнести в регион новые, востребованные товары и услуги. Мы предлагаем проверенные решения, которые уже показали свою эффективность и стабильность.    '
-        },
-        {
-            frontText: 'Как правильно подойти к выбору франшизы',
-            backText: 'Главные вопросы о франчайзинге',
-            link: '/pages/franchise',
-            uniqueTextHeader: 'Методические материалы',
-            uniqueText: 'Выбор франшизы — важное решение, которое требует тщательной подготовки. Мы разработали подробные методические материалы, которые помогут вам сориентироваться в процессе выбора и покупки франшизы. В них представлены практические советы по оценке финансовой модели, юридическим аспектам, а также стратегии взаимодействия с франчайзером. Этот материал поможет вам избежать типичных ошибок и принять обоснованное решение.'
-        }
-    ];
 
     return (
         <div className={styles.wrapper}>
@@ -113,10 +81,8 @@ const FlipCardFranchise: React.FC = () => {
                 <div className={`${styles.fourthBlock} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
                     <ScrollingAnimation/>
                 </div>
-
             </div>
         </div>
-
     );
 };
 
