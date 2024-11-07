@@ -99,7 +99,6 @@
     animation: rotateBG 2.5s linear infinite;
 }
 
-
 @property --a {
     syntax: '<angle>';
     inherits: false;
