@@ -3,7 +3,7 @@
 }
 
 .center {
-    text-align: center;
+    text-align: justify;
 }
 
 .container {
@@ -12,6 +12,8 @@
     /*width: 1140px;*/
     max-width: 1140px;
     margin: 0 auto;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (24 - 16) + 16px);
+
 }
 
 .container.lightTheme {
@@ -38,7 +40,7 @@
     position: sticky;
     top: 0;
     text-align: center;
-    height: calc(10vw + 20px);
+    height: calc(20vw + 20px);
     transition: all 0.2s ease-in;
 
     animation: fade-left 2s ease-in-out forwards;
@@ -57,6 +59,12 @@
 
 .episodeContent .title {
     font-weight: 600;
+
+    padding: 40px 40px 0 0;
+    position: sticky;
+    top: 0;
+    text-align: justify-all;
+    height: calc(20vw + 20px);
 }
 
 .episodeContent .story {
@@ -93,11 +101,15 @@
 }
 
 @media (max-width: 576px) {
-    .center {
-        font-size: 16px;
-    }
-    .episodeContent .story {
-        font-size: 15px;
+    /*.center {*/
+    /*    font-size: 16px;*/
+    /*}*/
+    /*.episodeContent .story {*/
+    /*    font-size: 15px;*/
+    /*}*/
+
+    .episodeContent .title {
+        padding: 0;
     }
 }
 
@@ -114,6 +126,8 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    text-align: justify-all;
+    /*padding: 0 0 0 15px;*/
 }
 
 .lightLink {
