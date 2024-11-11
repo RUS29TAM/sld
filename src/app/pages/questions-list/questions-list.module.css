@@ -212,12 +212,6 @@
     font-size: calc((100vw - 480px) / (1280 - 480) * (24 - 16) + 12px);
     transition: background-color .3s ease;
 
-
-
-
-
-
-
     /*transform: translateY(30px);*/
     opacity: 0;
 }
@@ -283,4 +277,3 @@
     text-shadow: none;
     width: 100%;
 }
-
