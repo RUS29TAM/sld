@@ -68,7 +68,6 @@ body::-webkit-scrollbar {
     width: 3px;
     background: rgba(116, 116, 116, 0.44);
     border-radius: 50px;
-
 }
 
 body::-webkit-scrollbar-thumb {
@@ -102,7 +101,6 @@ html, body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
-
 
 body.lightTheme {
     animation: lt linear .5s 1 forwards;
