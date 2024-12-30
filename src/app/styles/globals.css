@@ -55,7 +55,6 @@
     --c5: #0a0a0a; /* почти черный */
     --c6: #050505; /* самый темный черный */
 
-
     --clr: 1; /* change color from 1 to 12 */
     --hue: calc(30deg - (30deg * var(--clr)));
 }
@@ -95,7 +94,6 @@ html, body {
     /*overflow-x: hidden; 23.05 add page start-up*/
     background: #222;
     /*position: fixed;*/
-
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
