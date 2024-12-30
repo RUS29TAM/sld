@@ -87,3 +87,4 @@ export const slidesData:{ id: number, image: string | StaticImageData, title: st
         ],
     },
 ];
+
