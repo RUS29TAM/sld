@@ -30,3 +30,4 @@ const data: DataItem[] = [
 ];
 
 export default data;
+
