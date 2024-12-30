@@ -57,8 +57,6 @@ export const blocksData: { id: string, title: string, leftContent: string, right
         rightContent: "Nunc aliquet bibendum enim facilisis gravida neque convallis a...",
         num: 8,
     },
-];
-
-
+]
 
 
